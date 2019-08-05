@@ -10,34 +10,26 @@ package xyz.yuanmo;
 public class ReverseInteger {
 
     public static void main(String[] args){
-        int x = 1113329932;
+        int x = -1129932;
         ReverseInteger r = new ReverseInteger();
         System.out.println(r.reverse(x));
     }
 
     /**
-     * 该方法超慢的原因就是因为StringBuilder的append()方法
+     * 该方法不是很快的原因就是
      * @param x
      * @return
      */
     public int reverse(int x) {
         try {
             if (x>=0){
-                StringBuilder stringBuilder = new StringBuilder();
-                String[] args = String.valueOf(x).split("");
-                for(int i=args.length-1; i>=0; i--){
-                    stringBuilder.append(args[i]);
-                }
-                return new Integer(stringBuilder.toString());
+                StringBuilder sb = new StringBuilder(String.valueOf(x));
+                return new Integer(sb.reverse().toString());
             }
             else {
                 x = -x;
-                StringBuilder stringBuilder = new StringBuilder();
-                String[] args = String.valueOf(x).split("");
-                for(int i=args.length-1; i>=0; i--){
-                    stringBuilder.append(args[i]);
-                }
-                Integer str = new Integer(stringBuilder.toString());
+                StringBuilder sb = new StringBuilder(String.valueOf(x));
+                Integer str = new Integer(sb.reverse().toString());
                 return -str;
             }
         }
@@ -45,7 +37,5 @@ public class ReverseInteger {
             e.printStackTrace();
             return 0;
         }
-
-
     }
 }

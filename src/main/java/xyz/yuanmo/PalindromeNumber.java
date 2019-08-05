@@ -2,7 +2,7 @@ package xyz.yuanmo;
 
 /**
  * @ClassName PalindromeNumber
- * @Description TODO
+ * @Description 回文数
  * @Author MatthewHan
  * @Date 2019/8/5 16:21
  * @Version 1.0
