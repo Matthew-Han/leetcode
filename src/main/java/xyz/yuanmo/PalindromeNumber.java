@@ -13,7 +13,7 @@ public class PalindromeNumber {
         PalindromeNumber pn = new PalindromeNumber();
         System.out.println(pn.isPalindrome(11011));
     }
-    public boolean isPalindrome(int x) {
+    private boolean isPalindrome(int x) {
         String left,right;
         String str = String.valueOf(x);
         if (x<0){

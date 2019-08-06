@@ -20,7 +20,7 @@ public class ReverseInteger {
      * @param x
      * @return
      */
-    public int reverse(int x) {
+    private int reverse(int x) {
         try {
             if (x>=0){
                 StringBuilder sb = new StringBuilder(String.valueOf(x));
