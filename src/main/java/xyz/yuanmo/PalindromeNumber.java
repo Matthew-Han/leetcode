@@ -1,8 +1,11 @@
 package xyz.yuanmo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @ClassName PalindromeNumber
- * @Description 回文数
+ * @Description #9 回文数
  * @Author MatthewHan
  * @Date 2019/8/5 16:21
  * @Version 1.0
@@ -38,5 +41,7 @@ public class PalindromeNumber {
         }
 
     }
+
+
 
 }

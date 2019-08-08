@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * @ClassName LongestCommonPrefix
- * @Description 最长公共前缀
+ * @Description #14 最长公共前缀
  * @Author MatthewHan
  * @Date 2019/8/5 17:28
  * @Version 1.0
