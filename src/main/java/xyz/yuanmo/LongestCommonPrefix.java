@@ -11,20 +11,21 @@ import java.util.*;
  **/
 public class LongestCommonPrefix {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         LongestCommonPrefix lcp = new LongestCommonPrefix();
-        String[] strs = {"acaa","cbsaa"};
+        String[] strs = {"acaa", "cbsaa"};
         System.out.println(lcp.longestCommonPrefix(strs));
     }
 
     /**
      * 自己写的垃圾解法
+     *
      * @param strs
      * @return
      */
-    private String longestCommonPrefix(String[] strs){
+    private String longestCommonPrefix(String[] strs) {
 
-        if(strs.length == 0){
+        if (strs.length == 0) {
             return "";
         }
         int count = 0;
@@ -33,31 +34,31 @@ public class LongestCommonPrefix {
          * 最小长度字符串
          */
         String minLengthStr = strs[0];
-        for(String str:strs){
-            if(str.length() < minLengthStr.length()){
+        for (String str : strs) {
+            if (str.length() < minLengthStr.length()) {
                 minLengthStr = str;
             }
         }
         String[] args = minLengthStr.split("");
         List<String[]> lists = new ArrayList<>(16);
         for (String str : strs) {
-            if (!str.equals(minLengthStr)){
+            if (!str.equals(minLengthStr)) {
                 lists.add(str.split(""));
             }
         }
-        for(int i=0; i<minLengthStr.length(); i++){
+        for (int i = 0; i < minLengthStr.length(); i++) {
             for (String[] list : lists) {
                 /* 相同下标位置的元素进行对比 */
                 if (list[i].equals(args[i])) {
                     count++;
                 }
                 /* 长度至少是一位，若第一位就不相等，直接return ""。*/
-                if(!list[0].equals(args[0])){
+                if (!list[0].equals(args[0])) {
                     return "";
                 }
             }
             /* 累计数与集合长度一致时表示一次遍历，相同下标位置的元素都相等 */
-            if(count == lists.size()){
+            if (count == lists.size()) {
                 sb.append(args[i]);
             }
             count = 0;
@@ -68,24 +69,25 @@ public class LongestCommonPrefix {
 
     /**
      * LeetCode官方的解法
+     *
      * @param strs
      * @return
      */
     private String longestCommonPrefix2(String[] strs) {
 
-        if(strs.length == 0) {
+        if (strs.length == 0) {
             return "";
         }
         String ans = strs[0];
-        for(int i =1;i<strs.length;i++) {
-            int j=0;
-            for(;j<ans.length() && j < strs[i].length();j++) {
-                if(ans.charAt(j) != strs[i].charAt(j)) {
+        for (int i = 1; i < strs.length; i++) {
+            int j = 0;
+            for (; j < ans.length() && j < strs[i].length(); j++) {
+                if (ans.charAt(j) != strs[i].charAt(j)) {
                     break;
                 }
             }
             ans = ans.substring(0, j);
-            if("".equals(ans)) {
+            if ("".equals(ans)) {
                 return ans;
             }
         }
