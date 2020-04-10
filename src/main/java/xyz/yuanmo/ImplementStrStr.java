@@ -56,6 +56,6 @@ public class ImplementStrStr {
        return -1;
     }
     public static void main(String[] args) {
-        System.out.println(strStr("mississippi", "issip"));
+        System.out.println(strStr("a", "a"));
     }
 }
