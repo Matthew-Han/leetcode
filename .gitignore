@@ -6,7 +6,5 @@
 .idea
 *.iml
 target
-leetcode.iml
-pom.xml
 out
 gen
