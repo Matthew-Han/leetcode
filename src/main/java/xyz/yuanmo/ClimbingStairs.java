@@ -10,6 +10,7 @@ package xyz.yuanmo;
 public class ClimbingStairs {
 
     /**
+     * 1
      * 2
      * 3
      * 5
