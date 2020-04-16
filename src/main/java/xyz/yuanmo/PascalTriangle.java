@@ -27,8 +27,6 @@ public class PascalTriangle {
         List<Integer> fucker = new ArrayList<>(1);
         fucker.add(1);
         lover.add(fucker);
-        int nextValue;
-
         if (numRows == 1) {
             return lover;
         }
@@ -42,10 +40,8 @@ public class PascalTriangle {
                     nextFucker.add(1);
                 }
                 if (j + 1 < fucker.size()){
-                    nextValue = fucker.get(j) + fucker.get(j + 1);
-                    nextFucker.add(nextValue);
+                    nextFucker.add(fucker.get(j) + fucker.get(j + 1));
                 }
-                System.out.println("nf = " + nextFucker);
             }
             fucker = nextFucker;
             lover.add(fucker);
