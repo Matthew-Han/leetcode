@@ -33,7 +33,33 @@ public class BestTimeToBuyAndSellStock {
 
     }
 
+    /**
+     * 改良版
+     * 执行用时 : 1 ms , 在所有 Java 提交中击败了 99.06% 的用户
+     * 内存消耗 : 39.4 MB , 在所有 Java 提交中击败了 5.32% 的用户
+     * 一次循环，指针i随下标移动，每移动一次，找出前i天的最小值，return第i天的价格 - 最小值即可。
+     * @param prices
+     * @return
+     */
+    public static int dp(int[] prices) {
+        if (prices.length <= 0) {
+            return 0;
+        }
+        int maxDv = 0;
+        int minPrice = prices[0];
+        for (int k = 1; k < prices.length; k++) {
+            
+            if (minPrice > prices[k]) {
+                minPrice = prices[k];
+            }
+            if (prices[k] - minPrice > maxDv) {
+                maxDv = prices[k] - minPrice;
+            }
+        }
+        return maxDv;
+    }
+
     public static void main(String[] args) {
-        System.out.println(maxProfit(new int[]{1}));
+        System.out.println(dp(new int[]{6,19,7,9,6,22}));
     }
 }
