@@ -14,7 +14,6 @@ public class MinStack {
     int min = Integer.MAX_VALUE;
 
     private Stack<Integer> stack;
-
     /**
      * 执行用时 : 6 ms , 在所有 Java 提交中击败了 97.91% 的用户
      * 内存消耗 : 41.7 MB , 在所有 Java 提交中击败了 14.46% 的用户
