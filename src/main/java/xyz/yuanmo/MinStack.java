@@ -1,5 +1,6 @@
 package xyz.yuanmo;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 /**
@@ -11,49 +12,77 @@ import java.util.Stack;
  **/
 public class MinStack {
 
-    int min = Integer.MAX_VALUE;
+
 
     private Stack<Integer> stack;
+    private Stack<Integer> minStack;
     /**
      * 执行用时 : 6 ms , 在所有 Java 提交中击败了 97.91% 的用户
      * 内存消耗 : 41.7 MB , 在所有 Java 提交中击败了 14.46% 的用户
      */
     public MinStack() {
         stack = new Stack<>();
+        minStack = new Stack<>();
     }
 
     public void push(int x) {
-        if (x <= min) {
-            stack.add(min);
-            min = x;
+        stack.push(x);
+
+        if (minStack.empty()) {
+            minStack.push(x);
+        } else if (x >= minStack.peek()) {
+            minStack.push(x);
+        } else {
+            for (int i = 0; i <= minStack.size(); i++) {
+                if (x < minStack.get(i)) {
+                    minStack.insertElementAt(x, i);
+                    break;
+                }
+            }
         }
-        stack.add(x);
+
     }
 
     public void pop() {
-        if (min == stack.pop()) {
-            min = stack.pop();
-        }
+        minStack.remove(stack.pop());
     }
 
     public int top() {
-        return stack.get(stack.size() - 1);
+        return stack.peek();
     }
 
     public int getMin() {
-        return min;
+        return minStack.firstElement();
+
+    }
+
+    @Override
+    public String toString() {
+        return "MinStack{" +
+                "stack=" + stack +
+                ", minStack=" + minStack +
+                '}';
     }
 
     public static void main(String[] args) {
+
         MinStack minStack = new MinStack();
         minStack.push(-2);
+        minStack.push(0);
         minStack.push(-3);
-        minStack.push(99);
-        minStack.push(-7777);
-        System.out.println(minStack.top());
+        minStack.push(-11);
+        minStack.push(-1);
+        System.out.println(minStack.toString());
         System.out.println(minStack.getMin());
+
+
         minStack.pop();
+        minStack.top();
+
         System.out.println(minStack.getMin());
+
+
+
 
 
     }
