@@ -13,9 +13,9 @@ import java.util.Stack;
 public class MinStack {
 
 
-
     private Stack<Integer> stack;
     private Stack<Integer> minStack;
+
     /**
      * 执行用时 : 6 ms , 在所有 Java 提交中击败了 97.91% 的用户
      * 内存消耗 : 41.7 MB , 在所有 Java 提交中击败了 14.46% 的用户
@@ -80,9 +80,6 @@ public class MinStack {
         minStack.top();
 
         System.out.println(minStack.getMin());
-
-
-
 
 
     }

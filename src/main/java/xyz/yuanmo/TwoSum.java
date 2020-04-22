@@ -10,7 +10,7 @@ import java.util.Map;
  * @Date 2019/8/5 15:45
  * @Version 1.0
  **/
-public class TwoNum {
+public class TwoSum {
 
     /**
      * 最蠢方法，最容易想到
