@@ -14,7 +14,7 @@ public class MajorityElement {
 
     /**
      * 投票法，太帅了！！
-     * 初始化被选举人（elector）为第一个数，然后遍历；
+     * 初始化被选举人（elector）为第一个数，设定count = 1，然后遍历；
      * 当nextValue == elector，count + 1，反之 - 1；
      * 当count == 0时，当存在nextValue时，nextValue成为下一个elector，count = 1；
      * 最终的选举人一定是那个众数
@@ -33,6 +33,11 @@ public class MajorityElement {
             } else {
                 count--;
             }
+
+            /*
+             * 上面的if-else可以改成这样
+             * count += (nums[i] == elector) ? 1 : -1;
+             */
             if (i + 1 < nums.length && count == 0) {
                 elector = nums[i + 1];
             }
@@ -82,14 +87,12 @@ public class MajorityElement {
     public static int thirdMethod(int[] nums) {
 
         int count = 0;
-        int index = 0;
+        int index = (int) (Math.random() * nums.length);
         int fuck = nums[index];
         for (int i = 0; i < nums.length; i++) {
             System.out.println("i = " + i);
             System.out.println("num = " + nums[i]);
             System.out.println("fuck = " + fuck);
-
-
             if (nums[i] == fuck) {
                 count++;
                 System.out.println("count = " + count);
@@ -101,7 +104,7 @@ public class MajorityElement {
                 System.out.println("=======");
                 count = 0;
                 i = -1;
-                index++;
+                index = (int) (Math.random() * nums.length);
                 fuck = nums[index];
             }
         }
@@ -109,7 +112,8 @@ public class MajorityElement {
     }
 
     public static void main(String[] args) {
-        System.out.println(boyerMoore(new int[]{2,1,1,1,1,2,2,2,2,2,2,1,3,2}));
+        System.out.println(thirdMethod(new int[]{2,1,1,1,1,2,2,2,2,2,2,1,3,2}));
         //map.put(num, map.getOrDefault(num, 0) + 1);
+        System.out.println((int) (Math.random() * 5));
     }
 }

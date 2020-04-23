@@ -13,7 +13,7 @@ public class AddToArrayFormOfInteger {
 
 
     /**
-     * 该方法，LeetCode判定超时
+     * 该方法LeetCode判定超时。。。
      * @param a
      * @param k
      * @return
@@ -69,7 +69,6 @@ public class AddToArrayFormOfInteger {
         for (String s : sb.toString().split("")) {
             fucker.add(Integer.parseInt(s));
         }
-
         return fucker;
     }
 
