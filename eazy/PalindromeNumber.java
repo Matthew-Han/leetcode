@@ -1,5 +1,3 @@
-package leetcode.eazy;
-
 /**
  * @ClassName PalindromeNumber
  * @Description #9 回文数

@@ -1,5 +1,3 @@
-package leetcode.eazy;
-
 /**
  * @ClassName ExcelSheetColumnTitle
  * @Description #168 Excel表列名称

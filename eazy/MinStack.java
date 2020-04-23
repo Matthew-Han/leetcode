@@ -1,5 +1,3 @@
-package leetcode.eazy;
-
 import java.util.Stack;
 
 /**

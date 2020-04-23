@@ -1,5 +1,3 @@
-package leetcode.eazy;
-
 /**
  * @ClassName MaximumSubarray
  * @Description #53 最大子序和

@@ -1,5 +1,3 @@
-package leetcode.eazy;
-
 /**
  * @ClassName ReverseInteger
  * @Description #7 整数反转

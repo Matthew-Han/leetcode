@@ -1,5 +1,3 @@
-package leetcode.eazy;
-
 /**
  * @ClassName ClimbingStairs
  * @Description #70 爬楼梯

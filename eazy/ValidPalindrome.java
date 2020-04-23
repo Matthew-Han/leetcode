@@ -1,5 +1,3 @@
-package leetcode.eazy;
-
 /**
  * @ClassName ValidPalindrome
  * @Description #125 验证回文串

@@ -1,5 +1,3 @@
-package leetcode.eazy;
-
 /**
  * @ClassName CountAndSay
  * @Description # 38

@@ -1,5 +1,3 @@
-package leetcode.eazy;
-
 /**
  * @ClassName ImplementStrStr
  * @Description #28 实现 strStr()
