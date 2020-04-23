@@ -1,6 +1,4 @@
-package xyz.yuanmo;
-
-import java.util.Arrays;
+package leetcode.eazy;
 
 /**
  * @ClassName LengthOfLastWord

@@ -1,6 +1,5 @@
-package xyz.yuanmo;
+package leetcode.eazy;
 
-import org.omg.PortableInterceptor.INACTIVE;
 import java.util.*;
 
 /**

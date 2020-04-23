@@ -1,4 +1,4 @@
-package xyz.yuanmo;
+package leetcode.eazy;
 
 /**
  * @ClassName ClimbingStairs

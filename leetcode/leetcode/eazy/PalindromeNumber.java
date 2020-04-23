@@ -1,7 +1,4 @@
-package xyz.yuanmo;
-
-import java.util.ArrayList;
-import java.util.List;
+package leetcode.eazy;
 
 /**
  * @ClassName PalindromeNumber

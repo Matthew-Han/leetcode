@@ -1,6 +1,4 @@
-package xyz.yuanmo;
-
-import java.util.List;
+package leetcode.eazy;
 
 /**
  * @ClassName LinkedListCycle

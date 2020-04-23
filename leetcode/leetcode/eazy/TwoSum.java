@@ -1,4 +1,4 @@
-package xyz.yuanmo;
+package leetcode.eazy;
 
 import java.util.HashMap;
 import java.util.Map;

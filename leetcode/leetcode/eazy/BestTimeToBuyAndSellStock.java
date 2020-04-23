@@ -1,9 +1,9 @@
-package xyz.yuanmo;
+package leetcode.eazy;
 
 import java.util.Arrays;
 
 /**
- * @ClassName BestTimeToBuyAndSellStock
+ * @ClassName leetcode.eazy.BestTimeToBuyAndSellStock
  * @Description #121 买卖股票的最佳时机
  * @Author MatthewHan
  * @Date 2020/4/18 02:20

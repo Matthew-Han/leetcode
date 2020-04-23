@@ -1,10 +1,6 @@
-package xyz.yuanmo;
+package leetcode.eazy;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-
-import static javafx.scene.input.KeyCode.T;
 
 /**
  * @ClassName DesignHashSet

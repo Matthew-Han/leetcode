@@ -1,4 +1,4 @@
-package xyz.yuanmo;
+package leetcode.eazy;
 
 import java.util.ArrayList;
 import java.util.List;

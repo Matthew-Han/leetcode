@@ -1,8 +1,4 @@
-package xyz.yuanmo;
-
-import sun.jvm.hotspot.debugger.Page;
-import java.sql.SQLOutput;
-import java.util.Arrays;
+package leetcode.eazy;
 
 /**
  * @ClassName CountAndSay
