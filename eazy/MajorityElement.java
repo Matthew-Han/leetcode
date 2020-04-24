@@ -96,12 +96,12 @@ public class MajorityElement {
             if (nums[i] == fuck) {
                 count++;
                 System.out.println("count = " + count);
-                System.out.println("------");
+                System.out.println("------------");
             }
             if (count > nums.length / 2) {
                 return nums[index];
             } else if (i == (nums.length - 1)) {
-                System.out.println("=======");
+                System.out.println("============");
                 count = 0;
                 i = -1;
                 index = (int) (Math.random() * nums.length);
