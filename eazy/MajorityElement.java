@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @ClassName MajorityElement
- * @Description TODO
+ * @Description #169 多数元素
  * @Author MatthewHan
  * @Date 2020/4/23 09:52
  * @Version 1.0
