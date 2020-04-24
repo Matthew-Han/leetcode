@@ -1,6 +1,6 @@
 /**
  * @ClassName CountAndSay
- * @Description # 38
+ * @Description #38 外观数列
  * @Author MatthewHan
  * @Date 2020/4/13 09:59
  * @Version 1.0
