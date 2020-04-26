@@ -13,7 +13,6 @@ public class HappyNumber {
 
     /**
      * 超过内存限制
-     *
      * @param n
      * @return
      */
