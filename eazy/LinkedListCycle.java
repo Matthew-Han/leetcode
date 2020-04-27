@@ -10,10 +10,10 @@ public class LinkedListCycle {
 
 
 }
-class ListNode {
+class ListNode141 {
     int val;
-    ListNode next;
-    ListNode(int x) {
+    ListNode141 next;
+    ListNode141(int x) {
         val = x;
         next = null;
     }
