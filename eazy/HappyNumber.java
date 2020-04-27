@@ -61,7 +61,6 @@ public class HappyNumber {
             if (quick == 1 || slow == 1) {
                 return true;
             }
-
         } while (quick != slow);
         return false;
     }
