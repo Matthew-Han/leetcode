@@ -53,7 +53,7 @@ public class MajorityElement {
      * @return
      */
     public static int majorityElement(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<>(nums.length / 4 * 3 + 1);
+        Map<Integer, Integer> map = new HashMap<>(nums.length / 3 * 4 + 1);
         int max = nums.length / 2;
         AtomicInteger result = new AtomicInteger();
         for (int num : nums) {
