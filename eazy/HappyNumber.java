@@ -13,6 +13,7 @@ public class HappyNumber {
 
     /**
      * 超过内存限制
+     *
      * @param n
      * @return
      */
@@ -42,15 +43,41 @@ public class HappyNumber {
     }
 
     /**
+     * 执行用时 : 1 ms , 在所有 Java 提交中击败了 99.89% 的用户
+     * 内存消耗 : 36.8 MB , 在所有 Java 提交中击败了 8.33% 的用户
      * 快慢指针实现闭环判断
+     *
      * @param n
      * @return
      */
     public static boolean isHappyByFloyd(int n) {
+        int quick = n;
+        int slow = n;
+        do {
+            // 快指针，每次取模计算两次
+            quick = backNumber(backNumber(quick));
+            // 慢指针，每次取模计算一次
+            slow = backNumber(slow);
+            if (quick == 1 || slow == 1) {
+                return true;
+            }
+
+        } while (quick != slow);
         return false;
     }
 
+    public static int backNumber(int n) {
+        int r = 0;
+        while (n > 0) {
+            int d = n % 10;
+            n /= 10;
+            r += d * d;
+        }
+        System.out.println("r = " + r);
+        return r;
+    }
+
     public static void main(String[] args) {
-        System.out.println(isHappy(36));
+        System.out.println(isHappyByFloyd(19));
     }
 }
