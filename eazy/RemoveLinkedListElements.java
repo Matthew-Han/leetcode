@@ -47,7 +47,7 @@ public class RemoveLinkedListElements {
         listNode.next.next = new ListNode203(2);
 
         System.out.println(listNode);
-        System.out.println(removeElements(listNode, 1));
+        System.out.println(removeElements(listNode, 2));
     }
 
 }
