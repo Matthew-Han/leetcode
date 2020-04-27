@@ -18,7 +18,6 @@ public class RemoveLinkedListElements {
      * @return
      */
     public static ListNode203 removeElements(ListNode203 head, int val) {
-
         // 处理头结点为val的情况，知道头节点不是val
         while (head != null && head.val == val) {
             head = head.next;
@@ -47,13 +46,8 @@ public class RemoveLinkedListElements {
         listNode.next = new ListNode203(1);
         listNode.next.next = new ListNode203(2);
 
+        System.out.println(listNode);
         System.out.println(removeElements(listNode, 1));
-
-
-    }
-
-    public static void foo(String s) {
-        s = "ss";
     }
 
 }
