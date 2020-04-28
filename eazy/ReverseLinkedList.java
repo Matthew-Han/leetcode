@@ -10,29 +10,26 @@ import java.util.List;
 public class ReverseLinkedList {
 
     /**
-     * 输入: 1->2->3->4->5->NULL
-     * 输出: 5->4->3->2->1->NULL
+     * 官方题解
+     * 执行用时 : 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+     * 内存消耗 : 39.4 MB , 在所有 Java 提交中击败了 5.06% 的用户
      *
      * @param head
      * @return
      */
     public static ListNode206 reverseList(ListNode206 head) {
 
-        if (head == null) {
-            return null;
+        ListNode206 prev = null;
+        ListNode206 curr = head;
+        while (curr != null) {
+            ListNode206 nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
         }
-        ListNode206 temp = head;
-        ListNode206 reverse = new ListNode206(0);
-        while (true) {
+        System.out.println(prev);
+        return prev;
 
-            if (temp.next == null) {
-                reverse.next = temp;
-                break;
-            }
-            temp = temp.next;
-        }
-        System.out.println(head);
-        return null;
     }
 
     public static void main(String[] args) {
