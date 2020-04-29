@@ -33,34 +33,49 @@ public class ImplementStackUsingQueues {
     Queue<Integer> reverseQueue;
 
     /**
+     * 方法三：一个单向队列
+     * 不要使用自身的forEach方法，根据size搞个循环即可
+     */
+    Queue<Integer> singleQueue;
+
+    /**
      * Initialize your data structure here.
      */
     public ImplementStackUsingQueues() {
         deque = new LinkedList<>();
         queue = new LinkedList<>();
         reverseQueue = new LinkedList<>();
+        singleQueue = new LinkedList<>();
+
     }
 
     /**
      * Push element x onto stack.
      */
     public void push(int x) {
-        // deque.offerFirst(x);
+        /*
+         * deque双向队列，底层双向链表
+         */
+        deque.offerFirst(x);
         /*
          * 利用两个单向队列
          */
         if (queue.isEmpty()) {
             queue.offer(x);
         } else {
-            while (!queue.isEmpty()) {
-                reverseQueue.offer(queue.poll());
-            }
-            ;
+            reverseQueue.addAll(queue);
+            queue.clear();
             queue.offer(x);
-            while (!reverseQueue.isEmpty()) {
-                queue.offer(reverseQueue.poll());
-            }
-            ;
+            queue.addAll(reverseQueue);
+            reverseQueue.clear();
+        }
+
+        /*
+         * 单个单向队列
+         */
+        singleQueue.add(x);
+        for (int i = 0; i < singleQueue.size() - 1; i++) {
+            singleQueue.add(singleQueue.poll());
         }
     }
 
@@ -94,6 +109,7 @@ public class ImplementStackUsingQueues {
                 "deque=" + deque +
                 ", queue=" + queue +
                 ", reverseQueue=" + reverseQueue +
+                ", singleQueue=" + singleQueue +
                 '}';
     }
 
