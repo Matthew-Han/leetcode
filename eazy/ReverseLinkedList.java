@@ -17,12 +17,12 @@ public class ReverseLinkedList {
      * @param head
      * @return
      */
-    public static ListNode206 reverseList(ListNode206 head) {
+    public static ListNode reverseList(ListNode head) {
 
-        ListNode206 prev = null;
-        ListNode206 curr = head;
+        ListNode prev = null;
+        ListNode curr = head;
         while (curr != null) {
-            ListNode206 nextTemp = curr.next;
+            ListNode nextTemp = curr.next;
             curr.next = prev;
             prev = curr;
             curr = nextTemp;
@@ -33,30 +33,13 @@ public class ReverseLinkedList {
     }
 
     public static void main(String[] args) {
-        ListNode206 listNode = new ListNode206(1);
-        listNode.next = new ListNode206(2);
-        listNode.next.next = new ListNode206(3);
-        listNode.next.next.next = new ListNode206(4);
-        listNode.next.next.next.next = new ListNode206(5);
+        ListNode listNode = new ListNode(1);
+        listNode.next = new ListNode(2);
+        listNode.next.next = new ListNode(3);
+        listNode.next.next.next = new ListNode(4);
+        listNode.next.next.next.next = new ListNode(5);
 
         reverseList(listNode);
     }
 }
 
-class ListNode206 {
-    int val;
-    ListNode206 next;
-
-    ListNode206(int x) {
-        val = x;
-        next = null;
-    }
-
-    @Override
-    public String toString() {
-        return "ListNode206{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
-    }
-}
