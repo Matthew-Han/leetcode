@@ -17,12 +17,12 @@ public class RemoveLinkedListElements {
      * @param val
      * @return
      */
-    public static ListNode203 removeElements(ListNode203 head, int val) {
+    public static ListNode removeElements(ListNode head, int val) {
         // 处理头结点为val的情况，知道头节点不是val
         while (head != null && head.val == val) {
             head = head.next;
         }
-        ListNode203 temp = head;
+        ListNode temp = head;
 
         // 为null的情况
         if (head == null) {
@@ -42,9 +42,9 @@ public class RemoveLinkedListElements {
 
     public static void main(String[] args) {
 
-        ListNode203 listNode = new ListNode203(1);
-        listNode.next = new ListNode203(1);
-        listNode.next.next = new ListNode203(2);
+        ListNode listNode = new ListNode(1);
+        listNode.next = new ListNode(1);
+        listNode.next.next = new ListNode(2);
 
         System.out.println(listNode);
         System.out.println(removeElements(listNode, 2));
@@ -53,19 +53,3 @@ public class RemoveLinkedListElements {
 }
 
 
-class ListNode203 {
-    int val;
-    ListNode203 next;
-
-    ListNode203(int x) {
-        val = x;
-    }
-
-    @Override
-    public String toString() {
-        return "ListNode203{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
-    }
-}
