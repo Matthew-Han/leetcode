@@ -1,6 +1,7 @@
 package 链表;
 
 import 链表.ListNode;
+import java.util.List;
 
 /**
  * @ClassName 链表.RemoveLinkedListElements
@@ -24,7 +25,6 @@ public class RemoveLinkedListElements {
             head = head.next;
         }
         ListNode temp = head;
-
         // 为null的情况
         if (head == null) {
             return null;
@@ -33,10 +33,13 @@ public class RemoveLinkedListElements {
         while (temp.next != null) {
             if (temp.next.val == val) {
                 temp.next = temp.next.next;
+                break;
             } else {
                 temp = temp.next;
             }
         }
+        System.out.println("temp = " + temp);
+        System.out.println("head = " + head);
         return head;
     }
 
@@ -49,6 +52,7 @@ public class RemoveLinkedListElements {
 
         System.out.println(listNode);
         System.out.println(removeElements(listNode, 2));
+
     }
 
 }
