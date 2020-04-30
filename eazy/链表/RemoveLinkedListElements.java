@@ -1,8 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+package 链表;
+
+import 链表.ListNode;
 
 /**
- * @ClassName RemoveLinkedListElements
+ * @ClassName 链表.RemoveLinkedListElements
  * @Description #203 移除链表元素
  * @Author MatthewHan
  * @Date 2020/4/27 10:47
