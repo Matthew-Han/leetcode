@@ -1,7 +1,9 @@
-import java.util.List;
+package 链表;
+
+import 链表.ListNode;
 
 /**
- * @ClassName ReverseLinkedList
+ * @ClassName 链表.ReverseLinkedList
  * @Description #206 反转链表
  * @Author MatthewHan
  * @Date 2020/4/27 17:06
