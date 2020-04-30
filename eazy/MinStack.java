@@ -10,8 +10,8 @@ import java.util.Stack;
 public class MinStack {
 
 
-    private Stack<Integer> stack;
-    private Stack<Integer> minStack;
+    Stack<Integer> stack;
+    Stack<Integer> minStack;
 
     /**
      * 执行用时 : 6 ms , 在所有 Java 提交中击败了 97.91% 的用户
