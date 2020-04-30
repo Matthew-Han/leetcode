@@ -15,10 +15,10 @@ public class LinkedListCycle {
      * @param head
      * @return
      */
-    public static boolean hasCycle(ListNode141 head) {
+    public static boolean hasCycle(ListNode head) {
 
-        ListNode141 quick = head;
-        ListNode141 slow = head;
+        ListNode quick = head;
+        ListNode slow = head;
 
         while (slow != null && quick.next != null) {
             if (null != quick.next.next) {
@@ -35,10 +35,10 @@ public class LinkedListCycle {
     }
 
     public static void main(String[] args) {
-        ListNode141 listNode = new ListNode141(1);
-        listNode.next = new ListNode141(2);
-        listNode.next.next = new ListNode141(3);
-        listNode.next.next.next = new ListNode141(4);
+        ListNode listNode = new ListNode(1);
+        listNode.next = new ListNode(2);
+        listNode.next.next = new ListNode(3);
+        listNode.next.next.next = new ListNode(4);
         listNode.next.next.next.next = listNode.next.next.next;
 
         System.out.println(hasCycle(listNode));
@@ -47,13 +47,3 @@ public class LinkedListCycle {
 
 }
 
-class ListNode141 {
-    int val;
-    ListNode141 next;
-
-    ListNode141(int x) {
-        val = x;
-        next = null;
-    }
-
-}
