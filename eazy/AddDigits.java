@@ -49,7 +49,7 @@ public class AddDigits {
     }
 
     /**
-     * 要记住整数的每一位遍历可以用取模！！！
+     * 要记住整数的每一位遍历可以除以10！！！
      * 不要在用转字符串啦
      * 老是忘记！！！
      * 执行用时 : 1 ms , 在所有 Java 提交中击败了 100.00% 的用户
@@ -58,7 +58,7 @@ public class AddDigits {
      * @param num
      * @return
      */
-    public static int addDigitsMod(int num) {
+    public static int addDigitsMath(int num) {
         int result = 0;
         if (num < 10) {
             return num;
@@ -68,12 +68,12 @@ public class AddDigits {
                 num = num / 10;
             }
         }
-        return addDigitsMod(result);
+        return addDigitsMath(result);
     }
 
 
     public static void main(String[] args) {
-        System.out.println(addDigitsMod(44));
+        System.out.println(addDigitsMath(44));
 
 
     }
