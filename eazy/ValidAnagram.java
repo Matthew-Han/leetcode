@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @ClassName ValidAnagram
@@ -20,7 +18,6 @@ public class ValidAnagram {
      * @return
      */
     public static boolean isAnagram(String s, String t) {
-
         String[] s1 = s.split("");
         String[] s2 = t.split("");
         Arrays.sort(s1);
@@ -29,7 +26,31 @@ public class ValidAnagram {
     }
 
     /**
-     * 玛德，看错题目，携程滑块验证子字符串了😂
+     * 执行用时 : 31 ms , 在所有 Java 提交中击败了 9.31% 的用户
+     * 内存消耗 : 40.9 MB , 在所有 Java 提交中击败了 5.66% 的用户
+     * @param s
+     * @param t
+     * @return
+     */
+    public static boolean isAnagramByHash(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        int len = s.length();
+        Map<Character, Integer> map1 = new HashMap<>(len * 4 / 3 + 1);
+        Map<Character, Integer> map2 = new HashMap<>(len * 4 / 3 + 1);
+        for (int i = 0; i < len; i++) {
+            map1.put(s.charAt(i), map1.getOrDefault(s.charAt(i), 0) + 1);
+            map2.put(t.charAt(i), map2.getOrDefault(t.charAt(i), 0) + 1);
+        }
+        System.out.println("map1 = " + map1);
+        System.out.println("map2 = " + map2);
+        System.out.println("map1.equals(map2) = " + map1.equals(map2));
+        return map1.equals(map2);
+    }
+
+    /**
+     * 玛德，看错题目，写成滑块验证子字符串了😂
      *
      * @param s
      * @param t
@@ -51,7 +72,8 @@ public class ValidAnagram {
     }
 
     public static void main(String[] args) {
-        System.out.println(isAnagram("err", "rerr"));
+
+        System.out.println(isAnagramByHash("dgqztusjuu", "dqugjzutsu"));
     }
 }
 
