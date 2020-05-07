@@ -52,7 +52,6 @@ public class WordPattern {
                     break;
                 }
             }
-
         }
         for (int i = 0; i < str.split(" ").length; i++) {
             for (int l = 0; l < map2.size(); l++) {
