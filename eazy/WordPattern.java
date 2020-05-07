@@ -68,7 +68,33 @@ public class WordPattern {
         return Arrays.toString(ints1).equals(Arrays.toString(ints2));
     }
 
+    /**
+     * 和#205 同构字符串做法类似，但是必须是LinkedHashMap
+     * 执行用时 : 8 ms , 在所有 Java 提交中击败了 6.12% 的用户
+     * 内存消耗 : 40.5 MB , 在所有 Java 提交中击败了 10.00% 的用户
+     *
+     * @param pattern
+     * @param str
+     * @return
+     */
+    public static boolean wordPatternPro(String pattern, String str) {
+        Map<Character, Integer> map1 = new LinkedHashMap<>(pattern.length() * 4 / 3 + 1);
+        Map<String, Integer> map2 = new LinkedHashMap<>(pattern.length() * 4 / 3 + 1);
+
+        for (int i = 0; i < pattern.length(); i++) {
+            map1.put(pattern.charAt(i), i);
+        }
+        for (int i = 0; i < str.split(" ").length; i++) {
+            map2.put(str.split(" ")[i], i);
+        }
+
+        System.out.println(map1);
+        System.out.println(map2);
+        return map1.values().toString().equals(map2.values().toString());
+    }
+
+
     public static void main(String[] args) {
-        System.out.println(wordPattern("adda", "dog cat cat dog"));
+        System.out.println(wordPatternPro("", "b c a"));
     }
 }
