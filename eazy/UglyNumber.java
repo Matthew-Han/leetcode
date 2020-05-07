@@ -37,7 +37,6 @@ public class UglyNumber {
                 return num == 1;
             }
         }
-
     }
 
     public static void main(String[] args) {
