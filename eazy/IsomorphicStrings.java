@@ -10,6 +10,7 @@ import java.util.*;
 public class IsomorphicStrings {
 
     /**
+     * 注意是LinkedHashMap
      * 执行用时 : 12 ms , 在所有 Java 提交中击败了 58.27% 的用户
      * 内存消耗 : 40.8 MB , 在所有 Java 提交中击败了 5.88% 的用户
      * @param s
