@@ -82,7 +82,7 @@ public class ReverseVowelsOfaString {
     }
 
     public static boolean isVowels(String s) {
-        return "aeiouAEIOU".contains(s);
+        return "AaEeIiOoUu".contains(s);
     }
 
 
