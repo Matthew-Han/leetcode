@@ -22,7 +22,7 @@ public class IntersectionOfTwoArraysII {
     public static int[] intersect(int[] nums1, int[] nums2) {
         List<Integer> list1 = new ArrayList<>(nums1.length);
         List<Integer> list2 = new ArrayList<>(nums2.length);
-        List<Integer> list3 = new ArrayList<>();
+        List<Integer> list3 = new ArrayList<>(Math.max(nums1.length, nums2.length));
         for (int i : nums1) {
             list1.add(i);
         }
