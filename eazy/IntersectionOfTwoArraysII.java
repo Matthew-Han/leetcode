@@ -22,7 +22,6 @@ public class IntersectionOfTwoArraysII {
             list2.add(i);
         }
 
-
         int[] result = new int[list3.size()];
         for (int i = 0; i < list3.size(); i++) {
             result[i] = list3.get(i);
