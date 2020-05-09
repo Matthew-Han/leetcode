@@ -11,6 +11,14 @@ import java.util.List;
  **/
 public class IntersectionOfTwoArraysII {
 
+    /**
+     * 执行用时 : 27 ms , 在所有 Java 提交中击败了 5.80% 的用户
+     * 内存消耗 : 40.2 MB , 在所有 Java 提交中击败了 5.13% 的用户
+     *
+     * @param nums1
+     * @param nums2
+     * @return
+     */
     public static int[] intersect(int[] nums1, int[] nums2) {
         List<Integer> list1 = new ArrayList<>(nums1.length);
         List<Integer> list2 = new ArrayList<>(nums2.length);
@@ -22,6 +30,15 @@ public class IntersectionOfTwoArraysII {
             list2.add(i);
         }
 
+        for (int i = list1.size() - 1; i >= 0; i--) {
+            for (int i1 = list2.size() - 1; i1 >= 0; i1--) {
+                if (!list1.isEmpty() && !list2.isEmpty() && list1.get(i).equals(list2.get(i1))) {
+                    list3.add(list2.get(i1));
+                    list2.remove(i1);
+                    break;
+                }
+            }
+        }
         int[] result = new int[list3.size()];
         for (int i = 0; i < list3.size(); i++) {
             result[i] = list3.get(i);
@@ -30,6 +47,6 @@ public class IntersectionOfTwoArraysII {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(intersect(new int[]{1}, new int[]{1, 1})));
+        System.out.println(Arrays.toString(intersect(new int[]{1, 1}, new int[]{1, 1})));
     }
 }
