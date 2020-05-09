@@ -11,6 +11,32 @@ public class IntersectionOfTwoArrays {
 
     /**
      * 执行用时 : 8 ms , 在所有 Java 提交中击败了 17.15% 的用户
+     * 内存消耗 : 40.3 MB , 在所有 Java 提交中击败了 5.72% 的用户
+     *
+     * @param nums1
+     * @param nums2
+     * @return
+     */
+    public static int[] intersectionPro(int[] nums1, int[] nums2) {
+        Set<Integer> temp = new HashSet<>();
+        for (int value : nums1) {
+            for (int i : nums2) {
+                if (i == value) {
+                    temp.add(i);
+                }
+            }
+        }
+        int[] result = new int[temp.size()];
+        int i = 0;
+        for (Integer integer : temp) {
+            result[i] = integer;
+            i++;
+        }
+        return result;
+    }
+
+    /**
+     * 执行用时 : 8 ms , 在所有 Java 提交中击败了 17.15% 的用户
      * 内存消耗 : 39.5 MB , 在所有 Java 提交中击败了 5.72% 的用户
      *
      * @param nums1
@@ -43,7 +69,8 @@ public class IntersectionOfTwoArrays {
                 temp.add(k);
             }
         });
-        /* 因为不能确定上面不能确定交集元素的个数，所以无法直接定义数组容量大小在循环中赋值，只能先装到temp列表
+        /*
+         * 因为不能确定上面不能确定交集元素的个数，所以无法直接定义数组容量大小在循环中赋值，只能先装到temp列表
          * 根据temp的长度再实例化一个结果int数组
          */
         int[] result = new int[temp.size()];
@@ -54,6 +81,6 @@ public class IntersectionOfTwoArrays {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(intersection(new int[]{1, 2, 2, 1}, new int[]{2, 2})));
+        System.out.println(Arrays.toString(intersectionPro(new int[]{1, 3, 2, 2, 1}, new int[]{2, 2, 3})));
     }
 }
