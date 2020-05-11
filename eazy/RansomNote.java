@@ -1,8 +1,46 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class RansomNote {
 
+
+    /**
+     * 执行用时 : 15 ms , 在所有 Java 提交中击败了 30.25% 的用户
+     * 内存消耗 : 40 MB , 在所有 Java 提交中击败了 8.33% 的用户
+     * @param ransomNote
+     * @param magazine
+     * @return
+     */
+    public static boolean canConstructPro(String ransomNote, String magazine) {
+
+        List<Character> list1 = new ArrayList<>(ransomNote.length());
+        List<Character> list2 = new ArrayList<>(magazine.length());
+        for (int i = 0; i < ransomNote.length(); i++) {
+            list1.add(ransomNote.charAt(i));
+        }
+        for (int i = 0; i < magazine.length(); i++) {
+            list2.add(magazine.charAt(i));
+        }
+
+        System.out.println(list1);
+        System.out.println(list2);
+
+        for (int i = list1.size() - 1; i>=0; i--) {
+            for (int i1 = list2.size() - 1; i1>=0; i1--) {
+                if (list1.get(i) == list2.get(i1)) {
+                    list1.remove(i);
+                    list2.remove(i1);
+                    break;
+                }
+            }
+        }
+        System.out.println(list1);
+        System.out.println(list2);
+        return list1.size() == 0;
+
+    }
     /**
      * 执行用时 : 40 ms , 在所有 Java 提交中击败了 8.59% 的用户
      * 内存消耗 : 40.4 MB , 在所有 Java 提交中击败了 8.33% 的用户
@@ -22,6 +60,7 @@ public class RansomNote {
         }
         System.out.println(map1);
         System.out.println(map2);
+
         int count = 0;
         for (String s1 : map1.keySet()) {
             for (String s2 : map2.keySet()) {
@@ -36,6 +75,6 @@ public class RansomNote {
     }
 
     public static void main(String[] args) {
-        System.out.println(canConstruct("a", "ag"));
+        System.out.println(canConstructPro("abssad", "sabacds"));
     }
 }
