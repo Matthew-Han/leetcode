@@ -17,13 +17,7 @@ public class GuessNumberHigherOrLower {
      */
     public static int guess(int n) {
         int point = 6;
-        if (point < n) {
-            return -1;
-        } else if (point == n) {
-            return 0;
-        } else {
-            return 1;
-        }
+        return Integer.compare(point, n);
     }
 
     /**
