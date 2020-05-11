@@ -45,7 +45,7 @@ public class ValidPerfectSquare {
      * @return
      */
     public static boolean isPerfectSquarePro(int num) {
-        int[] se = Interval(String.valueOf(num).length());
+        int[] se = interval(String.valueOf(num).length());
         for (int i = se[0]; i <= se[1]; i++) {
             if (i * i == num) {
                 return true;
@@ -54,7 +54,7 @@ public class ValidPerfectSquare {
         return false;
     }
 
-    public static int[] Interval(int len) {
+    public static int[] interval(int len) {
         int start;
         int end;
         switch (len) {
