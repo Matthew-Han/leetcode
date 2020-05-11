@@ -23,10 +23,8 @@ public class RansomNote {
         for (int i = 0; i < magazine.length(); i++) {
             list2.add(magazine.charAt(i));
         }
-
         System.out.println(list1);
         System.out.println(list2);
-
         for (int i = list1.size() - 1; i>=0; i--) {
             for (int i1 = list2.size() - 1; i1>=0; i1--) {
                 if (list1.get(i) == list2.get(i1)) {
