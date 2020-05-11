@@ -13,6 +13,7 @@ public class FirstBadVersion {
      * 二分法考察重点之一！！！！
      * int值left和right相加的溢出！！！
      * 记得不要直接相加除以2，要变式！！！
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -50,9 +51,10 @@ public class FirstBadVersion {
      * 方法二
      * 二分法超出时间限制
      * 按照(left + right) / 2 会超过int的值（因为int溢出了，变成了负数，于是怎么算都不对了）
-     * 但是这样写(left / 2 + right / 2)就不会了。
-     * 执行用时 : 22 ms , 在所有 Java 提交中击败了 26.92% 的用户
-     * 内存消耗 : 35.9 MB , 在所有 Java 提交中击败了 8.33% 的用户
+     * 但是这样写left + (right - left) / 2就不会了。
+     * <p>
+     * 执行用时 : 21 ms , 在所有 Java 提交中击败了 29.76% 的用户
+     * 内存消耗 : 36.4 MB , 在所有 Java 提交中击败了 8.33% 的用户
      *
      * @param n
      * @return
@@ -65,17 +67,17 @@ public class FirstBadVersion {
         int right = n;
         while (true) {
             /* if true = 当前节点是坏掉的，所以找更早的版本（find old）*/
-            if (isBadVersion(left / 2 + right / 2)) {
-                if (!isBadVersion(left / 2 + right / 2 - 1)) {
-                    return (left / 2 + right / 2);
+            if (isBadVersion(left + (right - left) / 2)) {
+                if (!isBadVersion(left + (right - left) / 2 - 1)) {
+                    return (left + (right - left) / 2);
                 } else {
-                    right = left / 2 + right / 2;
+                    right = left + (right - left) / 2;
                     System.out.println("old - left = " + left);
                     System.out.println("old - right = " + right);
                 }
                 /* if false = 当前节点正常，所以找之后的版本（find new） */
             } else {
-                left = left / 2 + right / 2 + 1;
+                left = left + (right - left) / 2 + 1;
                 System.out.println("left = " + left);
                 System.out.println("right = " + right);
             }
