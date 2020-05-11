@@ -34,39 +34,35 @@ public class ValidPerfectSquare {
     }
 
     /**
+     * int整数最大是2的31次方，大约21亿，只要根据整数的长度可以确定他的平方根大概落在某个区间
+     * 比如2位数（10~99），平方根一定是在1~10，比如三位数（100~999），平方根一定是在（10~32），比如四位数（1000~9999），平方根一定是落在（31~100）
+     * 当这个数很大的话（最大为2147483647），相应的区间也会变大，最坏的情况要计算（46341 - 31622）次
      * 执行用时 : 1 ms , 在所有 Java 提交中击败了 28.75% 的用户
-     * 内存消耗 : 36.7 MB , 在所有 Java 提交中击败了 9.52% 的用户
+     * 内存消耗 : 36 MB , 在所有 Java 提交中击败了 9.52% 的用户
+     *
      * @param num
      * @return
      */
     public static boolean isPerfectSquarePro(int num) {
-            if (num < 0) {
-                return false;
+        int[] se = Interval(String.valueOf(num).length());
+        for (int i = se[0]; i <= se[1]; i++) {
+            if (i * i == num) {
+                return true;
             }
-            int[] se = start(String.valueOf(num).length());
-
-            for (int i = se[0]; i <= se[1]; i++) {
-                if (i * i == num) {
-                    return true;
-                }
-            }
-            return false;
+        }
+        return false;
     }
 
-    public static int[] start(int len) {
+    public static int[] Interval(int len) {
         int start;
         int end;
         switch (len) {
-            case 2:
-                start = 1;
-                end = 10;
-                break;
             case 3:
                 start = 10;
                 end = 32;
                 break;
             case 4:
-                start = 30;
+                start = 31;
                 end = 100;
                 break;
             case 5:
@@ -74,7 +70,7 @@ public class ValidPerfectSquare {
                 end = 317;
                 break;
             case 6:
-                start = 300;
+                start = 316;
                 end = 1000;
                 break;
             case 7:
@@ -82,7 +78,7 @@ public class ValidPerfectSquare {
                 end = 3163;
                 break;
             case 8:
-                start = 3000;
+                start = 3162;
                 end = 10000;
                 break;
             case 9:
@@ -90,19 +86,18 @@ public class ValidPerfectSquare {
                 end = 31623;
                 break;
             case 10:
-                start = 30000;
-                end = 100000;
+                start = 31622;
+                end = 46341;
                 break;
             default:
                 start = 1;
                 end = 10;
         }
-        System.out.println(start +"ssss"+ end);
-        return new int[]{start,end};
+        return new int[]{start, end};
     }
 
     public static void main(String[] args) {
-        System.out.println(isPerfectSquarePro(93025));
-        System.out.println(Math.sqrt(100000));
+        System.out.println(isPerfectSquarePro(2147483647));
+        System.out.println(Math.sqrt(2147483647));
     }
 }
