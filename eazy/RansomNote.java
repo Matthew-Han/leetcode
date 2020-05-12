@@ -3,12 +3,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @ClassName RansomNote
+ * @Description #383 赎金信
+ * @Author MatthewHan
+ * @Date 2020/5/11 21:43
+ * @Version 1.0
+ **/
 public class RansomNote {
 
 
     /**
      * 执行用时 : 15 ms , 在所有 Java 提交中击败了 30.25% 的用户
      * 内存消耗 : 40 MB , 在所有 Java 提交中击败了 8.33% 的用户
+     *
      * @param ransomNote
      * @param magazine
      * @return
@@ -25,9 +33,9 @@ public class RansomNote {
         }
         System.out.println(list1);
         System.out.println(list2);
-        for (int i = list1.size() - 1; i>=0; i--) {
-            for (int i1 = list2.size() - 1; i1>=0; i1--) {
-                if (list1.get(i) == list2.get(i1)) {
+        for (int i = list1.size() - 1; i >= 0; i--) {
+            for (int i1 = list2.size() - 1; i1 >= 0; i1--) {
+                if (list1.get(i).equals(list2.get(i1))) {
                     list1.remove(i);
                     list2.remove(i1);
                     break;
@@ -39,9 +47,11 @@ public class RansomNote {
         return list1.size() == 0;
 
     }
+
     /**
      * 执行用时 : 40 ms , 在所有 Java 提交中击败了 8.59% 的用户
      * 内存消耗 : 40.4 MB , 在所有 Java 提交中击败了 8.33% 的用户
+     *
      * @param ransomNote
      * @param magazine
      * @return
@@ -58,7 +68,6 @@ public class RansomNote {
         }
         System.out.println(map1);
         System.out.println(map2);
-
         int count = 0;
         for (String s1 : map1.keySet()) {
             for (String s2 : map2.keySet()) {
