@@ -15,6 +15,7 @@ public class ThirdMaximumNumber {
      * LinkedHashSet，不然白排序了
      * 执行用时 : 6 ms , 在所有 Java 提交中击败了 31.37% 的用户
      * 内存消耗 : 39.6 MB , 在所有 Java 提交中击败了 11.11% 的用户
+     *
      * @param nums
      * @return
      */
@@ -37,6 +38,6 @@ public class ThirdMaximumNumber {
     }
 
     public static void main(String[] args) {
-        System.out.println(thirdMax(new int[]{1, 2, 3, -90,-2,11,3}));
+        System.out.println(thirdMax(new int[]{1, 2, 3, -90, -2, 11, 3}));
     }
 }
