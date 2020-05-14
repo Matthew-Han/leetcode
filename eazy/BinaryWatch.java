@@ -11,16 +11,7 @@ public class BinaryWatch {
 
 
     public List<String> readBinaryWatch(int num) {
-        if (num > 10) {
-            return null;
-        }
-        int[] hour = {1, 2, 4, 8};
-        int[] min = {1, 2, 4, 8, 16, 32};
-        int hourMax = 12;
-        int minMax = 60;
-
         return null;
-
     }
 
 
