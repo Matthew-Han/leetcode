@@ -10,6 +10,25 @@ import java.util.*;
 public class ConstructTheRectangle {
 
     /**
+     * 在double类型的平方根转换成int类型，在该处找会比较快一点。
+     * 执行用时 : 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+     * 内存消耗 : 36.8 MB , 在所有 Java 提交中击败了 14.29% 的用户
+     *
+     * @param area
+     * @return
+     */
+    public static int[] constructRectanglePro(int area) {
+        int sqrt = (int) Math.sqrt(area);
+        while (sqrt > 0) {
+            if (area % sqrt == 0) {
+                return new int[]{Math.max(sqrt, area / sqrt), Math.min(sqrt, area / sqrt)};
+            }
+            sqrt--;
+        }
+        return new int[0];
+    }
+
+    /**
      * 执行用时 : 264 ms , 在所有 Java 提交中击败了 8.32% 的用户
      * 内存消耗 : 36.9 MB , 在所有 Java 提交中击败了 14.29% 的用户
      *
@@ -48,7 +67,8 @@ public class ConstructTheRectangle {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(constructRectangle(99999)));
+        System.out.println(Arrays.toString(constructRectanglePro(0)));
     }
+
 
 }
