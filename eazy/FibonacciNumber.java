@@ -7,19 +7,26 @@
  **/
 public class FibonacciNumber {
 
+    /**
+     * 执行用时 : 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+     * 内存消耗 : 36.6 MB , 在所有 Java 提交中击败了 5.26% 的用户
+     *
+     * @param N
+     * @return
+     */
     public static int fib(int N) {
-        int first = 1;
-        int second = 1;
-        int last = first + second;
-        int next = last;
-        while (N > 3) {
-            last = next;
-            next = last + next;
-
-
+        if (N == 0 || N == 1) {
+            return N;
+        }
+        int last = 0;
+        int curr = 1;
+        while (N > 1) {
+            int next  = curr + last;
+            last = curr;
+            curr = next;
             N--;
         }
-        return next;
+        return curr;
     }
 
     public static void main(String[] args) {
