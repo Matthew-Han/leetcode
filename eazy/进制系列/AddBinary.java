@@ -1,7 +1,9 @@
+package 进制系列;
+
 import java.util.*;
 
 /**
- * @ClassName AddBinary
+ * @ClassName 进制系列.AddBinary
  * @Description #67 二进制求和
  * @Author MatthewHan
  * @Date 2020/4/15 09:58
@@ -13,6 +15,7 @@ public class AddBinary {
      * 执行用时 : 83 ms , 在所有 Java 提交中击败了 6.38% 的用户
      * 内存消耗 : 40.5 MB , 在所有 Java 提交中击败了 7.69% 的用户
      * 能再垃圾点吗？写完有点自闭了。
+     *
      * @param a
      * @param b
      * @return
@@ -38,7 +41,7 @@ public class AddBinary {
         Integer[] result = new Integer[maxLength + 1];
         result[0] = 0;
         for (int i = 0; i < maxLength; i++) {
-            result[i+1] = list1.get(i) + list2.get(i);
+            result[i + 1] = list1.get(i) + list2.get(i);
         }
         // 如果数组里的元素有2
         while (isHas2(result)) {
@@ -62,6 +65,7 @@ public class AddBinary {
         }
         return sb.toString();
     }
+
     public static boolean isHas2(Integer[] fuck) {
         for (Integer integer : fuck) {
             if (integer == 2) {
