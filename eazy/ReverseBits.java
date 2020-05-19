@@ -10,6 +10,7 @@ public class ReverseBits {
     /**
      * you need treat n as an unsigned value
      * 关键核心是补全到32位
+     *
      * @param n
      * @return
      */
