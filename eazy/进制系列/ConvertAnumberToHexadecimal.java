@@ -1,5 +1,7 @@
+package 进制系列;
+
 /**
- * @ClassName ConvertAnumberToHexadecimal
+ * @ClassName 进制系列.ConvertAnumberToHexadecimal
  * @Description #405 数字转换为十六进制数
  * @Author MatthewHan
  * @Date 2020/5/14 09:16
