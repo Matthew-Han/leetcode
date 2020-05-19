@@ -1,3 +1,5 @@
+import com.sun.org.apache.regexp.internal.RE;
+
 /**
  * @ClassName FibonacciNumber
  * @Description #509 斐波那契数
@@ -29,7 +31,23 @@ public class FibonacciNumber {
         return curr;
     }
 
+    /**
+     * 执行用时 : 9 ms , 在所有 Java 提交中击败了 24.98% 的用户
+     * 内存消耗 : 36.4 MB , 在所有 Java 提交中击败了 5.26% 的用户
+     *
+     * @param N
+     * @return
+     */
+    public static int fibPro(int N) {
+        if (N == 0 || N == 1) {
+            return N;
+        }
+        return fibPro(N - 1) + fibPro(N - 2);
+    }
+
+
+
     public static void main(String[] args) {
-        System.out.println(fib(4));
+        System.out.println(fibPro(4));
     }
 }
