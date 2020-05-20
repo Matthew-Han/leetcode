@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class ArrayPartitionI {
 
     /**
-     * 数学问题
+     * 数学问题，下等马换上等马
      * 执行用时 : 13 ms , 在所有 Java 提交中击败了 96.02% 的用户
      * 内存消耗 : 41.8 MB , 在所有 Java 提交中击败了 8.33% 的用户
      *
