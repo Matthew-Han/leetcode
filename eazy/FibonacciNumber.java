@@ -23,7 +23,7 @@ public class FibonacciNumber {
         int last = 0;
         int curr = 1;
         while (N > 1) {
-            int next  = curr + last;
+            int next = curr + last;
             last = curr;
             curr = next;
             N--;
@@ -44,7 +44,6 @@ public class FibonacciNumber {
         }
         return fibPro(N - 1) + fibPro(N - 2);
     }
-
 
 
     public static void main(String[] args) {
