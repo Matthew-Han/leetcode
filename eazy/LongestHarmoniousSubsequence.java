@@ -78,7 +78,6 @@ public class LongestHarmoniousSubsequence {
 
     public static void main(String[] args) {
         System.out.println(findLHSPro(new int[]{1, 4, 1, 3, 1, -14, 1, -13}));
-        System.out.println("------------");
         System.out.println(findLHSPro(new int[]{1, 3, 5, 7, 9, 11, 13, 15, 17}));
         System.out.println(findLHSPro(new int[]{1, 1, 1, 1}));
         System.out.println(findLHSPro(new int[]{1, 1, 1, 3, 2, 2, 5, 2, 3, 7}));
