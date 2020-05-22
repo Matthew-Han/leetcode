@@ -46,7 +46,7 @@ public class MinimumIndexSumOfTwoLists {
                 min = Math.min(min, index.get(s));
             }
         }
-        List<String> result = new ArrayList(indexMap.size());
+        List<String> result = new ArrayList<>(indexMap.size());
         for (Map.Entry<String, Integer> entry : indexMap.entrySet()) {
             if (entry.getValue() == min) {
                 result.add(entry.getKey());
