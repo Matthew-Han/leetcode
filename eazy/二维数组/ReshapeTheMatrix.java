@@ -1,7 +1,9 @@
+package 二维数组;
+
 import java.util.Arrays;
 
 /**
- * @ClassName ReshapeTheMatrix
+ * @ClassName 二维数组.ReshapeTheMatrix
  * @Description #566 重塑矩阵
  * @Author MatthewHan
  * @Date 2020/5/20 17:10
