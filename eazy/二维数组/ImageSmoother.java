@@ -76,9 +76,6 @@ public class ImageSmoother {
                     System.out.println("h = " + h);
                     count++;
                 }
-                System.out.println(self + a + b + c + d + e + f + g + h);
-                System.out.println(count);
-                System.out.println("-------------");
                 ints[i][j] = (self + a + b + c + d + e + f + g + h) / count;
             }
         }
