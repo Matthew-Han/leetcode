@@ -1,7 +1,9 @@
+package design;
+
 import java.util.Stack;
 
 /**
- * @ClassName ImplementQueueUsingStacks
+ * @ClassName design.ImplementQueueUsingStacks
  * @Description #232 用栈实现队列
  * @Author MatthewHan
  * @Date 2020/4/29 17:29
@@ -58,7 +60,7 @@ public class ImplementQueueUsingStacks {
 
     @Override
     public String toString() {
-        return "ImplementQueueUsingStacks{" +
+        return "design.ImplementQueueUsingStacks{" +
                 "stack=" + stack +
                 ", reverseStack=" + reverseStack +
                 '}';
