@@ -1,7 +1,9 @@
+package design;
+
 import java.util.Stack;
 
 /**
- * @ClassName MinStack
+ * @ClassName design.MinStack
  * @Description #155 最小栈
  * @Author MatthewHan
  * @Date 2020/4/20 16:14
@@ -55,7 +57,7 @@ public class MinStack {
 
     @Override
     public String toString() {
-        return "MinStack{" +
+        return "design.MinStack{" +
                 "stack=" + stack +
                 ", minStack=" + minStack +
                 '}';
@@ -85,8 +87,8 @@ public class MinStack {
 }
 
 /*
- * Your MinStack object will be instantiated and called as such:
- * MinStack obj = new MinStack();
+ * Your design.MinStack object will be instantiated and called as such:
+ * design.MinStack obj = new design.MinStack();
  * obj.push(x);
  * obj.pop();
  * int param_3 = obj.top();
