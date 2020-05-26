@@ -1,6 +1,3 @@
-import sun.jvm.hotspot.memory.PlaceholderEntry;
-import java.util.Arrays;
-
 /**
  * @ClassName DetectCapital
  * @Description #520 检测大写字母
