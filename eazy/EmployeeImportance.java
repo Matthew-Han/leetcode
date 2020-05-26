@@ -1,7 +1,20 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Temp {
+/**
+ * @ClassName EmployeeImportance
+ * @Description #690 员工的重要性
+ * @Author MatthewHan
+ * @Date 2020/5/26 16:51
+ * @Version 1.0
+ **/
+public class EmployeeImportance {
+
+    static class Employee {
+        public int id;
+        public int importance;
+        public List<Integer> subordinates;
+    };
 
     /**
      * 执行用时 : 14 ms , 在所有 Java 提交中击败了 25.68% 的用户
@@ -17,7 +30,7 @@ public class Temp {
                 int sum = employee.importance;
                 List<Integer> list = employee.subordinates;
                 for (Integer integer : list) {
-                     sum += getImportance(employees, integer);
+                    sum += getImportance(employees, integer);
                 }
                 return sum;
             }
@@ -57,8 +70,4 @@ public class Temp {
         System.out.println(getImportance(employees, 1));
     }
 }
-class Employee {
-    public int id;
-    public int importance;
-    public List<Integer> subordinates;
-};
+
