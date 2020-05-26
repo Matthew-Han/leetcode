@@ -3,6 +3,7 @@ public class Temp {
     /**
      * 执行用时 : 1 ms , 在所有 Java 提交中击败了 35.24% 的用户
      * 内存消耗 : 36 MB , 在所有 Java 提交中击败了 14.29% 的用户
+     *
      * @param n
      * @return
      */
@@ -21,6 +22,6 @@ public class Temp {
     }
 
     public static void main(String[] args) {
-        hasAlternatingBits(66);
+        System.out.println(hasAlternatingBits(66));
     }
 }
