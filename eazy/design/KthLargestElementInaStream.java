@@ -13,24 +13,31 @@ public class KthLargestElementInaStream {
 
 
     private int len;
-    private final int[] oldData;
-    private int[] newData;
+    private int[] data;
     private final int index;
 
+    /**
+     * 执行用时 : 852 ms , 在所有 Java 提交中击败了 6.33% 的用户
+     * 内存消耗 : 47.2 MB , 在所有 Java 提交中击败了 87.50% 的用户
+     *
+     * @param k
+     * @param nums
+     */
     public KthLargestElementInaStream(int k, int[] nums) {
         index = k;
         len = nums.length;
-        oldData = nums;
-
+        data = nums;
     }
 
     public int add(int val) {
         len++;
-        newData = new int[len];
-        System.arraycopy(oldData, 0, newData, 0, oldData.length);
-        newData[len - 1] = val;
-        Arrays.sort(newData);
-        return newData[len - index];
+        int[] temp = new int[len];
+        System.arraycopy(data, 0, temp, 0, data.length);
+        temp[len - 1] = val;
+        Arrays.sort(temp);
+        data = new int[len];
+        System.arraycopy(temp, 0, data, 0, temp.length);
+        return data[len - index];
 
     }
 
