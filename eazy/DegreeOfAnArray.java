@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @ClassName DegreeOfAnArray
@@ -12,6 +9,7 @@ import java.util.Map;
  **/
 public class DegreeOfAnArray {
 
+
     /**
      * 执行用时 : 52 ms , 在所有 Java 提交中击败了 20.23% 的用户
      * 内存消耗 : 45 MB , 在所有 Java 提交中击败了 6.25% 的用户
@@ -20,7 +18,7 @@ public class DegreeOfAnArray {
      * @return
      */
     public static int findShortestSubArray(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>(nums.length * 4 / 3 + 1);
         for (int num : nums) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
@@ -57,6 +55,6 @@ public class DegreeOfAnArray {
     }
 
     public static void main(String[] args) {
-        System.out.println(findShortestSubArray(new int[]{1, 2, 1, 2, 2}));
+        System.out.println(findShortestSubArray(new int[]{1, 2, 1, 2, 3, 2}));
     }
 }
