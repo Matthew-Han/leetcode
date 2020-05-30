@@ -1,6 +1,6 @@
 package design;
 
-import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /**
  * @ClassName KthLargestElementInaStream
@@ -11,34 +11,35 @@ import java.util.Arrays;
  **/
 public class KthLargestElementInaStream {
 
+    // 小顶堆
+    private PriorityQueue<Integer> q;
 
-    private int len;
-    private int[] data;
-    private final int index;
+    private int k;
 
     /**
-     * 执行用时 : 852 ms , 在所有 Java 提交中击败了 6.33% 的用户
-     * 内存消耗 : 47.2 MB , 在所有 Java 提交中击败了 87.50% 的用户
+     * 执行用时 : 22 ms , 在所有 Java 提交中击败了 63.20% 的用户
+     * 内存消耗 : 43.8 MB , 在所有 Java 提交中击败了 100.00% 的用户
      *
      * @param k
      * @param nums
      */
     public KthLargestElementInaStream(int k, int[] nums) {
-        index = k;
-        len = nums.length;
-        data = nums;
+        this.k = k;
+        q = new PriorityQueue<Integer>(k);
+        for (int i : nums) {
+            add(i);
+        }
     }
 
     public int add(int val) {
-        len++;
-        int[] temp = new int[len];
-        System.arraycopy(data, 0, temp, 0, data.length);
-        temp[len - 1] = val;
-        Arrays.sort(temp);
-        data = new int[len];
-        System.arraycopy(temp, 0, data, 0, temp.length);
-        return data[len - index];
+        if (q.size() < this.k) {
+            q.offer(val);
 
+        } else if (q.peek() < val) {
+            q.poll();
+            q.offer(val);
+        }
+        return q.peek();
     }
 
     public static void main(String[] args) {
@@ -48,6 +49,16 @@ public class KthLargestElementInaStream {
         System.out.println(kth.add(10));
         System.out.println(kth.add(9));
         System.out.println(kth.add(4));
+
+        PriorityQueue<Integer> queue = new PriorityQueue<>(1);
+        queue.add(3);
+        queue.add(66);
+        queue.add(9);
+        queue.add(2);
+        System.out.println("queue = " + queue);
+        System.out.println(queue.peek());
+        queue.poll();
+        System.out.println(queue);
 
     }
 }
