@@ -12,9 +12,9 @@ import java.util.PriorityQueue;
 public class KthLargestElementInaStream {
 
     // 小顶堆
-    private PriorityQueue<Integer> q;
+    private final PriorityQueue<Integer> q;
 
-    private int k;
+    private final int k;
 
     /**
      * 执行用时 : 22 ms , 在所有 Java 提交中击败了 63.20% 的用户
