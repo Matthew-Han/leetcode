@@ -51,10 +51,12 @@ public class KthLargestElementInaStream {
         System.out.println(kth.add(4));
 
         PriorityQueue<Integer> queue = new PriorityQueue<>(1);
+        queue.add(8);
+        queue.add(5);
+        queue.add(4);
+        queue.add(12);
         queue.add(3);
-        queue.add(66);
-        queue.add(9);
-        queue.add(2);
+        queue.add(1);
         System.out.println("queue = " + queue);
         System.out.println(queue.peek());
         queue.poll();
