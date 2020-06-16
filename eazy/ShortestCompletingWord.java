@@ -15,7 +15,7 @@ public class ShortestCompletingWord {
 
     /**
      * 执行用时 : 13 ms , 在所有 Java 提交中击败了 28.85% 的用户
-     * 内存消耗 : 40.1 MB , 在所有 Java 提交中击败了 14.29% 的用户
+     * 内存消耗 : 39.8 MB , 在所有 Java 提交中击败了 14.29% 的用户
      *
      * @param licensePlate
      * @param words
@@ -30,7 +30,8 @@ public class ShortestCompletingWord {
         for (String word : words) {
             int tempSum = 0;
             char[] wordChar = word.toCharArray();
-            for (char c : licensePlate.toCharArray()) {
+            char[] licensePlateChar = licensePlate.toCharArray();
+            for (char c : licensePlateChar) {
                 for (int i = 0; i < wordChar.length; i++) {
                     if (wordChar[i] == c || wordChar[i] + 32 == c || wordChar[i] - 32 == c) {
                         tempSum++;
@@ -59,11 +60,9 @@ public class ShortestCompletingWord {
 
 
     public static void main(String[] args) {
-        System.out.println(shortestCompletingWord("AN87005", new String[]{
-                "participant", "individual", "start", "exist", "above", "already", "easy", "attack", "player", "important"}));
+        System.out.println(shortestCompletingWord("AN87005", new String[]{"participant", "individual", "start", "exist", "above", "already", "easy", "attack", "player", "important"}));
         System.out.println("===============");
-        System.out.println(shortestCompletingWord("1s3 PSt", new String[]{
-                "step", "steps", "stripe", "stepple"}));
+        System.out.println(shortestCompletingWord("1s3 PSt", new String[]{"step", "steps", "stripe", "stepple"}));
 
     }
 }
