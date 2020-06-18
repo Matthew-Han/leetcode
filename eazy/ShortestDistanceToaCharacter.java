@@ -12,6 +12,33 @@ import java.util.List;
 public class ShortestDistanceToaCharacter {
 
     /**
+     * 执行用时 : 2 ms , 在所有 Java 提交中击败了 68.20% 的用户
+     * 内存消耗 : 39.9 MB , 在所有 Java 提交中击败了 9.09% 的用户
+     *
+     * @param s
+     * @param c
+     * @return
+     */
+    public static int[] shortestToCharPro(String s, char c) {
+        int prev = s.length() - 1;
+        int[] result = new int[s.length()];
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == c) {
+                prev = i;
+            }
+            result[i] = Math.abs(prev - i);
+        }
+        int next = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == c) {
+                next = i;
+            }
+            result[i] = Math.min(Math.abs(next - i), result[i]);
+        }
+        return result;
+    }
+
+    /**
      * 行用时 : 8 ms , 在所有 Java 提交中击败了 19.11% 的用户
      * 内存消耗 : 40.1 MB , 在所有 Java 提交中击败了 9.09% 的用户
      *
@@ -55,6 +82,6 @@ public class ShortestDistanceToaCharacter {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(shortestToChar("loveleetcode", 'e')));
+        System.out.println(Arrays.toString(shortestToCharPro("loveleetcodeandfuckit", 'e')));
     }
 }
