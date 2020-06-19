@@ -36,7 +36,6 @@ public class GoatLatin {
 
         }
         System.out.println("temp = " + Arrays.toString(temp));
-
         StringBuilder stringBuilder = new StringBuilder();
         for (String s1 : temp) {
             stringBuilder.append(s1).append(" ");
