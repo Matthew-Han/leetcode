@@ -15,17 +15,55 @@ public class FlippingAnImage {
 
     public static void main(String[] args) {
         int[][] arr = {{1, 0, 0, 0}, {1, 0, 1, 0}, {1, 1, 1, 0}};
-        System.out.println(Arrays.deepToString(flipAndInvertImage(arr)));
+        System.out.println(Arrays.deepToString(flipAndInvertImagePro(arr)));
 
 
         String[] ff = {"s", "s", "dd"};
         System.out.println(Arrays.toString(ff));
     }
 
+
     /**
-     * @param arr arr辣
-     * @return {int[][]}
-     * @description 垃圾中垃圾代码，真的是全靠猥琐实现。。
+     * 时隔10个月
+     * 从简单一直刷到了当时随机做的一题
+     * 看了看当初的代码
+     * 现在的我写的更简洁、更高效了
+     * 希望今后下一次review以前的代码的时候
+     * 能够从心里发出一声
+     * 「哇，2020年的我，代码写的这么弱啊！」
+     * <p>
+     * 执行用时 : 1 ms , 在所有 Java 提交中击败了 57.22% 的用户
+     * 内存消耗 : 39.9 MB , 在所有 Java 提交中击败了 13.33% 的用户
+     *
+     * @param arr
+     * @return
+     */
+    private static int[][] flipAndInvertImagePro(int[][] arr) {
+        int x = arr.length;
+        int y = arr[0].length;
+        for (int i = 0; i < x; i++) {
+            int j = 0;
+            int k = y - 1;
+            while (j < k) {
+                int temp = arr[i][k];
+                arr[i][k] = arr[i][j];
+                arr[i][j] = temp;
+                j++;
+                k--;
+            }
+            for (int n = 0; n < y; n++) {
+                arr[i][n] = arr[i][n] == 0 ? 1 : 0;
+            }
+        }
+        return arr;
+    }
+
+
+    /**
+     * 垃圾中垃圾代码，真的是全靠猥琐实现.
+     *
+     * @param arr
+     * @return
      */
     private static int[][] flipAndInvertImage(int[][] arr) {
 
@@ -54,6 +92,7 @@ public class FlippingAnImage {
         return result.toArray(new int[0][]);
 
     }
+
     private static int[] stringToInt(String[] arrs) {
         int[] ints = new int[arrs.length];
         for (int i = 0; i < arrs.length; i++) {
