@@ -18,13 +18,6 @@ public class MaximizeDistance2ClosestPerson {
      * @return
      */
     public static int maxDistToClosest(int[] seats) {
-        /*
-         * 因为题目说了
-         * seats 中只含有 0 和 1，至少有一个 0，且至少有一个 1。
-         * 所以可以这么写，不然要判断是都全0
-         */
-        boolean left0 = seats[0] == 0;
-        boolean right0 = seats[seats.length - 1] == 0;
 
         List<Integer> list = new ArrayList<>(seats.length);
         boolean fuck = true;
@@ -36,29 +29,34 @@ public class MaximizeDistance2ClosestPerson {
             }
             if (seats[i] == 1 && !fuck) {
                 fuck = true;
-                list.add(i - low);
+                /*
+                 * 如果low == 0，说明最左边是0，则需要 * 2
+                 *
+                 * 因为题目说了
+                 * seats 中只含有 0 和 1，至少有一个 0，且至少有一个 1。
+                 * 所以可以这么写，不然要判断是都全0
+                 */
+                list.add(low == 0 ? (i - low) * 2 : i - low);
             }
             // 模拟最后一位补了一个哨兵：1
             if (i == seats.length - 1 && seats[i] == 0) {
-                list.add(i - low + 1);
+                /*
+                 * 最后一位是0，一定需要 * 2
+                 *
+                 * 因为题目说了
+                 * seats 中只含有 0 和 1，至少有一个 0，且至少有一个 1。
+                 * 所以可以这么写，不然要判断是都全0
+                 */
+                list.add((i - low + 1) * 2);
             }
         }
         System.out.println("list = " + list);
 
         // 不用Collections.sort方法，因为那个更慢
         int max = Integer.MIN_VALUE;
-        for (int i = 0; i < list.size(); i++) {
-            if (left0 && i == 0) {
-                list.set(i, list.get(i) * 2);
-            }
-            if (right0 && i == list.size() - 1) {
-                list.set(i, list.get(i) * 2);
-            }
-            max = Math.max(max, list.get(i));
-
+        for (Integer integer : list) {
+            max = Math.max(max, integer);
         }
-
-        System.out.println("list = " + list);
         System.out.println("max = " + max);
         // 计数要加1，偶数不用
         return max % 2 == 0 ? max / 2 : max / 2 + 1;
