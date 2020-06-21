@@ -1,0 +1,45 @@
+import java.util.*;
+
+/**
+ * @ClassName UncommonWordsFromTwoSentences
+ * @Description #884 两句话中的不常见单词
+ * @Author MatthewHan
+ * @Date 2020/6/22 00:40
+ * @Version 1.0
+ **/
+public class UncommonWordsFromTwoSentences {
+
+    /**
+     * 执行用时： 2 ms , 在所有 Java 提交中击败了 100.00% 的用户
+     * 内存消耗： 39.6 MB , 在所有 Java 提交中击败了 10.00% 的用户
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public static String[] uncommonFromSentences(String a, String b) {
+        Map<String, Integer> map = new HashMap<>(a.length() * 4 / 3 + 1);
+        String[] arr1 = a.split(" ");
+        String[] arr2 = b.split(" ");
+        for (String s : arr1) {
+            map.put(s, map.getOrDefault(s, 0) + 1);
+        }
+        for (String s : arr2) {
+            map.put(s, map.getOrDefault(s, 0) + 1);
+        }
+        System.out.println("map = " + map);
+
+        List<String> list = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == 1) {
+                list.add(entry.getKey());
+            }
+        }
+
+        return list.toArray(new String[0]);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(uncommonFromSentences("apple apple", "fuck")));
+    }
+}
