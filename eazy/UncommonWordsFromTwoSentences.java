@@ -12,23 +12,22 @@ public class UncommonWordsFromTwoSentences {
     /**
      * 执行用时： 2 ms , 在所有 Java 提交中击败了 100.00% 的用户
      * 内存消耗： 39.6 MB , 在所有 Java 提交中击败了 10.00% 的用户
+     * <p>
+     * 改成如下（a + b的情况）更简洁，但是变得更慢
+     * 执行用时： 7 ms , 在所有 Java 提交中击败了 20.39% 的用户
+     * 内存消耗： 39.8 MB , 在所有 Java 提交中击败了 10.00% 的用户
      *
      * @param a
      * @param b
      * @return
      */
     public static String[] uncommonFromSentences(String a, String b) {
-        Map<String, Integer> map = new HashMap<>(a.length() * 4 / 3 + 1);
-        String[] arr1 = a.split(" ");
-        String[] arr2 = b.split(" ");
-        for (String s : arr1) {
-            map.put(s, map.getOrDefault(s, 0) + 1);
-        }
-        for (String s : arr2) {
+        Map<String, Integer> map = new HashMap<>((a.length() + b.length()) * 4 / 3 + 1);
+        String[] arr = (a + " " + b).split(" ");
+        for (String s : arr) {
             map.put(s, map.getOrDefault(s, 0) + 1);
         }
         System.out.println("map = " + map);
-
         List<String> list = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             if (entry.getValue() == 1) {
