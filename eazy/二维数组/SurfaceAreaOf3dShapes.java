@@ -48,9 +48,6 @@ public class SurfaceAreaOf3dShapes {
 
     /**
      * 将模型看成多个「柱子」，先求出柱子的全部表面积，再减去相贴的面积
-     * 另外说明一点，这样写更简洁，但是效率还可以提升，提升在哪呢？
-     * 因为当前柱子高度为0的时候，直接跳过即可。
-     * 可是如上这样写即使当前柱子高度为0，①②③这三步都会走一遍会影响效率，但是看起来更简洁就vans了。
      * <p>
      * 执行用时： 5 ms , 在所有 Java 提交中击败了 46.39% 的用户
      * 内存消耗： 39.6 MB , 在所有 Java 提交中击败了 100.00% 的用户
@@ -62,16 +59,15 @@ public class SurfaceAreaOf3dShapes {
         int fucker = 0;
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
-                // ① 柱子为0，则整个为0
-                fucker += (4 * grid[i][j] == 0 ? -2 : 4 * grid[i][j]) + 2;
-
-                // ②
-                if (i - 1 >= 0 && grid[i - 1][j] != 0 && grid[i][j] != 0) {
-                    fucker -= Math.min(grid[i][j], grid[i - 1][j]) * 2;
-                }
-                // ③
-                if (j - 1 >= 0 && grid[i][j - 1] != 0 && grid[i][j] != 0) {
-                    fucker -= Math.min(grid[i][j], grid[i][j - 1]) * 2;
+                if (grid[i][j] != 0) {
+                    // 柱子为0，则整个为0
+                    fucker += 4 * grid[i][j] + 2;
+                    if (i - 1 >= 0 && grid[i - 1][j] != 0 && grid[i][j] != 0) {
+                        fucker -= Math.min(grid[i][j], grid[i - 1][j]) * 2;
+                    }
+                    if (j - 1 >= 0 && grid[i][j - 1] != 0 && grid[i][j] != 0) {
+                        fucker -= Math.min(grid[i][j], grid[i][j - 1]) * 2;
+                    }
                 }
             }
         }
