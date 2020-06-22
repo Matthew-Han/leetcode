@@ -12,6 +12,26 @@ import java.util.Set;
 public class MonotonicArray {
 
     /**
+     * 某个范例，带秀啊
+     * 统计个数就vans了
+     *
+     * @param arr
+     * @return
+     */
+    public boolean daiXiu(int[] arr) {
+        int asc = 0, dsc = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] <= arr[i + 1]) {
+                asc++;
+            }
+            if (arr[i] >= arr[i + 1]) {
+                dsc++;
+            }
+        }
+        return asc == arr.length - 1 || dsc == arr.length - 1;
+    }
+
+    /**
      * 执行用时： 1 ms , 在所有 Java 提交中击败了 100.00% 的用户
      * 内存消耗： 47.7 MB , 在所有 Java 提交中击败了 100.00% 的用户
      *
@@ -19,25 +39,23 @@ public class MonotonicArray {
      * @return
      */
     public static boolean isMonotonicPro(int[] arr) {
-
-        if (arr.length == 1 || arr.length == 2) {
+        if (arr.length < 3) {
             return true;
         }
         boolean isFirst = true;
         int prevEle = arr[0];
         boolean check = false;
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] != prevEle) {
+        for (int a : arr) {
+            if (a != prevEle) {
                 if (isFirst) {
-                    check = arr[i] - prevEle > 0;
+                    check = a - prevEle > 0;
                     isFirst = false;
                 }
-                if (check != arr[i] - prevEle > 0) {
+                if (check != a - prevEle > 0) {
                     return false;
                 }
             }
-            prevEle = arr[i];
-
+            prevEle = a;
         }
         return true;
     }
