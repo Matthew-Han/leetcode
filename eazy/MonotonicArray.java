@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @ClassName MonotonicArray
@@ -10,13 +12,34 @@ import java.util.Arrays;
 public class MonotonicArray {
 
     /**
+     * 执行用时： 1 ms , 在所有 Java 提交中击败了 100.00% 的用户
+     * 内存消耗： 47.7 MB , 在所有 Java 提交中击败了 100.00% 的用户
      *
      * @param arr
      * @return
      */
     public static boolean isMonotonicPro(int[] arr) {
 
-        return false;
+        if (arr.length == 1 || arr.length == 2) {
+            return true;
+        }
+        boolean isFirst = true;
+        int prevEle = arr[0];
+        boolean check = false;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] != prevEle) {
+                if (isFirst) {
+                    check = arr[i] - prevEle > 0;
+                    isFirst = false;
+                }
+                if (check != arr[i] - prevEle > 0) {
+                    return false;
+                }
+            }
+            prevEle = arr[i];
+
+        }
+        return true;
     }
     /**
      * 执行用时： 10 ms , 在所有 Java 提交中击败了 8.75% 的用户
@@ -42,11 +65,12 @@ public class MonotonicArray {
             j--;
         }
         return Arrays.equals(tempArr, arr);
-
-
     }
 
     public static void main(String[] args) {
-        System.out.println(isMonotonic(new int[]{6, 5, 2, 1}));
+        System.out.println(isMonotonicPro(new int[]{6, 5, 2, 1}));
+        System.out.println(isMonotonicPro(new int[]{3, 5, 2, 1}));
+        System.out.println(isMonotonicPro(new int[]{5, 5, 2, 1}));
+        System.out.println(isMonotonicPro(new int[]{5, 5, 6, 6}));
     }
 }
