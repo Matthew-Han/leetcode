@@ -1,5 +1,3 @@
-import com.sun.tools.javac.util.StringUtils;
-
 /**
  * @ClassName ToLowerCase
  * @Description #709 转换成小写字母
