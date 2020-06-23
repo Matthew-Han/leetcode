@@ -1,8 +1,10 @@
+package 双指针;
+
 import java.util.Arrays;
 import java.util.Stack;
 
 /**
- * @ClassName SortArrayByParity
+ * @ClassName 双指针.SortArrayByParity
  * @Description #905 按奇偶排序数组
  * @Author MatthewHan
  * @Date 2020/6/23 09:46
