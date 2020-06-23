@@ -11,6 +11,7 @@ public class ReverseOnlyLetters {
 
     /**
      * 原地双指针
+     * 元素交换有以下三种方式
      * 执行用时： 1 ms , 在所有 Java 提交中击败了 78.75% 的用户
      * 内存消耗： 37.4 MB , 在所有 Java 提交中击败了 14.29% 的用户
      *
@@ -21,6 +22,9 @@ public class ReverseOnlyLetters {
         char[] chars = s.toCharArray();
         int i = 0;
         int j = s.length() - 1;
+
+
+        // 方式1
         while (i <= j) {
             char left = chars[i];
             char right = chars[j];
@@ -37,6 +41,54 @@ public class ReverseOnlyLetters {
                 j--;
             }
         }
+
+        // 方式2
+        while (i <= j) {
+            if (!Character.isLetter(chars[i])) {
+                i++;
+                /*
+                 * continue 跳出当前循环一次
+                 * 因为下面的<code>chars[i]</code>指针指向的元素变了会出现可能数组下标越界
+                 *
+                 */
+                continue;
+            }
+            if (!Character.isLetter(chars[j])) {
+                j--;
+                continue;
+            }
+            if (Character.isLetter(chars[i]) && Character.isLetter(chars[j])) {
+                char temp = chars[i];
+                chars[i] = chars[j];
+                chars[j] = temp;
+                i++;
+                j--;
+            }
+
+        }
+
+        // 方式3
+        while (i <= j) {
+            if (!Character.isLetter(chars[i])) {
+                i++;
+            }
+            if (!Character.isLetter(chars[j])) {
+                j--;
+            }
+            /**
+             * 因为上面i,j指针变了，所以这里需要加判断条件
+             */
+            if (j >= 0 && i <= j && Character.isLetter(chars[i]) && Character.isLetter(chars[j])) {
+                char temp = chars[i];
+                chars[i] = chars[j];
+                chars[j] = temp;
+                i++;
+                j--;
+            }
+
+        }
+
+
         // 这里这样写和下面的for循环append方法其内核其实是一样的
         return String.valueOf(chars);
     }
