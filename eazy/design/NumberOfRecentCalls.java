@@ -1,6 +1,8 @@
 package design;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -13,16 +15,45 @@ import java.util.Queue;
 public class NumberOfRecentCalls {
 
     Queue<Integer> queue;
+    List<Integer> list;
 
+    /**
+     * Queue:
+     * 执行用时： 28 ms , 在所有 Java 提交中击败了 89.56% 的用户
+     * 内存消耗： 48.3 MB , 在所有 Java 提交中击败了 100.00% 的用户
+     *
+     * List:
+     * 执行用时： 471 ms , 在所有 Java 提交中击败了 6.50% 的用户
+     * 内存消耗： 49.1 MB , 在所有 Java 提交中击败了 100.00% 的用户
+     * 这个顺序表就是逊啦
+     */
     public NumberOfRecentCalls() {
         queue = new LinkedList<>();
+        list = new ArrayList<>();
     }
 
     public int ping(int t) {
+        /*
+         *
+         * queue实现
+         */
         queue.offer(t);
-        while (queue.peek() + 3000 < t) {
+        while (t - 3000 > queue.peek()) {
             queue.poll();
         }
+        /*
+         * list实现
+         */
+        list.add(t);
+        int count = 0;
+        for (int i = list.size() - 1; i >= 0; i--) {
+            if (t - 3000 > list.get(i)) {
+                return count;
+            } else {
+                count++;
+            }
+        }
+
         return queue.size();
     }
 
