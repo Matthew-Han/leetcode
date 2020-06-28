@@ -16,8 +16,8 @@ public class LargestTime4GivenDigits {
     }
 
     /**
-     * 执行用时： 15 ms , 在所有 Java 提交中击败了 21.76% 的用户
-     * 内存消耗： 38.1 MB , 在所有 Java 提交中击败了 33.33% 的用户
+     * 执行用时： 14 ms , 在所有 Java 提交中击败了 28.13% 的用户
+     * 内存消耗： 38.5 MB , 在所有 Java 提交中击败了 33.33% 的用户
      *
      * @param arr
      * @return
@@ -45,21 +45,31 @@ public class LargestTime4GivenDigits {
             return "";
         }
         int max = Integer.MIN_VALUE;
-        StringBuilder maxStr = new StringBuilder();
+        StringBuilder result = new StringBuilder();
+        String maxStr = null;
         for (String s : set) {
             if (max < Integer.parseInt(s)) {
                 max = Integer.parseInt(s);
-                maxStr = new StringBuilder();
-                maxStr.append(s.charAt(0)).append(s.charAt(1)).append(":").append(s.charAt(2)).append(s.charAt(3));
+                maxStr = s;
             }
         }
         System.out.println(max);
 
-        return maxStr.toString();
+        result.append(maxStr.charAt(0)).append(maxStr.charAt(1)).append(":").append(maxStr.charAt(2)).append(maxStr.charAt(3));
+
+        return result.toString();
+
 
     }
 
 
+    /**
+     * 判断是否符合24小时制
+     * char类型判断
+     *
+     * @param dateTime
+     * @return
+     */
     public static boolean verify(String dateTime) {
         // 第一位最大是2
         if (dateTime.charAt(0) > '2') {
