@@ -24,9 +24,7 @@ public class MaximizeSumOfArrayAfterKNegations {
      */
     public static int largestSumAfterKNegationsPro(int[] arr, int k) {
         Arrays.sort(arr);
-        System.out.println("arr = " + Arrays.toString(arr));
         int minIndex = 0;
-        System.out.println("======================");
         while (k > 0) {
             System.out.println("arr = " + Arrays.toString(arr));
             int left = minIndex - 1;
