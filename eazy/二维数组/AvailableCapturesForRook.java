@@ -1,5 +1,7 @@
+package 二维数组;
+
 /**
- * @ClassName AvailableCapturesForRook
+ * @ClassName 二维数组.AvailableCapturesForRook
  * @Description #999 可以被一步捕获的棋子数
  * @Author MatthewHan
  * @Date 2020/7/1 09:09
