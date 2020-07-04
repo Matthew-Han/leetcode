@@ -11,6 +11,46 @@ public class RemoveAllAdjacentDuplicatesInString {
 
 
     /**
+     * 滑动窗口
+     * 执行用时： 19 ms , 在所有 Java 提交中击败了 71.23% 的用户
+     * 内存消耗： 40.4 MB , 在所有 Java 提交中击败了 7.69% 的用户
+     *
+     * @param s
+     * @return
+     */
+    public static String removeDuplicatesPro(String s) {
+        StringBuilder sb = new StringBuilder();
+        int left = 0;
+        int right = left + 1;
+        while (true) {
+            int len = s.length();
+            while (left < len) {
+                char leftNum = s.charAt(left);
+                if (right < len && leftNum != s.charAt(right)) {
+                    sb.append(leftNum);
+                    left++;
+                    right = left + 1;
+                } else if (left == len - 1) {
+                    sb.append(leftNum);
+                    left++;
+                } else {
+                    left += 2;
+                    right = left + 1;
+                }
+            }
+            left = 0;
+            right = left + 1;
+            System.out.println("sb = " + sb);
+            if (sb.length() == len) {
+                return s;
+            } else {
+                s = sb.toString();
+            }
+            sb.delete(0, sb.length());
+        }
+    }
+
+    /**
      * 执行用时： 50 ms , 在所有 Java 提交中击败了 25.58% 的用户
      * 内存消耗： 40.5 MB , 在所有 Java 提交中击败了 7.69% 的用户
      *
@@ -42,7 +82,7 @@ public class RemoveAllAdjacentDuplicatesInString {
     }
 
     public static void main(String[] args) {
-        System.out.println(removeDuplicates("cssaacsafvvs"));
+        System.out.println(removeDuplicatesPro("cssaacsafvvs"));
     }
 
 }
