@@ -8,8 +8,8 @@
 public class GreatestCommonDivisorOfStrings {
 
     /**
-     * 执行用时： 17 ms , 在所有 Java 提交中击败了 8.65% 的用户
-     * 内存消耗： 40.4 MB , 在所有 Java 提交中击败了 100.00% 的用户 炫耀一下:
+     * 执行用时： 10 ms , 在所有 Java 提交中击败了 12.29% 的用户
+     * 内存消耗： 40.1 MB , 在所有 Java 提交中击败了 100.00% 的用户
      *
      * @param str1
      * @param str2
@@ -17,25 +17,23 @@ public class GreatestCommonDivisorOfStrings {
      */
     public static String gcdOfStrings(String str1, String str2) {
         int min;
-        String temp;
+        StringBuilder sb;
         if (str1.length() <= str2.length()) {
             min = str1.length();
-            temp = str1;
+            sb = new StringBuilder(str1);
         } else {
             min = str2.length();
-            temp = str2;
+            sb = new StringBuilder(str2);
         }
-
-        StringBuilder sb = new StringBuilder();
-        String result = "";
         for (int i = 0; i < min; i++) {
-            sb.append(temp.charAt(i));
-            if (isSonOfaBitch(sb.toString(), str1) && isSonOfaBitch(sb.toString(), str2)) {
-
-                result = sb.toString();
+            // 最长的情况应该是较短或者相同的那个字符串，所以倒序
+            if (!isSonOfaBitch(sb.toString(), str1) || !isSonOfaBitch(sb.toString(), str2)) {
+                sb.delete(sb.length() - 1, sb.length());
+            } else {
+                return sb.toString();
             }
         }
-        return result;
+        return "";
 
     }
 
@@ -45,10 +43,10 @@ public class GreatestCommonDivisorOfStrings {
         for (int i = 0; i < multiple; i++) {
             sb.append(son);
         }
-        return bitch.contentEquals(sb);
+        return bitch.equals(sb.toString());
     }
 
     public static void main(String[] args) {
-        System.out.println(gcdOfStrings("ABABABAB", "AB"));
+        System.out.println(gcdOfStrings("ABABABAB", "ABAB"));
     }
 }
