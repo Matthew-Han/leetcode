@@ -1,7 +1,9 @@
+package 桶排序;
+
 import java.util.*;
 
 /**
- * @ClassName RelativeSortArray
+ * @ClassName 桶排序.RelativeSortArray
  * @Description #1122 数组的相对排序
  * @Author MatthewHan
  * @Date 2020/7/6 15:40
