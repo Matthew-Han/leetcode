@@ -1,7 +1,9 @@
+package 桶排序;
+
 import java.util.Arrays;
 
 /**
- * @ClassName CompareStringsByFrequencyOfTheSmallestCharacter
+ * @ClassName 桶排序.CompareStringsByFrequencyOfTheSmallestCharacter
  * @Description #1170 比较字符串最小字母出现频次
  * @Author MatthewHan
  * @Date 2020/7/7 13:13
