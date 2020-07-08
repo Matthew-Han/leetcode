@@ -1,6 +1,7 @@
 package 二维数组;
 
-import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @ClassName FindWinnerOnaTicTacToeGame
@@ -12,6 +13,12 @@ import java.util.Arrays;
 public class FindWinnerOnaTicTacToeGame {
 
 
+    /**
+     * 执行用时： 13 ms , 在所有 Java 提交中击败了 6.13% 的用户
+     * 内存消耗： 40.1 MB , 在所有 Java 提交中击败了 14.29% 的用户
+     * @param moves
+     * @return
+     */
     public static String tictactoe(int[][] moves) {
         int len = moves.length;
 
@@ -31,8 +38,15 @@ public class FindWinnerOnaTicTacToeGame {
             }
 
         }
-        System.out.println("a = " + Arrays.deepToString(a));
-        System.out.println("b = " + Arrays.deepToString(b));
+        if (victory(a)) {
+            return "A";
+        }
+        if (victory(b)) {
+            return "B";
+        }
+        if (moves.length < 9) {
+            return "Pending";
+        }
         return "Draw";
     }
 
@@ -40,18 +54,78 @@ public class FindWinnerOnaTicTacToeGame {
         if (move.length < 3) {
             return false;
         }
-        // 第一排
-        int first = 0;
-        int second = 0;
-        int third = 0;
-        for (int i = 0; i < move.length; i++) {
-            for (int j = 0; j < move[i].length; j++) {
+        Set<String> set1 = new HashSet<>(4);
+        set1.add("00");
+        set1.add("11");
+        set1.add("22");
+        Set<String> set2 = new HashSet<>(4);
+        set2.add("02");
+        set2.add("11");
+        set2.add("20");
 
+
+        Set<String> set3 = new HashSet<>(4);
+        set3.add("00");
+        set3.add("01");
+        set3.add("02");
+        Set<String> set4 = new HashSet<>(4);
+        set4.add("10");
+        set4.add("11");
+        set4.add("12");
+        Set<String> set5 = new HashSet<>(4);
+        set5.add("20");
+        set5.add("21");
+        set5.add("22");
+
+        Set<String> set6 = new HashSet<>(4);
+        set6.add("00");
+        set6.add("10");
+        set6.add("20");
+        Set<String> set7 = new HashSet<>(4);
+        set7.add("01");
+        set7.add("11");
+        set7.add("21");
+        Set<String> set8 = new HashSet<>(4);
+        set8.add("02");
+        set8.add("12");
+        set8.add("22");
+
+        int a = 0,b = 0,c = 0,d = 0,e = 0,f = 0,g = 0,h = 0;
+        for (int[] ints : move) {
+            if (set1.contains(ints[0]+""+ints[1])) {
+                a++;
+            }
+            if (set2.contains(ints[0]+""+ints[1])) {
+                b++;
+            }
+            if (set3.contains(ints[0]+""+ints[1])) {
+                c++;
+            }
+            if (set4.contains(ints[0]+""+ints[1])) {
+                d++;
+            }
+            if (set5.contains(ints[0]+""+ints[1])) {
+                e++;
+            }
+            if (set6.contains(ints[0]+""+ints[1])) {
+                f++;
+            }
+            if (set7.contains(ints[0]+""+ints[1])) {
+                g++;
+            }
+            if (set8.contains(ints[0]+""+ints[1])) {
+                h++;
+            }
+
+            if (a==3||b==3||c==3||d==3||e==3||f==3||g==3||h==3) {
+                return true;
             }
         }
+
+        return false;
     }
 
     public static void main(String[] args) {
-        tictactoe(new int[][]{{0, 0}, {2, 0}, {1, 1}, {2, 1}, {2, 2}});
+
     }
 }
