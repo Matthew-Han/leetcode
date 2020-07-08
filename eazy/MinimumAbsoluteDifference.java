@@ -69,6 +69,6 @@ public class MinimumAbsoluteDifference {
     }
 
     public static void main(String[] args) {
-        System.out.println(minimumAbsDifferencePro(new int[]{3, 8, -10, 23, 19, -4, -14, 27}));
+        System.out.println(minimumAbsDifferencePro(new int[]{3, 8, 12, -10, 23, 19, -4, -14, 27}));
     }
 }
