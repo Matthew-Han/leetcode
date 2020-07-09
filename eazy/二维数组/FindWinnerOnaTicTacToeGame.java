@@ -16,6 +16,7 @@ public class FindWinnerOnaTicTacToeGame {
     /**
      * 执行用时： 13 ms , 在所有 Java 提交中击败了 6.13% 的用户
      * 内存消耗： 40.1 MB , 在所有 Java 提交中击败了 14.29% 的用户
+     *
      * @param moves
      * @return
      */
@@ -90,34 +91,34 @@ public class FindWinnerOnaTicTacToeGame {
         set8.add("12");
         set8.add("22");
 
-        int a = 0,b = 0,c = 0,d = 0,e = 0,f = 0,g = 0,h = 0;
+        int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0;
         for (int[] ints : move) {
-            if (set1.contains(ints[0]+""+ints[1])) {
+            if (set1.contains(ints[0] + "" + ints[1])) {
                 a++;
             }
-            if (set2.contains(ints[0]+""+ints[1])) {
+            if (set2.contains(ints[0] + "" + ints[1])) {
                 b++;
             }
-            if (set3.contains(ints[0]+""+ints[1])) {
+            if (set3.contains(ints[0] + "" + ints[1])) {
                 c++;
             }
-            if (set4.contains(ints[0]+""+ints[1])) {
+            if (set4.contains(ints[0] + "" + ints[1])) {
                 d++;
             }
-            if (set5.contains(ints[0]+""+ints[1])) {
+            if (set5.contains(ints[0] + "" + ints[1])) {
                 e++;
             }
-            if (set6.contains(ints[0]+""+ints[1])) {
+            if (set6.contains(ints[0] + "" + ints[1])) {
                 f++;
             }
-            if (set7.contains(ints[0]+""+ints[1])) {
+            if (set7.contains(ints[0] + "" + ints[1])) {
                 g++;
             }
-            if (set8.contains(ints[0]+""+ints[1])) {
+            if (set8.contains(ints[0] + "" + ints[1])) {
                 h++;
             }
 
-            if (a==3||b==3||c==3||d==3||e==3||f==3||g==3||h==3) {
+            if (a == 3 || b == 3 || c == 3 || d == 3 || e == 3 || f == 3 || g == 3 || h == 3) {
                 return true;
             }
         }
