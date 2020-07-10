@@ -1,5 +1,7 @@
+package 日期;
+
 /**
- * @ClassName DayOfTheWeek
+ * @ClassName 日期.DayOfTheWeek
  * @Description #1185 一周中的第几天
  * @Author MatthewHan
  * @Date 2020/7/7 16:36
