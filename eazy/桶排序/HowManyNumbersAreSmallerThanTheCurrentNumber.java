@@ -1,7 +1,6 @@
 package 桶排序;
 
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.*;
 
 /**
  * @ClassName 桶排序.HowManyNumbersAreSmallerThanTheCurrentNumber
@@ -13,7 +12,7 @@ import java.util.Comparator;
 public class HowManyNumbersAreSmallerThanTheCurrentNumber {
 
     /**
-     * 老K桶了
+     * 1. 老K桶了
      * （双for循环用时）
      * 执行用时： 2 ms , 在所有 Java 提交中击败了 82.19% 的用户
      * 内存消耗： 40 MB , 在所有 Java 提交中击败了 100.00% 的用户
@@ -43,6 +42,37 @@ public class HowManyNumbersAreSmallerThanTheCurrentNumber {
 
 
     /**
+     * 2. 哈希表
+     * 执行用时： 5 ms , 在所有 Java 提交中击败了 70.79% 的用户
+     * 内存消耗： 39.9 MB , 在所有 Java 提交中击败了 100.00% 的用户
+     *
+     * @param nums
+     * @return
+     */
+    public static int[] smallerNumbersThanCurrentByMap(int[] nums) {
+        int[] arr = new int[nums.length];
+        System.arraycopy(nums, 0, arr, 0, nums.length);
+        Arrays.sort(arr);
+        Map<Integer, Integer> map = new HashMap<>(nums.length * 4 / 3 + 1);
+        int index = 0;
+        map.put(arr[0], 0);
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] != arr[i - 1]) {
+                map.put(arr[i], i);
+                index = i;
+            } else {
+                map.put(arr[i], index);
+            }
+        }
+        System.out.println("map = " + map);
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = map.get(nums[i]);
+        }
+        return nums;
+    }
+
+    /**
+     * 3. 二维数组
      * 执行用时： 11 ms , 在所有 Java 提交中击败了 60.79% 的用户
      * 内存消耗： 40.2 MB , 在所有 Java 提交中击败了 100.00% 的用户
      *
@@ -78,8 +108,9 @@ public class HowManyNumbersAreSmallerThanTheCurrentNumber {
         return result;
     }
 
+
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(smallerNumbersThanCurrentByBucket(new int[]{1, 2, 6, 7, 0, 0, 9})));
+        System.out.println(Arrays.toString(smallerNumbersThanCurrentByMap(new int[]{8, 1, 2, 2, 3})));
     }
 
 }
