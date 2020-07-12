@@ -13,8 +13,9 @@ public class NumberOfSubstringsWithOnly1s {
 
     /**
      * 注意count要设置成long，然后对int类型取模
-     * 执行用时： 37 ms , 在所有 Java 提交中击败了 100.00% 的用户
-     * 内存消耗： 42.9 MB , 在所有 Java 提交中击败了 100.00% 的用户
+     * <p>
+     * 执行用时： 18 ms , 在所有 Java 提交中击败了 100.00% 的用户
+     * 内存消耗： 40.5 MB , 在所有 Java 提交中击败了 100.00% 的用户
      *
      * @param s
      * @return
@@ -31,27 +32,7 @@ public class NumberOfSubstringsWithOnly1s {
             }
         }
 
-        System.out.println("stack = " + stack);
-        StringBuilder sb = new StringBuilder();
-        for (Character character : stack) {
-            sb.append(character);
-
-        }
-        String[] result = sb.toString().split("-");
         long count = 0;
-        for (String value : result) {
-            for (int j = 1; j <= value.length(); j++) {
-                count += j;
-            }
-        }
-
-        return (int) (count % (1000000007));
-    }
-
-    public static void main(String[] args) {
-        System.out.println(numSub("100010011011110111101"));
-        /*
-        int count = 0;
         int curr = 0;
         for (int i = 0; i < stack.size(); i++) {
             char temp = stack.get(i);
@@ -70,7 +51,12 @@ public class NumberOfSubstringsWithOnly1s {
             }
             System.out.println("count = " + count);
         }
-         */
+
+        return (int) (count % (1000000007));
+    }
+
+    public static void main(String[] args) {
+        System.out.println(numSub("100010011011110111101"));
     }
 
 }
