@@ -1,6 +1,5 @@
 package 图;
 
-import java.util.Set;
 
 /**
  * @ClassName FlowerPlantingWithNoAdjacent
@@ -12,9 +11,6 @@ import java.util.Set;
 public class FlowerPlantingWithNoAdjacent {
 
     public int[] gardenNoAdj(int n, int[][] paths) {
-
-
-
 
         return new int[]{1,2,3,4};
     }
