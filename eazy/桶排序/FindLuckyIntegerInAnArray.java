@@ -1,5 +1,7 @@
+package 桶排序;
+
 /**
- * @ClassName FindLuckyIntegerInAnArray
+ * @ClassName 桶排序.FindLuckyIntegerInAnArray
  * @Description #1394 找出数组中的幸运数
  * @Author MatthewHan
  * @Date 2020/7/13 14:42
