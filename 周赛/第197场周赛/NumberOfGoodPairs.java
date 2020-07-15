@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * @ClassName NumberOfGoodPairs
- * @Description #5460 好数对的数目
+ * @Description #1512 好数对的数目
  * @Author MatthewHan
  * @Date 2020/7/12 17:32
  * @Version 1.0
