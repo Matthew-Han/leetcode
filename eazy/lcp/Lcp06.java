@@ -1,13 +1,13 @@
 package lcp;
 
 /**
- * @ClassName NaYingBi
+ * @ClassName Lcp06
  * @Description #LCP 06 拿硬币
  * @Author MatthewHan
  * @Date 2020/7/16 10:22
  * @Version 1.0
  **/
-public class NaYingBi {
+public class Lcp06 {
 
     /**
      * 执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
