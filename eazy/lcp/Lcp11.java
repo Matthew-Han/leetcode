@@ -3,13 +3,13 @@ package lcp;
 import java.util.*;
 
 /**
- * @ClassName lcp.QiWangGeShuTongJi
+ * @ClassName lcp.Lcp11
  * @Description #LCP 11 期望个数统计
  * @Author MatthewHan
  * @Date 2020/7/16 14:22
  * @Version 1.0
  **/
-public class QiWangGeShuTongJi {
+public class Lcp11 {
 
 
 
