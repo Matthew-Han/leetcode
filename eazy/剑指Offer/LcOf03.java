@@ -1,13 +1,13 @@
 package 剑指Offer;
 
 /**
- * @ClassName ShuZuZhongChongFuDeShuZiLcOf
+ * @ClassName LcOf03
  * @Description 剑指 Offer #03 数组中重复的数字
  * @Author MatthewHan
  * @Date 2020/7/16 14:44
  * @Version 1.0
  **/
-public class ShuZuZhongChongFuDeShuZiLcOf {
+public class LcOf03 {
 
     /**
      * 执行用时： 2 ms , 在所有 Java 提交中击败了 70.54% 的用户
