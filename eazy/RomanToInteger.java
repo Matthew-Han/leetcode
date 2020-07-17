@@ -10,6 +10,13 @@ import java.util.Map;
  **/
 public class RomanToInteger {
 
+    /**
+     * 执行用时： 8 ms , 在所有 Java 提交中击败了 30.30% 的用户
+     * 内存消耗： 40.1 MB , 在所有 Java 提交中击败了 5.56% 的用户
+     *
+     * @param s
+     * @return
+     */
     public static int romanToInt(String s) {
         Map<String, Integer> map = new HashMap<>();
         map.put("I", 1);
@@ -19,22 +26,16 @@ public class RomanToInteger {
         map.put("C", 100);
         map.put("D", 500);
         map.put("M", 1000);
-        map.put("IV", 4);
-        map.put("IX", 9);
-        map.put("XL", 40);
-        map.put("XC", 90);
-        map.put("CD", 400);
-        map.put("CM", 900);
         int sum = 0;
 
-        for (int i = s.length(); i > 0; i--) {
-            if (i > 1 && map.get(s.substring(i - 2, i)) != null) {
-                System.out.println("1 = " + s.substring(i - 2, i));
-                sum += map.get(s.substring(i - 2, i));
-                i--;
+        for (int i = 0; i < s.length(); ++i) {
+            int left = map.get(String.valueOf(s.charAt(i)));
+            int right = i + 1 < s.length() ? map.get(String.valueOf(s.charAt(i + 1))) : 0;
+            //小的数字位于大的数字左边
+            if (left < right) {
+                sum -= left;
             } else {
-                System.out.println("2 = " + s.charAt(i - 1));
-                sum += map.get(String.valueOf(s.charAt(i - 1)));
+                sum += left;
             }
         }
         return sum;
@@ -42,6 +43,7 @@ public class RomanToInteger {
     }
 
     public static void main(String[] args) {
+        System.out.println(romanToInt("CDMCX"));
         System.out.println(romanToInt("CXIIVCLCDMCX"));
     }
 
