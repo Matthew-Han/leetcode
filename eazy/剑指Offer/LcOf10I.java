@@ -7,7 +7,7 @@ package 剑指Offer;
  * @Date 2020/7/17 17:55
  * @Version 1.0
  **/
-public class LcOf10 {
+public class LcOf10I {
 
     /**
      * 执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
