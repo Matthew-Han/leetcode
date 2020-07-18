@@ -38,20 +38,21 @@ public class RemoveLinkedListElements {
                 temp = temp.next;
             }
         }
-        System.out.println("temp = " + temp);
-        System.out.println("head = " + head);
+        //System.out.println("temp = " + temp);
+        //System.out.println("head = " + head);
         return head;
     }
 
 
     public static void main(String[] args) {
 
-        ListNode listNode = new ListNode(1);
+        ListNode listNode = new ListNode(3);
         listNode.next = new ListNode(1);
         listNode.next.next = new ListNode(2);
 
         System.out.println(listNode);
-        System.out.println(removeElements(listNode, 2));
+        System.out.println(removeElements(listNode, 3));
+        System.out.println(listNode);
 
     }
 
