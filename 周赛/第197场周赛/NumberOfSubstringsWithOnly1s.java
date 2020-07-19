@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @ClassName 第197场周赛.NumberOfSubstringsWithOnly1s
- * @Description #5461 仅含 1 的子串数
+ * @Description #1513 仅含 1 的子串数
  * @Author MatthewHan
  * @Date 2020/7/12 17:43
  * @Version 1.0
