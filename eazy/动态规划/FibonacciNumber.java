@@ -1,5 +1,7 @@
 package 动态规划;
 
+import java.util.Arrays;
+
 /**
  * @ClassName 动态规划.FibonacciNumber
  * @Description #509 斐波那契数
@@ -8,6 +10,23 @@ package 动态规划;
  * @Version 1.0
  **/
 public class FibonacciNumber {
+
+    /**
+     * 状态方程 f(n) = f(n - 1) + f(n - 2)
+     *
+     * @param n
+     * @return
+     */
+    public static int fibDp(int n) {
+        int[] dp = new int[n];
+        dp[1] = 1;
+        dp[2] = 1;
+        for (int i = 3; i < n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        System.out.println("dp = " + Arrays.toString(dp));
+        return dp[n - 1];
+    }
 
     /**
      * 执行用时 : 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
@@ -47,6 +66,6 @@ public class FibonacciNumber {
 
 
     public static void main(String[] args) {
-        System.out.println(fibPro(4));
+        System.out.println(fibDp(7));
     }
 }
