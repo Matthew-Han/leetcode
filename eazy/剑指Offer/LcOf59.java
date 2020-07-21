@@ -20,7 +20,7 @@ public class LcOf59 {
      * @param k
      * @return
      */
-    public static int[] maxSlidingWindowDeque(int[] nums, int k) {
+    public static int[] maxSlidingWindowPq(int[] nums, int k) {
         if (nums.length == 0) {
             return new int[]{};
         }
@@ -75,6 +75,6 @@ public class LcOf59 {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
-        System.out.println(Arrays.toString(maxSlidingWindowDeque(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
+        System.out.println(Arrays.toString(maxSlidingWindowPq(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
     }
 }
