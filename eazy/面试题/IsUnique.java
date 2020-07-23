@@ -1,13 +1,13 @@
 package 面试题;
 
 /**
- * @ClassName IsUniqueLcCi
+ * @ClassName IsUnique
  * @Description 面试题 01.01. 判定字符是否唯一
  * @Author MatthewHan
  * @Date 2020/7/23 11:08
  * @Version 1.0
  **/
-public class IsUniqueLcCi {
+public class IsUnique {
 
     /**
      * 执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
