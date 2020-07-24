@@ -1,8 +1,6 @@
 package 面试题;
 
 import 链表.ListNode;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @ClassName PalindromeLinkedList
@@ -14,22 +12,30 @@ import java.util.List;
 public class PalindromeLinkedList {
 
     /**
-     * 执行用时： 6 ms , 在所有 Java 提交中击败了 8.12% 的用户
-     * 内存消耗： 43.2 MB , 在所有 Java 提交中击败了 100.00% 的用户
+     * 执行用时： 1 ms , 在所有 Java 提交中击败了 99.92% 的用户
+     * 内存消耗： 41.8 MB , 在所有 Java 提交中击败了 100.00% 的用户
      *
      * @param head
      * @return
      */
     public boolean isPalindrome(ListNode head) {
-        List<Integer> list = new ArrayList<>();
+        ListNode temp = head;
+        int len = 0;
+        while (temp != null) {
+            len++;
+            temp = temp.next;
+        }
+
+        int[] arr = new int[len];
+        int index = 0;
         while (head != null) {
-            list.add(head.val);
+            arr[index++] = head.val;
             head = head.next;
         }
         int i = 0;
-        int j = list.size() - 1;
+        int j = len - 1;
         while (i < j) {
-            if (!list.get(i--).equals(list.get(j--))) {
+            if (arr[i++] != arr[j--]) {
                 return false;
             }
         }
