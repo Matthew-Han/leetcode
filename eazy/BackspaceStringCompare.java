@@ -1,9 +1,7 @@
-package stack;
-
 import java.util.Stack;
 
 /**
- * @ClassName stack.BackspaceStringCompare
+ * @ClassName BackspaceStringCompare
  * @Description #844 比较含退格的字符串
  * @Author MatthewHan
  * @Date 2020/6/20 16:50
