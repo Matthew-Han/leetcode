@@ -8,6 +8,31 @@
 public class IsSubsequence {
 
     /**
+     * 执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+     * 内存消耗： 37.7 MB , 在所有 Java 提交中击败了 100.00% 的用户
+     *
+     * @param s
+     * @param t
+     * @return
+     */
+    public static boolean isSubsequencePlus(String s, String t) {
+        int j = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int index = t.substring(j).indexOf(s.charAt(i));
+            // 找不到元素
+            if (index == -1) {
+                return false;
+            } else {
+                // 控制j指针的移动
+                index += j;
+                j = index + 1;
+            }
+            System.out.println("j = " + j);
+        }
+        return true;
+    }
+
+    /**
      * 第一次内存占用打败100%😂
      * 执行用时 : 220 ms , 在所有 Java 提交中击败了 6.89% 的用户
      * 内存消耗 : 43.1 MB , 在所有 Java 提交中击败了 100.00% 的用户
