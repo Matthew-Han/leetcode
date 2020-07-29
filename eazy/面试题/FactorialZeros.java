@@ -9,6 +9,13 @@ package 面试题;
  **/
 public class FactorialZeros {
 
+    /**
+     * 执行用时： 1 ms , 在所有 Java 提交中击败了 99.37% 的用户
+     * 内存消耗： 36.6 MB , 在所有 Java 提交中击败了 100.00% 的用户
+     *
+     * @param n
+     * @return
+     */
     public int trailingZeroes(int n) {
 
         int res = 0;
