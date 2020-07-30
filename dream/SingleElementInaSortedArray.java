@@ -1,5 +1,3 @@
-package 二分法;
-
 /**
  * @ClassName SingleElementInaSortedArray
  * @Description #540 有序数组中的单一元素
