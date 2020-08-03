@@ -1,4 +1,4 @@
-package 剑指Offer;
+package 二叉树;
 
 import 二叉树.TreeNode;
 import java.util.ArrayList;
@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * @ClassName LcOf32
+ * @ClassName LcOf32II
  * @Description 剑指 Offer #32 - II 从上到下打印二叉树 II
  * @Author MatthewHan
  * @Date 2020/7/29 18:55
  * @Version 1.0
  **/
-public class LcOf32 {
+public class LcOf32II {
 
 
     /**
