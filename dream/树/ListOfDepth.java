@@ -1,4 +1,4 @@
-package 二叉树;
+package 树;
 
 import 链表.ListNode;
 import java.util.ArrayList;

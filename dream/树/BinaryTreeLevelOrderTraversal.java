@@ -1,4 +1,4 @@
-package 二叉树;
+package 树;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -6,32 +6,34 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * @ClassName FindBottomLeftTreeValue
- * @Description #513 找树左下角的值
+ * @ClassName BinaryTreeLevelOrderTraversal
+ * @Description #102 二叉树的层序遍历
  * @Author MatthewHan
- * @Date 2020/7/31 16:46
+ * @Date 2020/8/3 09:25
  * @Version 1.0
  **/
-public class FindBottomLeftTreeValue {
+public class BinaryTreeLevelOrderTraversal {
 
     /**
-     * 执行用时： 2 ms , 在所有 Java 提交中击败了 74.45% 的用户
-     * 内存消耗： 39.7 MB , 在所有 Java 提交中击败了 14.08% 的用户
+     * 执行用时： 1 ms , 在所有 Java 提交中击败了 91.61% 的用户
+     * 内存消耗： 40 MB , 在所有 Java 提交中击败了 41.47% 的用户
      *
      * @param root
      * @return
      */
-    public int findBottomLeftValue(TreeNode root) {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        List<List<Integer>> res = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-        int res = 0;
         while (!queue.isEmpty()) {
             int limit = queue.size();
+            List<Integer> list = new ArrayList<>();
             for (int i = 0; i < limit; i++) {
                 TreeNode tmp = queue.poll();
-                if (i == 0) {
-                    res = tmp.val;
-                }
+                list.add(tmp.val);
                 if (tmp.left != null) {
                     queue.offer(tmp.left);
                 }
@@ -39,8 +41,8 @@ public class FindBottomLeftTreeValue {
                     queue.offer(tmp.right);
                 }
             }
+            res.add(list);
         }
         return res;
     }
-
 }

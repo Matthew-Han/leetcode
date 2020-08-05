@@ -1,6 +1,5 @@
-package 二叉树;
+package 树;
 
-import 二叉树.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package 二叉树;
+package 树;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -6,43 +6,45 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * @ClassName FindLargestValueInEachTreeRow
- * @Description #515 在每个树行中找最大值
+ * @ClassName BinaryTreeRightSideView
+ * @Description #199 二叉树的右视图
  * @Author MatthewHan
- * @Date 2020/8/3 15:08
+ * @Date 2020/7/31 17:42
  * @Version 1.0
  **/
-public class FindLargestValueInEachTreeRow {
+public class BinaryTreeRightSideView {
 
     /**
-     * 执行用时： 3 ms , 在所有 Java 提交中击败了 45.08% 的用户
-     * 内存消耗： 40 MB , 在所有 Java 提交中击败了 70.68% 的用户
+     * 执行用时： 1 ms , 在所有 Java 提交中击败了 94.88% 的用户
+     * 内存消耗： 38.2 MB , 在所有 Java 提交中击败了 75.91% 的用户
      *
      * @param root
      * @return
      */
-    public List<Integer> largestValues(TreeNode root) {
+    public List<Integer> rightSideView(TreeNode root) {
         if (root == null) {
             return new ArrayList<>();
         }
         Queue<TreeNode> queue = new LinkedList<>();
-        List<Integer> res = new ArrayList<>();
         queue.offer(root);
+        List<Integer> list = new ArrayList<>();
         while (!queue.isEmpty()) {
             int limit = queue.size();
-            int max = Integer.MIN_VALUE;
             for (int i = 0; i < limit; i++) {
                 TreeNode tmp = queue.poll();
-                max = Math.max(max, tmp.val);
-                if (tmp.left != null) {
-                    queue.offer(tmp.left);
+                if (i == 0) {
+                    list.add(tmp.val);
                 }
+                // 先遍历右边
                 if (tmp.right != null) {
                     queue.offer(tmp.right);
                 }
+                if (tmp.left != null) {
+                    queue.offer(tmp.left);
+                }
+
             }
-            res.add(max);
         }
-        return res;
+        return list;
     }
 }
