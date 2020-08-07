@@ -1,7 +1,9 @@
+package 双指针;
+
 import java.util.*;
 
 /**
- * @ClassName TwoSumII
+ * @ClassName 双指针.TwoSumII
  * @Description #167 两数之和 II - 输入有序数组
  * @Author MatthewHan
  * @Date 2020/4/22 11:08

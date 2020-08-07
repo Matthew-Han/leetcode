@@ -1,8 +1,10 @@
+package 双指针;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @ClassName LongPressedName
+ * @ClassName 双指针.LongPressedName
  * @Description #925 长按键入
  * @Author MatthewHan
  * @Date 2020/6/23 17:08

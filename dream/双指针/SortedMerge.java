@@ -1,4 +1,4 @@
-package 面试题;
+package 双指针;
 
 import java.util.Arrays;
 

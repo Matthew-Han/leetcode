@@ -1,7 +1,9 @@
+package 双指针;
+
 import java.util.*;
 
 /**
- * @ClassName KdiffPairsInAnArray
+ * @ClassName 双指针.KdiffPairsInAnArray
  * @Description #532 数组中的K-diff数对
  * @Author MatthewHan
  * @Date 2020/5/20 13:08

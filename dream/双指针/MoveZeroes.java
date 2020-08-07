@@ -1,9 +1,11 @@
+package 双指针;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * @ClassName MoveZeroes
+ * @ClassName 双指针.MoveZeroes
  * @Description #283 移动零
  * @Author MatthewHan
  * @Date 2020/5/7 15:18

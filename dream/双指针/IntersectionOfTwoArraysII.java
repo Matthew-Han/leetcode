@@ -1,9 +1,11 @@
+package 双指针;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * @ClassName IntersectionOfTwoArraysII
+ * @ClassName 双指针.IntersectionOfTwoArraysII
  * @Description #350 两个数组的交集 II
  * @Author MatthewHan
  * @Date 2020/5/9 14:30

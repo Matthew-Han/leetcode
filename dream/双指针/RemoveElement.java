@@ -1,7 +1,9 @@
+package 双指针;
+
 import java.util.Arrays;
 
 /**
- * @ClassName RemoveElement
+ * @ClassName 双指针.RemoveElement
  * @Description #27 移除元素
  * @Author MatthewHan
  * @Date 2020/4/10 09:47

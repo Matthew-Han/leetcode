@@ -1,5 +1,7 @@
+package 双指针;
+
 /**
- * @ClassName SquaresOfaSortedArray
+ * @ClassName 双指针.SquaresOfaSortedArray
  * @Description #977 有序数组的平方
  * @Author MatthewHan
  * @Date 2020/6/30 09:51

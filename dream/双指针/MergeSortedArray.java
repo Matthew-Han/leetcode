@@ -1,7 +1,9 @@
+package 双指针;
+
 import java.util.Arrays;
 
 /**
- * @ClassName MergeSortedArray
+ * @ClassName 双指针.MergeSortedArray
  * @Description #88 合并两个有序数组
  * @Author MatthewHan
  * @Date 2020/4/15 17:15
@@ -14,6 +16,7 @@ public class MergeSortedArray {
      * 内存消耗 : 39.9 MB , 在所有 Java 提交中击败了 5.06% 的用户
      * 没学过归并排序，听说这题实际算是小归并排序
      * 看了下图解，尝试写了下，执行用时很满意~
+     *
      * @param nums1
      * @param m
      * @param nums2
@@ -25,21 +28,21 @@ public class MergeSortedArray {
         int k = 0;
         int[] temp = new int[m + n];
         while (i < m + n) {
-           if (j < m && k != n && nums1[j] <= nums2[k]) {
-               temp[i] = nums1[j];
-               j++;
-           } else if (k < n && j != m && nums2[k] < nums1[j]) {
-               temp[i] = nums2[k];
-               k++;
-           } else if (k < n && j == m){
-               temp[i] = nums2[k];
-               k++;
+            if (j < m && k != n && nums1[j] <= nums2[k]) {
+                temp[i] = nums1[j];
+                j++;
+            } else if (k < n && j != m && nums2[k] < nums1[j]) {
+                temp[i] = nums2[k];
+                k++;
+            } else if (k < n && j == m) {
+                temp[i] = nums2[k];
+                k++;
 
-           } else if (j < m && k == n){
-               temp[i] = nums1[j];
-               j++;
-           }
-           i++;
+            } else if (j < m && k == n) {
+                temp[i] = nums1[j];
+                j++;
+            }
+            i++;
         }
         // 第一种赋值方法
         for (int i1 = 0; i1 < nums1.length; i1++) {
@@ -52,6 +55,6 @@ public class MergeSortedArray {
     }
 
     public static void main(String[] args) {
-        merge(new int[]{1,2,3,0,0,0},  3, new int[]{2,5,6}, 3);
+        merge(new int[]{1, 2, 3, 0, 0, 0}, 3, new int[]{2, 5, 6}, 3);
     }
 }

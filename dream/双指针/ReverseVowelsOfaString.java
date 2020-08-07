@@ -1,3 +1,5 @@
+package 双指针;
+
 import com.sun.deploy.util.StringUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -5,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @ClassName ReverseVowelsOfaString
+ * @ClassName 双指针.ReverseVowelsOfaString
  * @Description #345 反转字符串中的元音字母
  * @Author MatthewHan
  * @Date 2020/5/9 10:02

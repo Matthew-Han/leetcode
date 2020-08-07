@@ -1,7 +1,9 @@
+package 双指针;
+
 import java.util.*;
 
 /**
- * @ClassName IntersectionOfTwoArrays
+ * @ClassName 双指针.IntersectionOfTwoArrays
  * @Description #349 两个数组的交集
  * @Author MatthewHan
  * @Date 2020/5/9 11:16
