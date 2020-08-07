@@ -1,4 +1,6 @@
-package tree;
+package bst;
+
+import tree.TreeNode;
 
 /**
  * @ClassName LowestCommonAncestorOfaBinarySearchTree
@@ -22,11 +24,10 @@ public class LowestCommonAncestorOfaBinarySearchTree {
      * @return
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        TreeNode curr = root;
         int pv = p.val, qv = q.val;
-        while ((curr.val - pv) * (curr.val - qv) > 0) {
-            curr = curr.val > pv ? curr.left : curr.right;
+        while ((root.val - pv) * (root.val - qv) > 0) {
+            root = root.val > pv ? root.left : root.right;
         }
-        return curr;
+        return root;
     }
 }
