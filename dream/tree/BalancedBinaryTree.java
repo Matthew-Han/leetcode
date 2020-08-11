@@ -30,7 +30,7 @@ public class BalancedBinaryTree {
                 TreeNode curr = stack.pop();
 
                 // 平衡二叉树的一个关键点：无论是BFS、DFS、害是递🐢。每个节点都要判断是否出现左右子树差2（含）以上
-                // 需要将当前节点的左右子树分别check以下~
+                // 需要将当前节点的左右子树分别check一下~
 
                 if (Math.abs(checkNode(curr.left, 0) - checkNode(curr.right, 0)) > 1) {
                     return false;
