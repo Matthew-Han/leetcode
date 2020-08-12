@@ -10,13 +10,13 @@ package tree;
 public class MaximumDepthOfBinaryTree {
 
     public static int maxDepth(TreeNode root) {
-        return bfs(root);
+        return dfs(root);
     }
 
-    public static int bfs(TreeNode root) {
+    public static int dfs(TreeNode root) {
         if (root == null) {
             return 0;
         }
-        return 1 + Math.max(bfs(root.left), bfs(root.right));
+        return 1 + Math.max(dfs(root.left), dfs(root.right));
     }
 }
