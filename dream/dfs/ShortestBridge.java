@@ -13,8 +13,8 @@ public class ShortestBridge {
 
 
     /**
-     * 执行用时： 1111 ms , 在所有 Java 提交中击败了 5.13% 的用户
-     * 内存消耗： 41 MB , 在所有 Java 提交中击败了 14.64% 的用户
+     * 执行用时： 258 ms , 在所有 Java 提交中击败了 12.22% 的用户
+     * 内存消耗： 41 MB , 在所有 Java 提交中击败了 14.29% 的用户
      *
      * @param arr
      * @return
@@ -35,6 +35,7 @@ public class ShortestBridge {
                 }
             }
         }
+        System.out.println("arr = " + Arrays.deepToString(arr));
         int ans = Integer.MAX_VALUE;
         for (int[] xy : firstLand) {
             // 【注意】每次初始化访问标记【注意】
@@ -46,7 +47,6 @@ public class ShortestBridge {
     }
 
     /**
-     *
      * @param arr
      * @param x
      * @param y
@@ -91,30 +91,32 @@ public class ShortestBridge {
                 int[] curr = queue.poll();
                 x = curr[0];
                 y = curr[1];
-                // 找到了-1
+                // 找到了1
                 if (arr[x][y] == 1) {
                     return len;
                 }
-                if (x - 1 >= 0 && !visited[x - 1][y]) {
+                // 如果周围的节点是-1的话，没必要入队
+                if (x - 1 >= 0 && !visited[x - 1][y] && arr[x - 1][y] != -1) {
                     queue.offer(new int[]{x - 1, y});
                     visited[x - 1][y] = true;
                 }
-                if (x + 1 < arr.length && !visited[x + 1][y]) {
+                if (x + 1 < arr.length && !visited[x + 1][y] && arr[x + 1][y] != -1) {
                     queue.offer(new int[]{x + 1, y});
                     visited[x + 1][y] = true;
                 }
-                if (y - 1 >= 0 && !visited[x][y - 1]) {
+                if (y - 1 >= 0 && !visited[x][y - 1] && arr[x][y - 1] != -1) {
                     queue.offer(new int[]{x, y - 1});
                     visited[x][y - 1] = true;
                 }
-                if (y + 1 < arr[0].length && !visited[x][y + 1]) {
+                if (y + 1 < arr[0].length && !visited[x][y + 1] && arr[x][y + 1] != -1) {
                     queue.offer(new int[]{x, y + 1});
                     visited[x][y + 1] = true;
                 }
             }
             len++;
         }
-        return len;
+        // 一定是可以找到最短路径的，所以这里返回的是错误的
+        return Integer.MAX_VALUE;
     }
 
     public static void main(String[] args) {

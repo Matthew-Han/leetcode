@@ -1,3 +1,4 @@
+import javafx.util.Pair;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -10,6 +11,44 @@ import java.util.Stack;
  * @Version 1.0
  **/
 public class ValidParentheses {
+
+
+    public static void main(String[] args) {
+        System.out.println(isValid3("([([])]){(()[]())}"));
+    }
+
+    /**
+     * 执行用时： 5 ms , 在所有 Java 提交中击败了 9.16% 的用户
+     * 内存消耗： 37.7 MB , 在所有 Java 提交中击败了 53.96% 的用户
+     *
+     * @param s
+     * @return
+     */
+    public static boolean isValid3(String s) {
+        if ((s.length() & 1) != 0) {
+            return false;
+        }
+        Map<Character, Character> map = new HashMap<>();
+        map.put('(', ')');
+        map.put('[', ']');
+        map.put('{', '}');
+
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+
+            if (stack.isEmpty()) {
+                stack.push(s.charAt(i));
+                // 基本类型不与null做比较
+            } else if ((map.get(stack.peek()) == null ? ' ' : map.get(stack.peek())) == s.charAt(i)) {
+                stack.pop();
+            } else {
+                stack.push(s.charAt(i));
+            }
+        }
+        return stack.isEmpty();
+
+
+    }
 
     /**
      * 执行用时： 38 ms , 在所有 Java 提交中击败了 5.31% 的用户
@@ -76,7 +115,5 @@ public class ValidParentheses {
         return stack.isEmpty();
     }
 
-    public static void main(String[] args) {
 
-    }
 }
