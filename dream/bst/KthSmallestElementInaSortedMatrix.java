@@ -15,8 +15,9 @@ public class KthSmallestElementInaSortedMatrix {
 
     /**
      * 哈哈哈，虽然用时很长，但是自己凭本事写出了在一组无序的向量中，构建一颗BST！！
-     * 执行用时： 417 ms , 在所有 Java 提交中击败了 5.44% 的用户
-     * 内存消耗： 45.2 MB , 在所有 Java 提交中击败了 74.13% 的用户
+     *
+     * 执行用时： 167 ms , 在所有 Java 提交中击败了 5.44% 的用户
+     * 内存消耗： 45.2 MB , 在所有 Java 提交中击败了 77.59% 的用户
      *
      * @param matrix
      * @param k
@@ -30,12 +31,13 @@ public class KthSmallestElementInaSortedMatrix {
         dfs2(matrix, matrix.length - 1, 0, visited, tmp);
         System.out.println("tmp = " + tmp);
         TreeNode root = new TreeNode(tmp.get(0));
-        for (Integer n : tmp) {
-            buildBst(n, root);
+        // 第一位是root节点，已经add了
+        for (int i = 1; i < tmp.size(); i++) {
+            buildBst(tmp.get(i), root);
         }
         dfs(root, res);
         System.out.println("res = " + res);
-        return res.get(k);
+        return res.get(k - 1);
     }
 
     public static void buildBst(int n, TreeNode root) {
@@ -69,8 +71,8 @@ public class KthSmallestElementInaSortedMatrix {
     public static void dfs2(int[][] matrix, int x, int y, boolean[][] visited, List<Integer> res) {
         if (x >= 0 && y >= 0 && x < matrix.length && y < matrix[0].length && !visited[x][y]) {
             visited[x][y] = true;
-            dfs2(matrix, x - 1, y, visited, res);
             res.add(matrix[x][y]);
+            dfs2(matrix, x - 1, y, visited, res);
             dfs2(matrix, x, y + 1, visited, res);
         }
     }
@@ -84,6 +86,7 @@ public class KthSmallestElementInaSortedMatrix {
                 buildBst(i, root);
             }
         }
+        System.out.println("tmp = [1, 5, 9, 10, 11, 13, 12, 13, 15]");
         List<Integer> res = new ArrayList<>();
         dfs(root, res);
         System.out.println("res = " + res);
