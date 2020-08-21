@@ -1,7 +1,4 @@
-import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * @ClassName AddStrings
@@ -11,6 +8,50 @@ import java.util.List;
  * @Version 1.0
  **/
 public class AddStrings {
+
+    /**
+     * 今看到v2ex讨论面试算法的话题，其中考题就是大数相加，于是再来做一遍
+     * 执行用时： 3 ms , 在所有 Java 提交中击败了 79.76% 的用户
+     * 内存消耗： 40 MB , 在所有 Java 提交中击败了 22.57% 的用户
+     *
+     * @param num1
+     * @param num2
+     * @return
+     */
+    public static String addStrings2(String num1, String num2) {
+        int len = Math.max(num1.length(), num2.length());
+        int[] res = new int[len + 1];
+        if (num1.length() < num2.length()) {
+            String temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
+        char[] n1 = num1.toCharArray();
+        char[] n2 = num2.toCharArray();
+
+        int index = res.length - 1;
+        int j = n2.length - 1;
+        for (int i = num1.length() - 1; i >= 0; i--) {
+            res[index--] = (n1[i] - '0') + (j >= 0 ? (n2[j--] - '0') : 0);
+        }
+        for (int i = res.length - 1; i > 0; i--) {
+            if (res[i] > 9) {
+                res[i] %= 10;
+                res[i - 1]++;
+            }
+        }
+        System.out.println("res = " + Arrays.toString(res));
+        StringBuilder ans = new StringBuilder();
+        for (int i = 0; i < res.length; i++) {
+            if (i == 0 && res[i] == 0) {
+                continue;
+            }
+            ans.append(res[i]);
+        }
+        return ans.toString();
+
+
+    }
 
     /**
      * 执行用时 : 3 ms , 在所有 Java 提交中击败了 82.32% 的用户
@@ -58,7 +99,7 @@ public class AddStrings {
     }
 
     public static void main(String[] args) {
-        System.out.println(addStrings("0", "0"));
+        System.out.println(addStrings2("0", "0"));
         System.out.println((int) '9');
     }
 }
