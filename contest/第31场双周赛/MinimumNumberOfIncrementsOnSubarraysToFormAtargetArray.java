@@ -2,7 +2,7 @@ package 第31场双周赛;
 
 /**
  * @ClassName MinimumNumberOfIncrementsOnSubarraysToFormAtargetArray
- * @Description #5459 形成目标数组的子数组最少增加次数
+ * @Description #1526 形成目标数组的子数组最少增加次数
  * @Author MatthewHan
  * @Date 2020/7/25 23:36
  * @Version 1.0

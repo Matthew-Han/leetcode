@@ -5,7 +5,7 @@ import java.util.Set;
 
 /**
  * @ClassName NumberOfGoodWaysToSplitAstring
- * @Description #5458 字符串的好分割数目
+ * @Description #1525 字符串的好分割数目
  * @Author MatthewHan
  * @Date 2020/7/25 20:25
  * @Version 1.0

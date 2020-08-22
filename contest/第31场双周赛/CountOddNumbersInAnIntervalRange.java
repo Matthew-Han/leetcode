@@ -2,7 +2,7 @@ package 第31场双周赛;
 
 /**
  * @ClassName CountOddNumbersInAnIntervalRange
- * @Description #5456 在区间范围内统计奇数数目
+ * @Description #1523 在区间范围内统计奇数数目
  * @Author MatthewHan
  * @Date 2020/7/25 20:25
  * @Version 1.0
