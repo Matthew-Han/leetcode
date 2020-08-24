@@ -1,3 +1,4 @@
+
 /**
  * @ClassName RepeatedSubstringPattern
  * @Description #459 重复的子字符串
@@ -6,6 +7,52 @@
  * @Version 1.0
  **/
 public class RepeatedSubstringPattern {
+
+    public static void main(String[] args) {
+        System.out.println(repeatedSubstringPattern2("abcdabcd"));
+        System.out.println(repeatedSubstringPattern2("abab"));
+        System.out.println(repeatedSubstringPattern2("babbabbabbabbab"));
+
+    }
+
+    /**
+     * 执行用时： 48 ms , 在所有 Java 提交中击败了 71.99% 的用户
+     * 内存消耗： 40.3 MB , 在所有 Java 提交中击败了 43.66% 的用户
+     *
+     * @param s
+     * @return
+     */
+    public static boolean repeatedSubstringPattern2(String s) {
+        if (s.length() == 1) {
+            return false;
+        }
+        int len = s.length();
+        for (int i = 1; i < len; i++) {
+            // 这个sub长度一定是可以除得尽的
+            if (len % i == 0 && check(s, i)) {
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    public static boolean check(String s, int size) {
+        char[] tmp = new char[size];
+        for (int i = 0; i < size; i++) {
+            tmp[i] = s.charAt(i);
+        }
+        String sub = new String(tmp);
+        StringBuilder res = new StringBuilder();
+        int count = s.length() / size;
+
+        for (int i = 0; i < count; i++) {
+            res.append(sub);
+        }
+        System.out.println("res = " + res);
+        return res.toString().equals(s);
+    }
+
 
     /**
      * 执行用时 : 281 ms , 在所有 Java 提交中击败了 7.05% 的用户
@@ -46,7 +93,7 @@ public class RepeatedSubstringPattern {
      * 假如字符串S有N个字符串s组成，那么2个S组成的字符串应该是由2N个s字符串组成
      * 将原字符串给出拷贝一遍组成新字符串
      * 掐头去尾留中间
-     * 3如果还包含原字符串，则满足题意
+     * 如果还包含原字符串，则满足题意
      *
      * @param s
      * @return
@@ -57,8 +104,4 @@ public class RepeatedSubstringPattern {
     }
 
 
-    public static void main(String[] args) {
-        System.out.println(repeatedSubstringPatternPro("abcdabcd"));
-
-    }
 }
