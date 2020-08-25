@@ -1,5 +1,6 @@
 package dfs;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,6 +12,53 @@ import java.util.List;
  * @Version 1.0
  **/
 public class SurroundedRegions {
+
+    boolean flag = true;
+
+    /**
+     * 拉胯，这方法
+     * 执行用时： 18 ms , 在所有 Java 提交中击败了 5.40% 的用户
+     * 内存消耗： 46.8 MB , 在所有 Java 提交中击败了 5.03% 的用户
+     *
+     * @param board
+     */
+    public void solve2(char[][] board) {
+        for (int i = 1; i < board.length - 1; i++) {
+            for (int j = 1; j < board[i].length - 1; j++) {
+                if (board[i][j] == 'O') {
+                    boolean[][] visited = new boolean[board.length][board[0].length];
+                    List<int[]> tmp = new ArrayList<>();
+                    dfs2(board, i, j, visited, tmp);
+                    if (flag) {
+                        for (int[] ints : tmp) {
+                            board[ints[0]][ints[1]] = 'X';
+                        }
+                    } else {
+                        // 重置
+                        flag = true;
+                    }
+                }
+            }
+        }
+    }
+
+
+    public void dfs2(char[][] board, int x, int y, boolean[][] visited, List<int[]> set) {
+        if (x >= 0 && y >= 0 && x < board.length && y < board[0].length && !visited[x][y] && board[x][y] == 'O') {
+            visited[x][y] = true;
+            // 说明「O」在边界
+            if (x == 0 || x == board.length - 1 || y == 0 || y == board[0].length - 1) {
+                flag = false;
+                return;
+            }
+            set.add(new int[]{x, y});
+            dfs2(board, x - 1, y, visited, set);
+            dfs2(board, x + 1, y, visited, set);
+            dfs2(board, x, y - 1, visited, set);
+            dfs2(board, x, y + 1, visited, set);
+        }
+    }
+
 
     /**
      * 示例:
