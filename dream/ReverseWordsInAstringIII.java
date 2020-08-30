@@ -12,6 +12,25 @@ import java.util.List;
 public class ReverseWordsInAstringIII {
 
     /**
+     * 执行用时： 5 ms , 在所有 Java 提交中击败了 88.52% 的用户
+     * 内存消耗： 40.8 MB , 在所有 Java 提交中击败了 9.96% 的用户
+     *
+     * @param s
+     * @return
+     */
+    public String reverseWords2(String s) {
+        String[] strings = s.split(" ");
+        StringBuilder ans = new StringBuilder();
+        for (String string : strings) {
+            StringBuilder tmp = new StringBuilder(string);
+            ans.append(tmp.reverse().append(" "));
+        }
+        ans.deleteCharAt(ans.length() - 1);
+        return ans.toString();
+    }
+
+
+    /**
      * 执行用时 : 7 ms , 在所有 Java 提交中击败了 66.99% 的用户
      * 内存消耗 : 40.2 MB , 在所有 Java 提交中击败了 5.00% 的用户
      *
