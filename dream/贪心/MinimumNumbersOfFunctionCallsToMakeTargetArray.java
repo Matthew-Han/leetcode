@@ -1,7 +1,5 @@
 package 贪心;
 
-import java.util.Arrays;
-
 /**
  * @ClassName MinimumNumbersOfFunctionCallsToMakeTargetArray
  * @Description #1558 得到目标数组的最少函数调用次数
@@ -64,5 +62,7 @@ public class MinimumNumbersOfFunctionCallsToMakeTargetArray {
     public static void main(String[] args) {
         MinimumNumbersOfFunctionCallsToMakeTargetArray mmm = new MinimumNumbersOfFunctionCallsToMakeTargetArray();
         System.out.println(mmm.minOperations(new int[]{1, 5}));
+
+        System.out.println((int) Math.log(9) / Math.log(2));
     }
 }
