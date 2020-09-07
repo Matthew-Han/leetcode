@@ -13,8 +13,9 @@ public class BinaryTreeLevelOrderTraversalII {
 
 
     /**
-     * 执行用时： 1 ms , 在所有 Java 提交中击败了 98.02% 的用户
-     * 内存消耗： 40.1 MB , 在所有 Java 提交中击败了 17.95% 的用户
+     * 执行用时： 1 ms , 在所有 Java 提交中击败了 98.22% 的用户
+     * 内存消耗： 39.8 MB , 在所有 Java 提交中击败了 85.34% 的用户
+     *
      * @param root
      * @return
      */
