@@ -34,7 +34,7 @@ public class LruCache {
         for (Pair<Integer, Integer> pair : data) {
             if (pair.getKey() == key) {
                 value = pair.getValue();
-                data.remove();
+                data.remove(pair);
                 break;
             }
         }
@@ -59,7 +59,7 @@ public class LruCache {
             boolean flag = false;
             for (Pair<Integer, Integer> pair : data) {
                 if (pair.getKey() == key) {
-                    data.remove();
+                    data.remove(pair);
                     flag = true;
                     break;
                 }
