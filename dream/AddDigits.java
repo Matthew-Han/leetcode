@@ -71,10 +71,4 @@ public class AddDigits {
         return addDigitsMath(result);
     }
 
-
-    public static void main(String[] args) {
-        System.out.println(addDigitsMath(44));
-
-
-    }
 }
