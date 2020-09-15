@@ -1,9 +1,6 @@
 package tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @ClassName AverageOfLevelsInBinaryTree
@@ -13,6 +10,41 @@ import java.util.Queue;
  * @Version 1.0
  **/
 public class AverageOfLevelsInBinaryTree {
+
+
+
+
+    /**
+     * 执行用时： 2 ms , 在所有 Java 提交中击败了 99.17% 的用户
+     * 内存消耗： 41.6 MB , 在所有 Java 提交中击败了 36.96% 的用户
+     *
+     * @param root
+     * @return
+     */
+    public List<Double> averageOfLevels2(TreeNode root) {
+        List<Double> res = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (root != null) {
+            queue.add(root);
+        }
+        while (!queue.isEmpty()) {
+            int limit = queue.size();
+            double tmp = 0;
+            for (int i = 0; i < limit; i++) {
+                TreeNode curr = queue.poll();
+                tmp += curr.val;
+                if (curr.left != null) {
+                    queue.add(curr.left);
+                }
+                if (curr.right != null) {
+                    queue.add(curr.right);
+                }
+            }
+            res.add(tmp / limit);
+        }
+        return res;
+    }
+
 
     /**
      * 执行用时： 3 ms , 在所有 Java 提交中击败了 73.72% 的用户
