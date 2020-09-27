@@ -1,6 +1,8 @@
 package bst;
 
 import tree.TreeNode;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * @ClassName LowestCommonAncestorOfaBinarySearchTree
@@ -30,4 +32,45 @@ public class LowestCommonAncestorOfaBinarySearchTree {
         }
         return root;
     }
+
+    /**
+     * 后来写的，性能轻微拉胯
+     *
+     * @param root
+     * @param p
+     * @param q
+     * @return
+     */
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        TreeNode ans = null;
+        while (!queue.isEmpty()) {
+            int limit = queue.size();
+            for (int i = 0; i < limit; i++) {
+                TreeNode curr = queue.poll();
+                if (dfs(curr, p) && dfs(curr, q)) {
+                    ans = curr;
+                }
+                if (curr.left != null) {
+                    queue.offer(curr.left);
+                }
+                if (curr.right != null) {
+                    queue.offer(curr.right);
+                }
+            }
+        }
+        return ans;
+    }
+
+    public boolean dfs(TreeNode node, TreeNode child) {
+        if (node == null) {
+            return false;
+        }
+        if (node == child) {
+            return true;
+        }
+        return dfs(node.left, child) || dfs(node.right, child);
+    }
+
 }
