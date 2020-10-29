@@ -19,22 +19,22 @@ public class LetterCasePermutation {
      * 执行用时： 90 ms , 在所有 Java 提交中击败了 5.00% 的用户
      * 内存消耗： 39.8 MB , 在所有 Java 提交中击败了 25.40% 的用户
      *
-     * @param S
+     * @param s
      * @return
      */
-    public List<String> letterCasePermutation(String S) {
+    public List<String> letterCasePermutation(String s) {
         Set<String> res = new HashSet<>();
         StringBuilder newStr = new StringBuilder();
         int diff = 'a' - 'A';
-        for (int i = 0; i < S.length(); i++) {
-            char curr = S.charAt(i);
+        for (int i = 0; i < s.length(); i++) {
+            char curr = s.charAt(i);
             if (Character.isUpperCase(curr)) {
                 curr += diff;
             }
             newStr.append(curr);
         }
         dfs(newStr.toString(), res, 0);
-        res.add(S);
+        res.add(s);
         return new ArrayList<>(res);
     }
 
@@ -50,8 +50,8 @@ public class LetterCasePermutation {
         }
     }
 
-    public String toUpper(String S, int i) {
-        char[] tmp = S.toCharArray();
+    public String toUpper(String s, int i) {
+        char[] tmp = s.toCharArray();
         tmp[i] -= 'a' - 'A';
         return String.valueOf(tmp);
     }
