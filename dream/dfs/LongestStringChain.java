@@ -24,7 +24,12 @@ public class LongestStringChain {
      * @return
      */
     public static int longestStrChain(String[] words) {
-        Arrays.sort(words, new Lsc());
+        Arrays.sort(words, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return Integer.compare(o1.length(), o2.length());
+            }
+        });
         List<List<String>> res = new ArrayList<>();
         for (String word : words) {
             List<String> list = new ArrayList<>();
@@ -55,6 +60,7 @@ public class LongestStringChain {
     }
 
     public static boolean check(String curr, String word) {
+
         int[] bucket = new int[26];
         for (int i = 0; i < word.length(); i++) {
             if (i < curr.length()) {
@@ -72,10 +78,4 @@ public class LongestStringChain {
 
 }
 
-class Lsc implements Comparator<String> {
 
-    @Override
-    public int compare(String o1, String o2) {
-        return Integer.compare(o1.length(), o2.length());
-    }
-}
