@@ -9,6 +9,55 @@ import java.util.Arrays;
  **/
 public class MaximumLengthOfRepeatedSubarray {
 
+
+    int max = 0;
+
+    /**
+     * 执行用时： 67 ms , 在所有 Java 提交中击败了 36.40% 的用户
+     * 内存消耗： 38.1 MB , 在所有 Java 提交中击败了 96.86% 的用户
+     *
+     * @param char1
+     * @param char2
+     * @return
+     */
+    public int fuck(int[] char1, int[] char2) {
+        int len1 = char1.length;
+        int len2 = char2.length;
+        int[] tmp = new int[len1 + len2 * 2];
+        Arrays.fill(tmp, -1);
+        int j = 0;
+        for (int i = 0; i < len1; i++) {
+            tmp[i + len2] = char1[j++];
+        }
+        // System.out.println(Arrays.toString(tmp));
+        dfs(tmp, char2, 0);
+        return max;
+    }
+
+    public void dfs(int[] tmp, int[] char2, int index) {
+        if (index > tmp.length - char2.length) {
+            return;
+        }
+        int j = 0;
+        int c = 0;
+        boolean flag = false;
+        for (int i = index; i < index + char2.length; i++) {
+            if (tmp[i] == char2[j]) {
+                flag = true;
+                c++;
+            } else if (flag && tmp[i] != char2[j]) {
+                max = Math.max(max, c);
+                c = 0;
+                flag = false;
+            }
+            j++;
+        }
+        max = Math.max(max, c);
+        c = 0;
+        dfs(tmp, char2, index + 1);
+    }
+
+
     public static void main(String[] args) {
         System.out.println(findLength2(new int[]{1, 2, 3, 4, 5}, new int[]{1, 2, 3, 5, 4}));
         System.out.println(findLength2(new int[]{0, 1, 1, 1, 1}, new int[]{1, 0, 1, 0, 1}));
