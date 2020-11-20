@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Matthew Han
@@ -32,6 +31,11 @@ public class FindAndReplacePattern {
     }
 
     public String convert(String word) {
+        Map<Character, Integer> map = new HashMap<>(2 * 4 / 3 + 1);
+        for (char c : new char[]{'1','2','1'}) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+
         StringBuilder sb = new StringBuilder();
         List<Character> list = new ArrayList<>(word.length());
         int index = 0;
