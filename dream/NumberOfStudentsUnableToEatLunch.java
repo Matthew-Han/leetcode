@@ -21,20 +21,17 @@ public class NumberOfStudentsUnableToEatLunch {
      */
     public int countStudents(int[] students, int[] sandwiches) {
         Queue<Integer> queue = new LinkedList<>();
-        Stack<Integer> stack = new Stack<>();
 
         for (int s : students) {
             queue.offer(s);
         }
-        for (int i = sandwiches.length - 1; i >= 0; i--) {
-            stack.add(sandwiches[i]);
-        }
+        int stackIndex = 0;
         int c = 0;
         while (true) {
-            if (queue.peek().equals(stack.peek())) {
+            if (queue.peek() == sandwiches[stackIndex]) {
                 c = 0;
                 queue.poll();
-                stack.pop();
+                stackIndex++;
             } else {
                 int tmp = queue.poll();
                 queue.offer(tmp);
