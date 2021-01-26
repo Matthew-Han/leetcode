@@ -1,7 +1,6 @@
 package dfs;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Matthew Han
@@ -34,13 +33,13 @@ public class PalindromePartitioning {
                 List<String> tmp = new ArrayList<>();
                 tmp.add(prev);
                 // System.out.println(prev);
-                dfs(s, prev, i, tmp, res);
+                dfs(s, i, tmp, res);
             }
         }
         return res;
     }
 
-    public void dfs(String s, String prev, int index, List<String> tmp, List<List<String>> res) {
+    public void dfs(String s, int index, List<String> tmp, List<List<String>> res) {
         if (index == s.length()) {
             res.add(tmp);
         }
@@ -51,7 +50,7 @@ public class PalindromePartitioning {
             String curr = s.substring(index, index + j);
             if (check(curr)) {
                 next.add(curr);
-                dfs(s, curr, index + j, next, res);
+                dfs(s, index + j, next, res);
             }
         }
     }
@@ -68,7 +67,5 @@ public class PalindromePartitioning {
         return sb.reverse().toString().equals(s);
     }
 
-    public static void main(String[] args) {
-        System.out.println("4".charAt(0) - '0');
-    }
+
 }

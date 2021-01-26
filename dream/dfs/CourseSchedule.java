@@ -11,6 +11,54 @@ import java.util.Queue;
  **/
 public class CourseSchedule {
 
+
+    /**
+     * 拓扑排序
+     * 执行用时： 143 ms , 在所有 Java 提交中击败了 5.00% 的用户
+     * 内存消耗： 39.1 MB , 在所有 Java 提交中击败了 52.11% 的用户
+     *
+     * @param numCourses
+     * @param prerequisites
+     * @return
+     */
+    public boolean canFinish2(int numCourses, int[][] prerequisites) {
+        Queue<int[]> queue = new LinkedList<>();
+        for (int[] p : prerequisites) {
+            queue.offer(p);
+        }
+
+        while (!search(numCourses, queue).isEmpty()) {
+            Queue<Integer> tmp = search(numCourses, queue);
+            while (!tmp.isEmpty()) {
+                Integer t = tmp.poll();
+                queue.removeIf(ints -> ints[0] == t || ints[1] == t);
+            }
+        }
+        return queue.isEmpty();
+    }
+
+    public Queue<Integer> search(int numCourses, Queue<int[]> queue) {
+        Queue<Integer> res = new LinkedList<>();
+        int[] set = new int[numCourses];
+        for (int[] q : queue) {
+            if (set[q[1]] == 0) {
+                set[q[1]] = 1;
+            }
+        }
+        for (int[] q : queue) {
+            if (set[q[0]] != 0) {
+                set[q[0]] = 0;
+            }
+        }
+        for (int i = 0; i < set.length; i++) {
+            if (set[i] == 1) {
+                res.offer(i);
+            }
+        }
+        return res;
+    }
+
+
     /**
      * #207 课程表
      * 经典超时

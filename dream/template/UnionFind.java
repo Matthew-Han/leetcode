@@ -1,6 +1,6 @@
 package template;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * @author Matthew Han
@@ -44,7 +44,6 @@ public class UnionFind {
         }
         return element;
     }
-
     /**
      * 判断两个元素是否同属于一个集合
      *
@@ -71,10 +70,4 @@ public class UnionFind {
         parent[firstRoot] = secondRoot;
     }
 
-    public static void main(String[] args) {
-        int[][] src = new int[][]{{1, 2}, {1, 3}, {2, 3}};
-        UnionFind unionFind = new UnionFind(3);
-        System.out.println("unionFind = " + unionFind);
-
-    }
 }
