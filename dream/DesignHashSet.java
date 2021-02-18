@@ -9,7 +9,7 @@ import java.util.Arrays;
  **/
 public class DesignHashSet {
 
-    int[] data = null;
+    int[] data;
 
     public static void main(String[] args) {
 
@@ -31,9 +31,7 @@ public class DesignHashSet {
      */
     public DesignHashSet() {
         data = new int[1000001];
-        for (int i = 0; i < data.length; i++) {
-            data[i] = -1;
-        }
+        Arrays.fill(data, -1);
     }
 
     public void add(int key) {
