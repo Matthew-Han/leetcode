@@ -1,5 +1,7 @@
 package 贪心;
 
+import java.util.Random;
+
 /**
  * @author Matthew Han
  * @version 1.0
@@ -56,4 +58,5 @@ public class CouplesHoldingHands {
         }
         return ans;
     }
+
 }
