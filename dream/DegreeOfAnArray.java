@@ -25,32 +25,24 @@ public class DegreeOfAnArray {
         // 存放 nums[i] 的两端 index
         Map<Integer, int[]> cache = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            // 初始化
-            if (!cache.containsKey(nums[i])) {
-                int[] v = new int[]{i, i};
-                cache.put(nums[i], v);
-            }
-
             bucket[nums[i]]++;
             if (max == bucket[nums[i]]) {
                 list.add(nums[i]);
-
-                // 更新右端点
-                int[] v = cache.get(nums[i]);
-                v[1] = i;
-                cache.put(nums[i], v);
             } else if (max < bucket[nums[i]]) {
                 max = bucket[nums[i]];
                 list.clear();
                 list.add(nums[i]);
-
-                // 更新右端点
-                int[] v = cache.get(nums[i]);
-                v[1] = i;
-                cache.put(nums[i], v);
             }
-
-
+            int[] v;
+            if (!cache.containsKey(nums[i])) {
+                // 初始化
+                v = new int[]{i, i};
+            } else {
+                // 更新右端点
+                v = cache.get(nums[i]);
+                v[1] = i;
+            }
+            cache.put(nums[i], v);
         }
         for (Integer n : list) {
             int[] v = cache.get(n);
@@ -126,7 +118,4 @@ public class DegreeOfAnArray {
         return len;
     }
 
-    public static void main(String[] args) {
-        System.out.println(findShortestSubArrayOld(new int[]{1, 2, 1, 2, 3, 2}));
-    }
 }

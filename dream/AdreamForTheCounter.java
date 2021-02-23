@@ -2,6 +2,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
 
 /**
  * @ClassName Counter
@@ -10,7 +14,7 @@ import java.io.IOException;
  * @Date 2020/6/12 18:39
  * @Version 1.0
  **/
-public class Counter {
+public class AdreamForTheCounter {
 
 
     /**
@@ -39,7 +43,7 @@ public class Counter {
         if (!file.isDirectory()) {
             String filename = file.getName();
             // 判断是否是.java文件
-            if (filename.endsWith(".java")) {
+            if (filename.endsWith(".java") && !filename.startsWith("AdreamForTheCounter")) {
                 j++;
                 BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
                 while (bufferedReader.readLine() != null) {
