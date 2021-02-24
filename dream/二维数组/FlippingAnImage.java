@@ -22,6 +22,28 @@ public class FlippingAnImage {
         System.out.println(Arrays.toString(ff));
     }
 
+    /**
+     * 时隔 8 个月,这次的代码相比于上一次的代码似乎又更精简了一些
+     * 2021 年初期还有许多目标没有实现,各个目标的进展也比较缓慢
+     * 加油吧!
+     *
+     * @param A
+     * @return
+     */
+    public int[][] flipAndInvertImageIn20210224(int[][] A) {
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A[0].length; j++) {
+                if (j < A[0].length / 2) {
+                    int tmp = A[i][j];
+                    A[i][j] = A[i][A[0].length - 1 - j];
+                    A[i][A[0].length - 1 - j] = tmp;
+                }
+                A[i][j] = 1 - A[i][j];
+            }
+        }
+        return A;
+    }
+
 
     /**
      * 时隔10个月
