@@ -33,7 +33,13 @@ public class AdreamForTheCounter {
         traverseFiles(file);
         System.out.println("所写文件个数：" + j);
         System.out.println("所写代码总行数：" + i);
+
+
+
+        /* ----------------------------------- test ----------------------------------- */
+
     }
+
 
     public static void traverseFiles(File file) throws IOException {
         if (!file.exists()) {
@@ -64,4 +70,5 @@ public class AdreamForTheCounter {
         }
 
     }
+
 }

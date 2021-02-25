@@ -21,8 +21,8 @@ public class LongestRepeatingCharacterReplacement {
      * @return
      */
     public int characterReplacement(String s, int k) {
-        int size = s.length();
 
+        int size = s.length();
         int ans = 0;
         int left = 0;
         int right = left + 1;
