@@ -2,10 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @ClassName Counter
@@ -15,6 +12,7 @@ import java.util.Queue;
  * @Version 1.0
  **/
 public class AdreamForTheCounter {
+
 
 
     /**
@@ -35,7 +33,14 @@ public class AdreamForTheCounter {
         System.out.println("所写代码总行数：" + i);
 
 
-
+        StringBuilder stringBuilder = new StringBuilder();
+        double len = 40000;
+        for (double i = 1; i < len; i++) {
+            Random random = new Random();
+            int r = random.nextInt(26);
+            stringBuilder.append((char) (r + 'a'));
+        }
+        System.out.println("stringBuilder = " + stringBuilder);
         /* ----------------------------------- test ----------------------------------- */
 
     }
