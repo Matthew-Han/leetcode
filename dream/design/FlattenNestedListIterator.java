@@ -8,74 +8,66 @@ import java.util.List;
  * @author Matthew Han
  * @version 1.0
  * @description
- * @since 2020/11/20 15:00
+ * @since 2021/3/23 10:23
  **/
 public class FlattenNestedListIterator implements Iterator<Integer> {
 
-    private interface NestedInteger {
+    public interface NestedInteger {
 
         /**
-         * 如果此NestedInteger持有单个整数而不是嵌套列表，则返回true。
-         *
-         * @return
+         * @return true if this NestedInteger holds a single integer, rather than a nested list
          */
-        boolean isInteger();
+        public boolean isInteger();
 
         /**
-         * 如果此NestedInteger持有单个整数，则返回此整数
-         * 如果此NestedInteger包含嵌套列表，则返回null
-         *
-         * @return
+         * @return the single integer that this NestedInteger holds, if it holds a single integer
+         * Return null if this NestedInteger holds a nested list
          */
-        Integer getInteger();
+        public Integer getInteger();
+
 
         /**
-         * 返回此NestedInteger所保存的嵌套列表（如果它包含嵌套列表）
-         * 如果此NestedInteger包含单个整数，则返回null
-         *
-         * @return
+         * @return the nested list that this NestedInteger holds, if it holds a nested list
+         * Return null if this NestedInteger holds a single integer
          */
-        List<NestedInteger> getList();
+        public List<NestedInteger> getList();
     }
 
+    List<Integer> data;
     int index;
-
-    private final List<Integer> res;
 
     /**
      * #341 扁平化嵌套列表迭代器
-     * 执行用时： 3 ms , 在所有 Java 提交中击败了 98.02% 的用户
-     * 内存消耗： 40.7 MB , 在所有 Java 提交中击败了 87.33% 的用户
+     * 执行用时： 3 ms , 在所有 Java 提交中击败了 91.05% 的用户
+     * 内存消耗： 41 MB , 在所有 Java 提交中击败了 23.05% 的用户
      *
      * @param nestedList
      */
     public FlattenNestedListIterator(List<NestedInteger> nestedList) {
-        index = 0;
-        this.res = new ArrayList<>();
-        for (NestedInteger nestedInteger : nestedList) {
-            dfs(nestedInteger);
+        this.data = new ArrayList<>();
+        this.index = 0;
+        init(nestedList);
+    }
+
+    public void init(List<NestedInteger> list) {
+        for (NestedInteger curr : list) {
+            if (curr.isInteger()) {
+                data.add(curr.getInteger());
+            } else {
+                init(curr.getList());
+            }
         }
+
     }
 
     @Override
     public Integer next() {
-        return res.get(index++);
+        return data.get(index++);
     }
-
 
     @Override
     public boolean hasNext() {
-        return index < res.size();
-    }
-
-    public void dfs(NestedInteger nestedInteger) {
-        if (nestedInteger.isInteger()) {
-            res.add(nestedInteger.getInteger());
-        } else {
-            for (NestedInteger integer : nestedInteger.getList()) {
-                dfs(integer);
-            }
-        }
+        return index < data.size();
     }
 
 }
