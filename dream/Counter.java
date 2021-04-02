@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @ClassName Counter
@@ -11,8 +13,7 @@ import java.util.*;
  * @Date 2020/6/12 18:39
  * @Version 1.0
  **/
-public class AdreamForTheCounter {
-
+public class Counter {
 
 
     /**
@@ -34,7 +35,7 @@ public class AdreamForTheCounter {
 
 
         StringBuilder stringBuilder = new StringBuilder();
-        double len = 40000;
+        double len = 1000;
         for (double i = 1; i < len; i++) {
             Random random = new Random();
             int r = random.nextInt(26);
@@ -42,6 +43,19 @@ public class AdreamForTheCounter {
         }
         System.out.println("stringBuilder = " + stringBuilder);
         /* ----------------------------------- test ----------------------------------- */
+
+
+        List<Integer> values = Stream.of(1, 2, 3, 4, 5)
+                .collect(Collectors.toList());
+
+        System.out.println(values.getClass());
+
+        values = Stream.of(1, 2, 3, 4, 5)
+                .filter(x -> x > 1)
+                .collect(LinkedList::new, List::add, List::addAll);
+
+        System.out.println(values);
+
 
     }
 
