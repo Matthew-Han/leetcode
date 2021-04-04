@@ -1,3 +1,5 @@
+package 第234场周赛;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +13,7 @@ import java.util.Map;
 public class EvaluateTheBracketPairsOfaString {
 
     /**
-     * #5714 替换字符串中的括号内容
+     * #1807 替换字符串中的括号内容
      * 执行用时： 52 ms , 在所有 Java 提交中击败了 100.00% 的用户
      * 内存消耗： 77.9 MB , 在所有 Java 提交中击败了 100.00% 的用户
      *

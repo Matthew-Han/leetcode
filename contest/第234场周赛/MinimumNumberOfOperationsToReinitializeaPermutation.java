@@ -1,3 +1,5 @@
+package 第234场周赛;
+
 /**
  * @author Matthew Han
  * @version 1.0

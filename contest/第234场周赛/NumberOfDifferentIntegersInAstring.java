@@ -1,3 +1,5 @@
+package 第234场周赛;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,7 +12,7 @@ import java.util.Set;
 public class NumberOfDifferentIntegersInAstring {
 
     /**
-     * #5713 字符串中不同整数的数目
+     * #1805 字符串中不同整数的数目
      * 执行用时： 4 ms , 在所有 Java 提交中击败了 100.00% 的用户
      * 内存消耗： 36.4 MB , 在所有 Java 提交中击败了 100.00% 的用户
      *
