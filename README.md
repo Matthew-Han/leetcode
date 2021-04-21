@@ -1,2 +1,2 @@
-# leetcode
-leetcode算法题个人解法
+# Leetcode
+Leetcode 个人记录
