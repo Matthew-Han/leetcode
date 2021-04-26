@@ -22,13 +22,39 @@ public class QuickSort<T extends Comparable<T>> implements ISort<T> {
     }
 
     public void quickSort(T[] arr, int left, int right) {
-        //todo 等下回家写
-
+        if (left > right) {
+            return;
+        }
+        int i = left;
+        int j = right;
+        T pivot = arr[i];
+        while (i < j) {
+            while (i < j && arr[j].compareTo(pivot) >= 0) {
+                j--;
+            }
+            if (i < j && arr[j].compareTo(pivot) < 0) {
+                arr[i] = arr[j];
+                i++;
+            }
+            while (i < j && arr[i].compareTo(pivot) < 1) {
+                i++;
+            }
+            if (i < j && arr[i].compareTo(pivot) > 0) {
+                arr[j] = arr[i];
+                j--;
+            }
+        }
+        if (i == j) {
+            arr[i] = pivot;
+        }
+        quickSort(arr, left, i - 1);
+        quickSort(arr, i + 1, right);
+        System.out.println("arr = " + Arrays.toString(arr));
 
     }
 
     public static void main(String[] args) {
         QuickSort<Integer> demo = new QuickSort<>();
-        demo.sort(new Integer[]{3, 8, 1, 4, 5});
+        demo.sort(new Integer[]{4, 5, 1, 1, 0, 2, 3, 3, 3, 33, 2, -1, 2, -111, 111});
     }
 }
