@@ -14,6 +14,34 @@ import java.util.List;
 public class RangeSumOfBst {
 
     /**
+     * <date>2020/4/27</date>
+     * 利用了 BST 的性质做优化
+     * 执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+     * 内存消耗： 46.6 MB , 在所有 Java 提交中击败了 25.91% 的用户
+     *
+     * @param root
+     * @param low
+     * @param high
+     * @return
+     */
+    public int rangeSumBST(TreeNode root, int low, int high) {
+        if (root != null) {
+            // 利用 BST 的特性
+            if (root.val > high) {
+                return rangeSumBST(root.left, low, high);
+            }
+            if (root.val < low) {
+                return rangeSumBST(root.right, low, high);
+            }
+            return root.val
+                    + rangeSumBST(root.left, low, high)
+                    + rangeSumBST(root.right, low, high);
+        } else {
+            return 0;
+        }
+    }
+
+    /**
      * 当前节点的val比r大，只需要遍历左边
      * 当前节点的val比l小，只需要遍历右边
      * <p>
