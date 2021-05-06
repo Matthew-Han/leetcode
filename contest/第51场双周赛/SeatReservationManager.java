@@ -18,7 +18,7 @@ public class SeatReservationManager {
      */
     public SeatReservationManager(int n) {
         index = 0;
-        data = new boolean[n];
+        data = new boolean[n + 1];
     }
 
     public int reserve() {
@@ -35,7 +35,7 @@ public class SeatReservationManager {
 
     public void unreserve(int seatNumber) {
         data[seatNumber - 1] = false;
-        if (index >= seatNumber - 1) {
+        if (index > seatNumber - 1) {
             index = seatNumber - 1;
         }
     }
