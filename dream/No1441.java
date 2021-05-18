@@ -8,7 +8,7 @@ import java.util.List;
  * @Date 2020/7/14 16:41
  * @Version 1.0
  **/
-public class BuildAnArrayWithStackOperations {
+public class No1441 {
 
     /**
      * 执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户

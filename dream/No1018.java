@@ -8,7 +8,7 @@ import java.util.List;
  * @Date 2020/7/1 16:45
  * @Version 1.0
  **/
-public class BinaryPrefixDivisibleBy5 {
+public class No1018 {
 
     /**
      * 执行用时： 5 ms , 在所有 Java 提交中击败了 70.36% 的用户

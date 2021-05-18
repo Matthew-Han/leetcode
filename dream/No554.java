@@ -9,7 +9,7 @@ import java.util.Map;
  * @date 2021/5/2 20:41
  * @since 1.0.0
  **/
-public class BrickWall {
+public class No554 {
 
     /**
      * #554 砖墙

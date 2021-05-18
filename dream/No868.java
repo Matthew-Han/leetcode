@@ -5,7 +5,7 @@
  * @Date 2020/6/20 23:30
  * @Version 1.0
  **/
-public class BinaryGap {
+public class No868 {
 
     /**
      * 执行用时 : 1 ms , 在所有 Java 提交中击败了 80.67% 的用户

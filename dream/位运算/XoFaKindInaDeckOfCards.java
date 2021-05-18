@@ -1,7 +1,9 @@
+package 位运算;
+
 import java.util.*;
 
 /**
- * @ClassName XoFaKindInaDeckOfCards
+ * @ClassName 位运算.XoFaKindInaDeckOfCards
  * @Description #914 卡牌分组
  * @Author MatthewHan
  * @Date 2020/6/23 11:21

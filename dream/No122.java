@@ -5,7 +5,7 @@
  * @Date 2020/4/20 10:04
  * @Version 1.0
  **/
-public class BestTimeToBuyAndSellStockII {
+public class No122 {
 
     /**
      * 执行用时 : 1 ms , 在所有 Java 提交中击败了 99.10% 的用户

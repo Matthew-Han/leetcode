@@ -9,7 +9,7 @@ import java.util.List;
  * @Date 2020/5/24 21:12
  * @Version 1.0
  **/
-public class BaseballGame {
+public class No682 {
 
     /**
      * 执行用时 : 4 ms , 在所有 Java 提交中击败了 36.12% 的用户

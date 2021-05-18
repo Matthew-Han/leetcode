@@ -5,7 +5,7 @@
  * @Date 2020/7/15 14:52
  * @Version 1.0
  **/
-public class AverageSalaryExcludingTheMinimumAndMaximumSalary {
+public class No1491 {
 
     /**
      * 执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户

@@ -5,7 +5,7 @@
  * @Date 2020/9/2 18:19
  * @Version 1.0
  **/
-public class BulbSwitcher {
+public class No319 {
 
     /**
      * 执行用时： 1 ms , 在所有 Java 提交中击败了 5.22% 的用户

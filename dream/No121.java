@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @Date 2020/4/18 02:20
  * @Version 1.0
  **/
-public class BestTimeToBuyAndSellStock {
+public class No121 {
 
     /**
      * 执行用时 : 370 ms , 在所有 Java 提交中击败了 9.26% 的用户

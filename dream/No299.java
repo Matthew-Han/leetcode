@@ -9,12 +9,13 @@ import java.util.List;
  * @Date 2020/5/8 09:49
  * @Version 1.0
  **/
-public class BullsAndCows {
+public class No299 {
 
     /**
      * 有史以来最长用时
      * 执行用时 : 1817 ms , 在所有 Java 提交中击败了 5.25% 的用户
      * 内存消耗 : 43.5 MB , 在所有 Java 提交中击败了 5.55% 的用户
+     *
      * @param secret
      * @param guess
      * @return
@@ -52,7 +53,7 @@ public class BullsAndCows {
             }
         }
         System.out.println(cows);
-        return bulls + "A" + (cows-bulls) + "B";
+        return bulls + "A" + (cows - bulls) + "B";
     }
 
     public static void main(String[] args) {

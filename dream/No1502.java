@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @Date 2020/7/15 17:17
  * @Version 1.0
  **/
-public class CanMakeArithmeticProgressionFromSequence {
+public class No1502 {
 
     /**
      * 执行用时： 1 ms , 在所有 Java 提交中击败了 99.64% 的用户

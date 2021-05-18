@@ -5,7 +5,7 @@
  * @Date 2020/5/6 13:58
  * @Version 1.0
  **/
-public class AddDigits {
+public class No258 {
 
     /**
      * 执行用时 : 11 ms , 在所有 Java 提交中击败了 5.22% 的用户

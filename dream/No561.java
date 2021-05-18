@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @Date 2020/5/20 16:54
  * @Version 1.0
  **/
-public class ArrayPartitionI {
+public class No561 {
 
     /**
      * 数学问题，下等马换上等马

@@ -4,7 +4,7 @@
  * @description
  * @since 2021/4/14 09:38
  **/
-public class BulbSwitcherIII {
+public class No1375 {
 
     /**
      * #1375 灯泡开关 III

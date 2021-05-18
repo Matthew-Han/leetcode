@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @Date 2020/5/14 15:48
  * @Version 1.0
  **/
-public class AddStrings {
+public class No415 {
 
     /**
      * 今看到v2ex讨论面试算法的话题，其中考题就是大数相加，于是再来做一遍

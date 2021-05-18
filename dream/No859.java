@@ -8,7 +8,7 @@ import java.util.Set;
  * @Date 2020/6/20 20:03
  * @Version 1.0
  **/
-public class BuddyStrings {
+public class No859 {
 
     /**
      * 执行用时 : 7 ms , 在所有 Java 提交中击败了 18.13% 的用户

@@ -1,5 +1,7 @@
+package 位运算;
+
 /**
- * @ClassName XorOperationInAnArray
+ * @ClassName 位运算.XorOperationInAnArray
  * @Description #1486 数组异或操作
  * @Author MatthewHan
  * @Date 2020/7/15 14:41

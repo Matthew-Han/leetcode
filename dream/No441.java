@@ -5,7 +5,7 @@
  * @Date 2020/5/15 09:22
  * @Version 1.0
  **/
-public class ArrangingCoins {
+public class No441 {
 
     /**
      * 执行用时 : 12 ms , 在所有 Java 提交中击败了 17.22% 的用户

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 /**
@@ -8,7 +6,7 @@ import java.util.Stack;
  * @description
  * @since 2021/3/11 09:49
  **/
-public class BasicCalculatorII {
+public class No227 {
 
     /**
      * #227 基本计算器 II
@@ -86,7 +84,7 @@ public class BasicCalculatorII {
     }
 
     public static void main(String[] args) {
-        BasicCalculatorII demo = new BasicCalculatorII();
+        No227 demo = new No227();
         System.out.println(demo.calculate("123+440/10-123*3*2+1"));
         System.out.println(demo.calculate("10000/10/5+16/4/4"));
         System.out.println(demo.calculate("1*3+1"));

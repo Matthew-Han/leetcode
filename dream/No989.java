@@ -9,7 +9,7 @@ import java.util.List;
  * @Date 2019/8/9 09:06
  * @Version 1.0
  **/
-public class AddToArrayFormOfInteger {
+public class No989 {
 
     public static void main(String[] args) {
         int[] p = {0};

@@ -8,7 +8,7 @@ import java.util.Map;
  * @description
  * @since 2020/10/29 17:47
  **/
-public class AlphabetBoardPath {
+public class No1138 {
 
     /**
      * #1138 字母板上的路径

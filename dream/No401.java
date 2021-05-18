@@ -7,12 +7,12 @@ import java.util.*;
  * @Date 2020/5/12 16:54
  * @Version 1.0
  **/
-public class BinaryWatch {
+public class No401 {
 
 
     public List<String> readBinaryWatch(int num) {
         List<String> res = new LinkedList<>();
-        //直接遍历  0:00 -> 12:00   每个时间有多少1
+        // 直接遍历  0:00 -> 12:00   每个时间有多少1
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 60; j++) {
                 if (count1(i) + count1(j) == num) {
