@@ -49,6 +49,5 @@ public class No540 {
 
     public static void main(String[] args) {
         System.out.println(singleNonDuplicate(new int[]{3, 3, 4, 7, 7, 10, 10, 1, 11}));
-        System.out.println(1 & 1);
     }
 }

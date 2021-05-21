@@ -1,2 +1,2 @@
-# Leetcode
-Leetcode 个人记录
+# LeetCode
+LeetCode 个人记录
