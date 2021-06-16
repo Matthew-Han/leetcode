@@ -13,6 +13,14 @@ import java.util.Arrays;
 public class Lcp18 {
 
 
+    /**
+     * Lcp #18 早餐组合
+     *
+     * @param staple
+     * @param drinks
+     * @param x
+     * @return
+     */
     public static int breakfastNumber(int[] staple, int[] drinks, int x) {
         int mod = 1000000007;
         Arrays.sort(staple);

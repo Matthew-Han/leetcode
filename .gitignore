@@ -1,12 +1,13 @@
 # Created by .ignore support plugin (hsz.mobi)
-### Example user template template
-### Example user template
+### Example user 默认模板 默认模板
+### Example user 默认模板
 
 # IntelliJ project files
 .idea
 *.iml
 target
 out
+test
 gen
 pom.xml
 .gitignore

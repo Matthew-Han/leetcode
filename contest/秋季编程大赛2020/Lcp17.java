@@ -10,6 +10,12 @@ package 秋季编程大赛2020;
 public class Lcp17 {
 
 
+    /**
+     * LCP #17 速算机器人
+     *
+     * @param s
+     * @return
+     */
     public int calculate(String s) {
         int x = 1;
         int y = 0;
