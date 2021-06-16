@@ -48,6 +48,26 @@ public class No278 {
     }
 
     /**
+     * @param n
+     * @return
+     * @date 2021/6/16
+     */
+    public int firstBadVersionPro(int n) {
+        int l = 1;
+        int r = n;
+        while (l < r) {
+            int mid = l + (r - l) / 2;
+            if (isBadVersion(mid)) {
+                r = mid;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return l;
+
+    }
+
+    /**
      * 方法二
      * 二分法超出时间限制
      * 按照 (left + right) / 2 会超过int的值（因为 int 溢出了，变成了负数，于是怎么算都不对了）
