@@ -1,4 +1,4 @@
-package 第246场双周赛;
+package 第246场周赛;
 
 import java.util.ArrayList;
 import java.util.HashMap;

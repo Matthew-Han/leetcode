@@ -1,4 +1,4 @@
-package 第246场双周赛;
+package 第246场周赛;
 
 /**
  * @author <a href="https://github.com/Matthew-Han">Matthew Han</a>

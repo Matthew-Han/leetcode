@@ -1,4 +1,4 @@
-package 第246场双周赛;
+package 第246场周赛;
 
 /**
  * @author <a href="https://github.com/Matthew-Han">Matthew Han</a>
@@ -65,15 +65,15 @@ public class No1904 {
                 if (fm >= 45) {
                     if (sm <= 0) {
                         ans += 3;
-                    } else if (sh <= 15) {
+                    } else if (sm <= 15) {
                         ans += 2;
-                    } else if (sh <= 30) {
+                    } else if (sm <= 30) {
                         ans += 1;
                     }
                 } else if (fm >= 30) {
                     if (sm <= 0) {
                         ans += 2;
-                    } else if (sh <= 15) {
+                    } else if (sm <= 15) {
                         ans += 1;
                     }
                 } else if (fm >= 15) {
