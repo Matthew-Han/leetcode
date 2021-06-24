@@ -32,11 +32,11 @@ public class No1154 {
     }
 
     public static boolean isLeap(int year) {
-        // 世纪年：2000、1900必须满足能被100和400整除
+        // 世纪年：2000、1900 必须满足能被 100 和 400 整除
         if (year % 100 == 0 && year % 400 == 0) {
             return true;
         } else {
-            // 普通年必须满足不能被100整除但被4整数
+            // 普通年必须满足不能被 100 整除但被 4 整数
             return year % 4 == 0 && year % 100 != 0;
         }
     }

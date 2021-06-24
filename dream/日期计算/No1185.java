@@ -19,7 +19,7 @@ public class No1185 {
      * @return
      */
     public static String dayOfTheWeek(int day, int month, int year) {
-        // 1971.1.1是周五
+        // 1971.1.1 是周五
         String[] week = new String[]{"Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"};
 
         int totalDays = 0;
@@ -41,11 +41,11 @@ public class No1185 {
     }
 
     public static boolean isLeapYear(int year) {
-        // 世纪年：2000、1900必须满足能被100和400整除
+        // 世纪年：2000、1900 必须满足能被 100 和 400 整除
         if (year % 100 == 0 && year % 400 == 0) {
             return true;
         } else {
-            // 普通年必须满足不能被100整除但被4整数
+            // 普通年必须满足不能被 100 整除但被 4 整数
             return year % 4 == 0 && year % 100 != 0;
         }
     }
@@ -53,7 +53,7 @@ public class No1185 {
     public static int dayOfCurrYear(int year, int month, int day) {
         int[] days = new int[]{0, 31, 28 + 31, 28 + 31 + 31, 28 + 31 + 31 + 30, 28 + 31 + 31 + 30 + 31, 28 + 31 + 31 + 30 + 31 + 30, 365 - 31 - 30 - 31 - 30 - 31, 365 - 31 - 30 - 31 - 30, 365 - 31 - 30 - 31, 365 - 31 - 30, 365 - 31};
         int sum = days[month - 1] + day;
-        // 闰年，且月份大于2月
+        // 闰年，且月份大于 2 月
         if (isLeapYear(year) && month > 2) {
             sum++;
         }
