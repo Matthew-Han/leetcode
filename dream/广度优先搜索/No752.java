@@ -101,6 +101,67 @@ public class No752 {
         }
     }
 
+
+    /**
+     * 2021.6.25
+     */
+    Set<String> map;
+    String target;
+    Set<String> visited;
+    public int openLockPro(String[] deadends, String target) {
+        map = new HashSet<>(deadends.length * 4 / 3 + 1);
+        visited = new HashSet<>(deadends.length * 4 / 3 + 1);
+        Collections.addAll(map, deadends);
+        this.target = target;
+        int depth = 0;
+        Queue<int[]> queue = new LinkedList<>();
+        int[] root = new int[4];
+        queue.offer(root);
+        visited.add("0000");
+        while (!queue.isEmpty()) {
+            int limit = queue.size();
+            for (int i = 0; i < limit; i++) {
+                int[] curr = queue.poll();
+                String currStr = fuck(curr);
+                if (target.equals(currStr) && !map.contains(currStr)) {
+                    return depth;
+                }
+                if (!map.contains(currStr)) {
+                    for (int j = 0; j < 4; j++) {
+                        int[] next = curr.clone();
+                        next[j]++;
+                        next[j] = next[j] > 9 ? 0 : next[j];
+                        String tmp = fuck(next);
+                        if (!visited.contains(tmp)) {
+                            queue.offer(next);
+                            visited.add(tmp);
+                        }
+
+                        next = curr.clone();
+                        next[j]--;
+                        next[j] = next[j] < 0 ? 9 : next[j];
+                        tmp = fuck(next);
+                        if (!visited.contains(tmp)) {
+                            queue.offer(next);
+                            visited.add(tmp);
+                        }
+                    }
+                }
+            }
+            depth++;
+        }
+        return -1;
+    }
+
+    public String fuck(int[] arr) {
+        StringBuilder sb = new StringBuilder();
+        for (int j : arr) {
+            sb.append(j);
+        }
+        return sb.toString();
+    }
+
+
     public static void main(String[] args) {
         No752 demo = new No752();
         System.out.println(demo.openLock(new String[]{"8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888"}, "8888"));
