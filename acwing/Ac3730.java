@@ -28,7 +28,6 @@ public class Ac3730 {
             int[] a = new int[k];
             int[] b = new int[k];
             int[] c = new int[k];
-            int[] p = new int[k];
             List<int[]> arr = new ArrayList<>();
             for (int i = 0; i < k; i++) {
                 a[i] = sc.nextInt();
