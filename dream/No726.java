@@ -20,11 +20,11 @@ public class No726 {
         for (int i = 0; i < arr.length; i++) {
             if (i + 1 < arr.length && Character.isUpperCase(arr[i]) && !Character.isLowerCase(arr[i + 1])) {
                 String k = String.valueOf(arr[i]);
-                map.put(k, map.getOrDefault(k, map.get(k) == null ? 0 : map.get(k)) + check(arr, i));
+                map.put(k, map.getOrDefault(k, 0) + check(arr, i));
 
             } else if (i + 1 < arr.length && Character.isUpperCase(arr[i]) && Character.isLowerCase(arr[i + 1])) {
                 String k = "" + arr[i] + arr[i + 1];
-                map.put(k, map.getOrDefault(k, map.get(k) == null ? 0 : map.get(k)) + check(arr, i + 1));
+                map.put(k, map.getOrDefault(k, 0) + check(arr, i + 1));
             }
 
             if (i == arr.length - 1 && Character.isUpperCase(arr[i])) {
