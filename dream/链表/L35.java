@@ -1,6 +1,6 @@
 package 链表;
 
-import 默认模板.MultiNode;
+import 默认模板.RandomNode;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,17 +20,17 @@ public class L35 {
      * @param head
      * @return
      */
-    public static MultiNode copyRandomList(MultiNode head) {
+    public static RandomNode copyRandomList(RandomNode head) {
         if (head == null) {
             return head;
         }
         // map 中存的是(原节点，拷贝节点)的一个映射
-        Map<MultiNode, MultiNode> map = new HashMap<>();
-        for (MultiNode cur = head; cur != null; cur = cur.next) {
-            map.put(cur, new MultiNode(cur.val));
+        Map<RandomNode, RandomNode> map = new HashMap<>();
+        for (RandomNode cur = head; cur != null; cur = cur.next) {
+            map.put(cur, new RandomNode(cur.val));
         }
         // 将拷贝的新的节点组织成一个链表
-        for (MultiNode cur = head; cur != null; cur = cur.next) {
+        for (RandomNode cur = head; cur != null; cur = cur.next) {
             map.get(cur).next = map.get(cur.next);
             map.get(cur).random = map.get(cur.random);
         }
@@ -38,8 +38,8 @@ public class L35 {
     }
 
     public static void main(String[] args) {
-        MultiNode node = new MultiNode(7);
-        MultiNode node2 = new MultiNode(2);
+        RandomNode node = new RandomNode(7);
+        RandomNode node2 = new RandomNode(2);
         node.next = node2;
         node.random = node2;
         node2.next = null;

@@ -1,6 +1,6 @@
 package 链表;
 
-import 默认模板.MultiNode;
+import 默认模板.RandomNode;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,40 +17,40 @@ public class No138 {
      * @param head
      * @return
      */
-    public MultiNode copyRandomList(MultiNode head) {
+    public RandomNode copyRandomList(RandomNode head) {
         if (head == null) {
             return null;
         }
-        Map<Integer, MultiNode> hash = new HashMap<>();
-        Map<Integer, Integer> toward = new HashMap<>();
-        Map<MultiNode, Integer> gg = new HashMap<>();
+        Map<Integer, RandomNode> hash = new HashMap<>();
+        Map<RandomNode, Integer> hash2 = new HashMap<>();
+        Map<Integer, Integer> hash3 = new HashMap<>();
         int index = 0;
-        MultiNode root = new MultiNode(head.val);
-        MultiNode tmp = root;
-        MultiNode ans = root;
-        MultiNode headTmp = head;
+        RandomNode root = new RandomNode(head.val);
+        RandomNode tmp = root;
+        RandomNode ans = root;
+        RandomNode headTmp = head;
         hash.put(index, root);
-        gg.put(head, index++);
+        hash2.put(head, index++);
         while (head.next != null) {
             head = head.next;
-            root.next = new MultiNode(head.val);
+            root.next = new RandomNode(head.val);
             root = root.next;
             hash.put(index, root);
-            gg.put(head, index++);
+            hash2.put(head, index++);
         }
         index = 0;
         while (headTmp != null) {
             if (headTmp.random == null) {
-                toward.put(index++, null);
+                hash3.put(index++, null);
             } else {
-                toward.put(index++, gg.get(headTmp.random));
+                hash3.put(index++, hash2.get(headTmp.random));
             }
             headTmp = headTmp.next;
 
         }
         index = 0;
         while (tmp != null) {
-            tmp.random = hash.get(toward.get(index++));
+            tmp.random = hash.get(hash3.get(index++));
             tmp = tmp.next;
         }
 

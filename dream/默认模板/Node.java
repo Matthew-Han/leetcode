@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * @ClassName Node
- * @Description N叉树公共类
+ * @Description N 叉树公共类
  * @Author MatthewHan
  * @Date 2020/7/31 10:16
  * @Version 1.0

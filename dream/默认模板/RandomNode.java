@@ -9,12 +9,12 @@ import java.util.Objects;
  * @Date 2020/8/24 09:34
  * @Version 1.0
  **/
-public class MultiNode {
+public class RandomNode {
     public int val;
-    public MultiNode next;
-    public MultiNode random;
+    public RandomNode next;
+    public RandomNode random;
 
-    public MultiNode(int val) {
+    public RandomNode(int val) {
         this.val = val;
         this.next = null;
         this.random = null;
@@ -28,8 +28,8 @@ public class MultiNode {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        MultiNode multiNode = (MultiNode) o;
-        return val == multiNode.val && next.equals(multiNode.next) && random.equals(multiNode.random);
+        RandomNode randomNode = (RandomNode) o;
+        return val == randomNode.val && next.equals(randomNode.next) && random.equals(randomNode.random);
     }
 
     @Override
