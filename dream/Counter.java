@@ -56,7 +56,6 @@ public class Counter {
 
         System.out.println(values);
 
-
     }
 
 
@@ -87,6 +86,7 @@ public class Counter {
         for (File file2 : files) {
             traverseFiles(file2);
         }
+
 
     }
 
