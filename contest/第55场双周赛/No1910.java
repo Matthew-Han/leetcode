@@ -17,13 +17,26 @@ public class No1910 {
     public String removeOccurrences(String s, String part) {
         int prev = s.length();
         while (s.length() > 0) {
-            s = s.replaceAll(part, "");
+            s = s.replaceFirst(part, "");
             if (s.length() == prev) {
                 break;
             }
             prev = s.length();
         }
         return s;
+    }
+
+    public static void main(String[] args) {
+        int nas = 0;
+        fuck:
+        for (int i = 0; i < 10; i++) {
+            System.out.println("i = " + i);
+            nas = i;
+            if (nas == 3) {
+                break fuck;
+            }
+        }
+        System.out.println("nas = " + nas);
     }
 }
 
