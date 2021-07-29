@@ -25,18 +25,5 @@ public class No1910 {
         }
         return s;
     }
-
-    public static void main(String[] args) {
-        int nas = 0;
-        fuck:
-        for (int i = 0; i < 10; i++) {
-            System.out.println("i = " + i);
-            nas = i;
-            if (nas == 3) {
-                break fuck;
-            }
-        }
-        System.out.println("nas = " + nas);
-    }
 }
 
