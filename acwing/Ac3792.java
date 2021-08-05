@@ -18,7 +18,6 @@ public class Ac3792 {
         while (t-- > 0) {
             int n = sc.nextInt();
             int k = sc.nextInt();
-            int target = n - 1;
             boolean[] vis = new boolean[n + 1];
             int max = (int) Math.sqrt(n);
             for (int j = 2; j <= max; j++) {

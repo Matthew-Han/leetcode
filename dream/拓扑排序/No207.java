@@ -1,4 +1,4 @@
-package 深度优先搜索;
+package 拓扑排序;
 
 import java.util.LinkedList;
 import java.util.Queue;
