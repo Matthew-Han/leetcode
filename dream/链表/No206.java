@@ -21,21 +21,19 @@ public class No206 {
      * @return
      */
     public static ListNode reverseList(ListNode head) {
-
         ListNode prev = null;
-        ListNode curr = head;
-        while (curr != null) {
-            ListNode nextTemp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = nextTemp;
+        while (head != null) {
+            ListNode nextTemp = head.next;
+            head.next = prev;
+            prev = head;
+            head = nextTemp;
         }
-        System.out.println(prev);
         return prev;
 
     }
 
     public static void main(String[] args) {
+        System.out.println("0 % 3 = " + 6 % 3);
         ListNode listNode = new ListNode(1);
         listNode.next = new ListNode(2);
         listNode.next.next = new ListNode(3);
