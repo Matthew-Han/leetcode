@@ -114,8 +114,6 @@ public class No1958 {
             System.out.println(8);
             return true;
         }
-
-
         return false;
     }
 
