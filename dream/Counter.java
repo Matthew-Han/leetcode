@@ -2,9 +2,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @ClassName Counter
@@ -32,30 +29,6 @@ public class Counter {
         traverseFiles(file);
         System.out.println("所写文件个数：" + j);
         System.out.println("所写代码总行数：" + i);
-
-
-        StringBuilder stringBuilder = new StringBuilder();
-        double len = 1000;
-        for (double i = 1; i < len; i++) {
-            Random random = new Random();
-            int r = random.nextInt(26);
-            stringBuilder.append((char) (r + 'a'));
-        }
-        System.out.println("stringBuilder = " + stringBuilder);
-        /* ----------------------------------- test ----------------------------------- */
-
-
-        List<Integer> values = Stream.of(1, 2, 3, 4, 5)
-                .collect(Collectors.toList());
-
-        System.out.println(values.getClass());
-
-        values = Stream.of(1, 2, 3, 4, 5)
-                .filter(x -> x > 1)
-                .collect(LinkedList::new, List::add, List::addAll);
-
-        System.out.println(values);
-
     }
 
 
