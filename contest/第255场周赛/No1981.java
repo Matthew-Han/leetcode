@@ -13,6 +13,8 @@ public class No1981 {
     int ans = 0x3f3f3f3f;
 
     /**
+     * 记忆化递归
+     * <p>
      * 最小化目标值与所选元素的差
      *
      * @param mat
