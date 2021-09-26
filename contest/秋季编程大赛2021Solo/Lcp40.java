@@ -1,4 +1,4 @@
-package 秋季编程大赛2021;
+package 秋季编程大赛2021Solo;
 
 import java.util.*;
 

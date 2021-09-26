@@ -1,4 +1,4 @@
-package 秋季编程大赛2020;
+package 秋季编程大赛2020Solo;
 
 import java.util.Arrays;
 

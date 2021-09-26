@@ -1,4 +1,4 @@
-package 春季编程大赛2021;
+package 春季编程大赛2021Solo;
 
 import java.util.Arrays;
 
