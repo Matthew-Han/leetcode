@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -12,7 +11,7 @@ import java.util.List;
 public class No434 {
 
     /**
-     * wdnmd，这if逻辑👴自己都看傻了
+     * wdnmd，这 if 逻辑👴自己都看傻了
      * 执行用时 : 3 ms , 在所有 Java 提交中击败了 6.04% 的用户
      * 内存消耗 : 37.7 MB , 在所有 Java 提交中击败了 14.29% 的用户
      *
@@ -24,7 +23,6 @@ public class No434 {
             return 0;
         }
         String[] strings = s.split("");
-        System.out.println(Arrays.toString(strings));
         List<String> list = new ArrayList<>(s.length());
         StringBuilder temp = new StringBuilder();
         for (int i = 0; i < strings.length; i++) {
@@ -33,8 +31,8 @@ public class No434 {
             }
             /*
              * 这里的判断逻辑大概是
-             * 当i位不是空格，i+1是空格，list添加temp；
-             * 当i位是最后一位时，有个三目运算，就不用进入i+1了，防止ArrayIndexOutOfBoundsException
+             * 当 i 位不是空格，i + 1 是空格，list 添加 temp
+             * 当 i 位是最后一位时，有个三目运算，就不用进入 i + 1 了，防止 ArrayIndexOutOfBoundsException
              */
             if (i <= strings.length - 1 && !" ".equals(strings[i]) && (i == strings.length - 1 ? i == strings.length - 1 : (" ".equals(strings[i + 1])))) {
                 list.add(temp.toString());
@@ -42,15 +40,7 @@ public class No434 {
                 temp.delete(0, temp.length());
             }
         }
-        System.out.println(list);
         return list.size();
     }
 
-    public static void main(String[] args) {
-        System.out.println(countSegments("a, b, c"));
-        System.out.println(countSegments("a"));
-        System.out.println(countSegments(" "));
-        System.out.println(countSegments(""));
-
-    }
 }

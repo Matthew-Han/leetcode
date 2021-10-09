@@ -33,8 +33,4 @@ public class No1436 {
         }
         return "";
     }
-
-    public static void main(String[] args) {
-
-    }
 }
