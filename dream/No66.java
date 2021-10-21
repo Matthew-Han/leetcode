@@ -33,7 +33,6 @@ public class No66 {
                     list.add(1);
                 }
             }
-
         }
         Collections.reverse(list);
 
@@ -44,9 +43,36 @@ public class No66 {
         return result;
     }
 
+    public int[] date2021102110(int[] digits) {
+        boolean flag = true;
+        boolean carry = false;
+        for (int i = digits.length - 1; i >= 0; i--) {
+            if (flag) {
+                flag = false;
+                if (digits[i] == 9) {
+                    digits[i] = 0;
+                    carry = true;
+                    continue;
+                } else {
+                    digits[i] += 1;
+                    break;
+                }
+            }
+            if (digits[i] == 9) {
+                digits[i] = 0;
+            } else {
+                digits[i] += 1;
+                carry = false;
+                break;
+            }
+        }
 
-    public static void main(String[] args) {
-        System.out.println((Arrays.toString(plusOne(new int[]{9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9}))));
-
+        if (carry) {
+            int[] ans = new int[digits.length + 1];
+            ans[0] = 1;
+            System.arraycopy(digits, 0, ans, 1, digits.length);
+            return ans;
+        }
+        return digits;
     }
 }

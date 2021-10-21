@@ -1,6 +1,4 @@
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @ClassName MinimumMovesToEqualArrayElements
@@ -12,47 +10,16 @@ import java.util.Set;
 public class No453 {
 
     /**
-     * 超出时间限制
+     * n-1 个数同时加一，就好比每次有 1 个数自身减一，因为只能做减法，所以数组最后的数只能是最小值。
+     * 这样的话每个元素减去最小值求其和就是答案。小小菜鸟，博君一笑！
      *
      * @param nums
      * @return
      */
-    public static int minMoves(int[] nums) {
-        Set<Integer> set = new HashSet<>();
-        for (int num : nums) {
-            set.add(num);
-        }
-        int count = 0;
-        while (set.size() != 1) {
-            set.clear();
-            int[] maxElement = maxElement(nums);
-            System.out.println(Arrays.toString(nums));
-            // 将除了最大元素下标的其他的元素都+1（模拟移动）
-            for (int i1 = 0; i1 < nums.length; i1++) {
-                if (i1 != maxElement[1]) {
-                    nums[i1]++;
-                }
-            }
-            for (int num : nums) {
-                set.add(num);
-            }
-            count++;
-        }
-        return count;
+    public int minMoves(int[] nums) {
+        return Arrays.stream(nums).sum() - nums.length * Arrays.stream(nums).min().orElse(0);
     }
 
-    public static int[] maxElement(int[] nums) {
-        int[] maxElement = {0, 0};
-
-        for (int i = 0; i < nums.length; i++) {
-            // 挑出最大的元素的下标
-            if (maxElement[0] < nums[i]) {
-                maxElement[0] = nums[i];
-                maxElement[1] = i;
-            }
-        }
-        return maxElement;
-    }
 
     /**
      * 执行用时 : 14 ms , 在所有 Java 提交中击败了 29.26% 的用户

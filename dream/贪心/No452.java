@@ -24,7 +24,7 @@ public class No452 {
             return 0;
         }
         int ans = 1;
-        // 这里排序不要用o1 - o2, 因为在坐标系里有 Integer.MAX_VALUE 和 integer.MIN_VALUE会溢出
+        // 这里排序不要用 o1 - o2, 因为在坐标系里有 Integer.MAX_VALUE 和 integer.MIN_VALUE会溢出
         Arrays.sort(points, (o1, o2) -> Integer.compare(o1[1], o2[1]));
         int len = points.length;
         int prev = points[0][1];
