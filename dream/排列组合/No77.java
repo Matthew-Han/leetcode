@@ -48,9 +48,10 @@ public class No77 {
     /**
      * 回溯法案例，有空回来学学
      */
-    private List<List<Integer>> res = new LinkedList<>();
+    private List<List<Integer>> res;
 
-    public List<List<Integer>> huisu(int n, int k) {
+    public List<List<Integer>> backtrack(int n, int k) {
+        this.res = new LinkedList<>();
         // 边界值
         if (n < k) {
             return res;
