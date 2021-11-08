@@ -56,7 +56,35 @@ public class No299 {
         return bulls + "A" + (cows - bulls) + "B";
     }
 
-    public static void main(String[] args) {
-        System.out.println(getHint("1807", "7810"));
+    /**
+     * 2021.11.08
+     *
+     * @param secret
+     * @param guess
+     * @return
+     */
+    public String date20211108(String secret, String guess) {
+        int x = bulls(secret, guess);
+        return x + "A" + (fakeCows(secret, guess) - x) + "B";
+    }
+
+    public int bulls(String secret, String guess) {
+        int ans = 0;
+        for (int i = 0; i < secret.length(); i++) {
+            ans += secret.charAt(i) == guess.charAt(i) ? 1 : 0;
+        }
+        return ans;
+    }
+
+    public int fakeCows(String secret, String guess) {
+        int ans = 0;
+        int[] bucket = new int[100];
+        for (int i = 0; i < secret.length(); i++) {
+            bucket[secret.charAt(i) - '0']++;
+        }
+        for (int i = 0; i < guess.length(); i++) {
+            ans += bucket[guess.charAt(i) - '0']-- > 0 ? 1 : 0;
+        }
+        return ans;
     }
 }

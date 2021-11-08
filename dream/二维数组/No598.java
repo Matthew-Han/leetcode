@@ -52,10 +52,6 @@ public class No598 {
                 }
             }
         }
-
-        System.out.println("fucker = " + Arrays.deepToString(fucker));
-        System.out.println("max = " + max);
-        System.out.println(sum);
         return sum;
     }
 
@@ -64,5 +60,23 @@ public class No598 {
         int[][] xy = new int[1][3];
         xy[0][1] = 1;
         System.out.println(Arrays.deepToString(xy));
+    }
+
+    /**
+     * 2021.11.08
+     *
+     * @param m
+     * @param n
+     * @param ops
+     * @return
+     */
+    public int date20211108(int m, int n, int[][] ops) {
+        int ans = 0;
+        int[] max = {0x3f3f3f3f, 0x3f3f3f3f};
+        for (int[] o : ops) {
+            max[0] = Math.min(max[0], o[0]);
+            max[1] = Math.min(max[1], o[1]);
+        }
+        return ops.length > 0 ? max[0] * max[1] : m * n;
     }
 }

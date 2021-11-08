@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * @ClassName MissingNumber
@@ -19,7 +17,7 @@ public class No268 {
      * @param nums
      * @return
      */
-    public static int missingNumber(int[] nums) {
+    public int missingNumber(int[] nums) {
         Arrays.sort(nums);
         // 判断 n 是否出现在末位
         if (nums[nums.length - 1] != nums.length) {
@@ -40,7 +38,20 @@ public class No268 {
         return -1;
     }
 
-    public static void main(String[] args) {
-        System.out.println(missingNumber(new int[]{0, 1}));
+    /**
+     * 2021.11.08
+     *
+     * @param nums
+     * @return
+     */
+    public int date20211108(int[] nums) {
+        int len = nums.length;
+        int min = 0;
+        int sum = (min + len) * (len + 1) / 2;
+        for (int num : nums) {
+            sum -= num;
+        }
+        return sum;
     }
+
 }
