@@ -8,6 +8,21 @@
 public class No520 {
 
     /**
+     * 2021.11.15
+     *
+     * @param word
+     * @return
+     */
+    public boolean date2021115(String word) {
+        boolean head = Character.isUpperCase(word.charAt(0));
+        int cnt = head ? 1 : 0;
+        for (int i = 1; i < word.length(); i++) {
+            cnt += Character.isUpperCase(word.charAt(i)) ? 1 : 0;
+        }
+        return head ? (cnt == 1 || cnt == word.length()) : cnt == 0;
+    }
+
+    /**
      * 数组流
      * 执行用时 : 1 ms , 在所有 Java 提交中击败了 100.00% 的用户
      * 内存消耗 : 38.3 MB , 在所有 Java 提交中击败了 25.00% 的用户
