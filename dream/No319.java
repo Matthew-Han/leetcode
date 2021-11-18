@@ -7,6 +7,21 @@
  **/
 public class No319 {
 
+
+    /**
+     * 2021.11.15
+     *
+     * @param n
+     * @return
+     */
+    public int date20211115(int n) {
+        int count = 0;
+        for (int i = 1; (i * i) < n; i++) {
+            count++;
+        }
+        return count;
+    }
+
     /**
      * 执行用时： 1 ms , 在所有 Java 提交中击败了 5.22% 的用户
      * 内存消耗： 36.6 MB , 在所有 Java 提交中击败了 5.52% 的用户
@@ -14,7 +29,7 @@ public class No319 {
      * @param n
      * @return
      */
-    public static int bulbSwitch(int n) {
+    public int bulbSwitch(int n) {
         int count = 0;
         for (int i = 1; (i * i) < n; i++) {
             count++;
