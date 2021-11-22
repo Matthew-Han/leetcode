@@ -10,6 +10,27 @@ import java.util.*;
 public class No594 {
 
     /**
+     * date 2021.11.20
+     *
+     * @param nums
+     * @return
+     */
+    public int date20211120(int[] nums) {
+        Arrays.sort(nums);
+        int ans = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        for (Integer k : map.keySet()) {
+            if (map.containsKey(k + 1)) {
+                ans = Math.max(ans, map.get(k) + map.get(k + 1));
+            }
+        }
+        return ans;
+    }
+
+    /**
      * 执行用时 : 1428 ms , 在所有 Java 提交中击败了 5.46% 的用户
      * 内存消耗 : 40.4 MB , 在所有 Java 提交中击败了 33.33% 的用户
      *
