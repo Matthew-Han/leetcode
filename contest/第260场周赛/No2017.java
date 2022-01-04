@@ -14,13 +14,12 @@ public class No2017 {
      * @return
      */
     public long gridGame(int[][] grid) {
-        long ans = Long.MAX_VALUE;
         long left = 0L;
         long right = 0L;
         for (int i = 1; i < grid[0].length; i++) {
             right += grid[0][i];
         }
-        ans = Math.min(ans, Math.max(left, right));
+        long ans = Math.max(left, right);
         for (int i = 1; i < grid[0].length; i++) {
             left += grid[1][i - 1];
             right -= grid[0][i];
