@@ -11,6 +11,20 @@ import java.util.List;
  **/
 public class No89 {
 
+
+    public List<Integer> date20220110(int n) {
+        List<Integer> ans = new ArrayList<>(2 << (n - 1));
+        ans.add(0);
+        for (int i = 0; i < n; i++) {
+            int size = ans.size();
+            for (int j = size - 1; j >= 0; j--) {
+                ans.add(ans.get(j) | (1 << i));
+            }
+        }
+        return ans;
+    }
+
+
     List<Integer> res = new ArrayList<>();
 
     /**

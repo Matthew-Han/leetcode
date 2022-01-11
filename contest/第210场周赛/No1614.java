@@ -1,5 +1,7 @@
 package 第210场周赛;
 
+import java.util.Stack;
+
 /**
  * @author MatthewHan
  * @version 1.0
@@ -7,6 +9,24 @@ package 第210场周赛;
  * @date 2020/10/11 10:21
  **/
 public class No1614 {
+
+    public int date20220107(String s) {
+        int ans = 0;
+        int t = 0;
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                stack.add(s.charAt(i));
+                t++;
+                ans = Math.max(ans, t);
+            } else if (s.charAt(i) == ')' && !stack.isEmpty()) {
+                stack.pop();
+                t--;
+            }
+        }
+        return ans;
+
+    }
 
 
     /**
