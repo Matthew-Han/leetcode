@@ -9,7 +9,7 @@ import java.util.List;
  * @date 2022/1/10 10:10
  * @since 1.0
  **/
-public class No1987 {
+public class Ac1987 {
 
     /**
      * 6

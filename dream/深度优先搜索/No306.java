@@ -35,13 +35,14 @@ public class No306 {
         if (idx == num.length()) {
             return true;
         }
+        boolean flag = false;
         for (int i = idx; i < num.length(); i++) {
             String c = num.substring(idx, i + 1);
             if (checkPlus(l, r, c)) {
-                return dfs(i + 1, r, c);
+                flag |= dfs(i + 1, r, c);
             }
         }
-        return false;
+        return flag;
     }
 
 
@@ -62,8 +63,4 @@ public class No306 {
         return null != num && !"".equals(num) && num.charAt(0) == '0' && num.length() != 1;
     }
 
-    public static void main(String[] args) {
-        No306 demo = new No306();
-        demo.isAdditiveNumber("199100199");
-    }
 }
