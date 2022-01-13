@@ -10,6 +10,22 @@ import java.util.List;
  **/
 public class No747 {
 
+    public int date20220113(int[] nums) {
+        int max = Integer.MIN_VALUE;
+        int second = -1;
+        int ans = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > max) {
+                second = max;
+                max = nums[i];
+                ans = i;
+            } else if (nums[i] < max && nums[i] > second) {
+                second = nums[i];
+            }
+        }
+        return second * 2 <= max ? ans : -1;
+    }
+
     /**
      * 执行用时 : 2 ms , 在所有 Java 提交中击败了 16.24% 的用户
      * 内存消耗 : 38.2 MB , 在所有 Java 提交中击败了 6.25% 的用户
@@ -17,7 +33,7 @@ public class No747 {
      * @param nums
      * @return
      */
-    public static int dominantIndex(int[] nums) {
+    public int dominantIndex(int[] nums) {
         List<Integer> list = new ArrayList<>(nums.length);
         int max = 0;
 
@@ -45,7 +61,4 @@ public class No747 {
     }
 
 
-    public static void main(String[] args) {
-        System.out.println(dominantIndex(new int[]{1, 1, 0}));
-    }
 }

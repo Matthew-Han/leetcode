@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -89,6 +90,12 @@ public class No68 {
             sb.append(" ");
         }
         return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        String string = Arrays.toString(new int[]{1, 1, 1, 0});
+        System.out.println("string = " + string);
+
     }
 
 }
