@@ -12,13 +12,7 @@ import java.util.List;
 public class Ac1987 {
 
     /**
-     * 6
-     * 2 R
-     * 6 L
-     * 1 R
-     * 8 L
-     * 1 R
-     * 2 R
+     * 粉刷栅栏
      *
      * @param args
      * @throws IOException
