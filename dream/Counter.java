@@ -68,7 +68,8 @@ public class Counter {
                 j++;
                 BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
                 while (bufferedReader.readLine() != null) {
-                    i++;//读取行数
+                    // 读取行数
+                    i++;
                 }
             } else {
                 return;
