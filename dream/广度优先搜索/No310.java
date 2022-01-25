@@ -28,24 +28,15 @@ public class No310 {
         // 类似邻接表
         Map<Integer, List<Integer>> map = new HashMap<>();
         for (int[] edge : edges) {
-            int key1 = edge[0];
-            int key2 = edge[1];
-
             // key1
-            List<Integer> v1 = map.get(key1);
-            if (null == v1) {
-                v1 = new ArrayList<>();
-            }
-            v1.add(key2);
-            map.put(key1, v1);
+            map.put(edge[0], map.getOrDefault(edge[0], new ArrayList<>()));
+            List<Integer> v1 = map.get(edge[0]);
+            v1.add(edge[1]);
 
             // key2
-            List<Integer> v2 = map.get(key2);
-            if (null == v2) {
-                v2 = new ArrayList<>();
-            }
-            v2.add(key1);
-            map.put(key2, v2);
+            map.put(edge[1], map.getOrDefault(edge[1], new ArrayList<>()));
+            List<Integer> v2 = map.get(edge[1]);
+            v2.add(edge[0]);
 
         }
         // System.out.println(map);
