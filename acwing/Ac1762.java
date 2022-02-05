@@ -17,8 +17,6 @@ public class Ac1762 {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        System.out.println(1134903170);
-        System.out.println((int)1E9);
         BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(sc.readLine());
         int[] t = Arrays.stream(sc.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
