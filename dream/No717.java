@@ -7,6 +7,17 @@
  **/
 public class No717 {
 
+    public boolean date20220222(int[] bits) {
+        for (int i = 0; i < bits.length; i++) {
+            if (bits[i] == 1 && i == bits.length - 2) {
+                return false;
+            } else if (bits[i] == 1) {
+                i++;
+            }
+        }
+        return true;
+    }
+
     /**
      * 思路1：
      * <p>
