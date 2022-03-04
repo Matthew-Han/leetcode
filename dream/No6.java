@@ -26,12 +26,7 @@ public class No6 {
             row.add(s.charAt(i));
             map.put(layer, row);
             layer += flag ? 1 : -1;
-            if (layer == numRows) {
-                flag = false;
-            }
-            if (layer == 1) {
-                flag = true;
-            }
+            flag = layer != numRows && (layer == 1 || flag);
         }
         StringBuilder sb = new StringBuilder();
         map.forEach((k, v) -> v.forEach(sb::append));
