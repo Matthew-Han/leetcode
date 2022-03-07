@@ -12,6 +12,29 @@ import java.util.Map;
  **/
 public class No2100 {
 
+    public List<Integer> date20220307(int[] security, int time) {
+        int[] l = new int[security.length];
+        int[] r = new int[security.length];
+        for (int i = 1; i < security.length; i++) {
+            if (security[i - 1] >= security[i]) {
+                l[i] += l[i - 1] + 1;
+            }
+        }
+        for (int i = security.length - 2; i >= 0; i--) {
+            if (security[i + 1] >= security[i]) {
+                r[i] += r[i + 1] + 1;
+            }
+        }
+        List<Integer> ans = new ArrayList<>();
+        for (int i = 0; i < security.length; i++) {
+            if (l[i] >= time && r[i] >= time) {
+                ans.add(i);
+            }
+        }
+        return ans;
+    }
+
+
     /**
      * 适合打劫银行的日子
      *
