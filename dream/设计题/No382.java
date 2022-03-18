@@ -13,8 +13,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class No382 {
     List<ListNode> all;
 
-    ThreadLocalRandom r;
-
     /**
      * 链表随机节点
      *
@@ -22,7 +20,6 @@ public class No382 {
      */
     public No382(ListNode head) {
         this.all = new ArrayList<>();
-        this.r = ThreadLocalRandom.current();
         while (head != null) {
             this.all.add(head);
             head = head.next;
@@ -31,6 +28,6 @@ public class No382 {
     }
 
     public int getRandom() {
-        return all.get(this.r.nextInt(this.all.size())).val;
+        return all.get(ThreadLocalRandom.current().nextInt(this.all.size())).val;
     }
 }
