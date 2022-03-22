@@ -14,7 +14,7 @@ import java.util.List;
 public class No378 {
 
     /**
-     * 哈哈哈，虽然用时很长，但是自己凭本事写出了在一组无序的向量中，构建一颗BST！！
+     * 哈哈哈，虽然用时很长，但是自己凭本事写出了在一组无序的向量中，构建一颗 BST！！
      * <p>
      * 执行用时： 167 ms , 在所有 Java 提交中击败了 5.44% 的用户
      * 内存消耗： 45.2 MB , 在所有 Java 提交中击败了 77.59% 的用户
@@ -31,7 +31,7 @@ public class No378 {
         dfs2(matrix, matrix.length - 1, 0, visited, tmp);
         System.out.println("tmp = " + tmp);
         TreeNode root = new TreeNode(tmp.get(0));
-        // 第一位是root节点，已经add了
+        // 第一位是root节点，已经 add 了
         for (int i = 1; i < tmp.size(); i++) {
             buildBst(tmp.get(i), root);
         }
