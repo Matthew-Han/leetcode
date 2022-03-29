@@ -8,14 +8,13 @@
 public class No172 {
 
     /**
-     * 算多少个5
-     * 但是当有个25时，拆分成2个5相乘，所以30的时候是7个5
+     * 算多少个 5
+     * 但是当有个 25 时，拆分成 2 个 5 相乘，但是 30 的时候是 1 个 5
      *
      * @param n
      * @return
      */
-    public static int trailingZeroes(int n) {
-
+    public int trailingZeroes(int n) {
         int count = 0;
         while (n >= 5) {
             count += n / 5;
@@ -24,7 +23,4 @@ public class No172 {
         return count;
     }
 
-    public static void main(String[] args) {
-        System.out.println(trailingZeroes(20));
-    }
 }
