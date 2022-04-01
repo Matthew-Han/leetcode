@@ -25,14 +25,15 @@ public class No2024 {
         char[] ak = answerKey.toCharArray();
         int ans = 0;
         List<Integer> list = new ArrayList<>();
-        int[] cnt = new int[ak.length];
+        int[] left = new int[ak.length];
+        int[] right = new int[ak.length];
         int prev = 0;
         int tmp = 0;
         for (int i = 0; i < ak.length; i++) {
             if (ak[i] == a) {
                 list.add(i);
                 if (i > 0 && ak[i - 1] == b) {
-                    cnt[i] = prev;
+                    left[i] = prev;
                 }
                 tmp++;
                 prev = 0;
@@ -42,18 +43,22 @@ public class No2024 {
                 prev++;
             }
         }
+        prev = 0;
+        for (int i = ak.length - 1; i >= 0; i--) {
+            if (ak[i] == a) {
+                if (i < ak.length - 1 && ak[i + 1] == b) {
+                    right[i] = prev;
+                }
+                prev = 0;
+            } else {
+                prev++;
+            }
+        }
         ans = Math.max(ans, tmp);
         for (int i = 0; i < list.size(); i++) {
             int l = list.get(i);
             int r = list.get(Math.min(i + k - 1, list.size() - 1));
-            int sum = cnt[l] + (r - l + 1);
-            for (int j = r + 1; j < ak.length; j++) {
-                if (ak[j] == b) {
-                    sum++;
-                } else {
-                    break;
-                }
-            }
+            int sum = left[l] + (r - l + 1) + right[r];
             ans = Math.max(ans, sum);
         }
         return ans;
