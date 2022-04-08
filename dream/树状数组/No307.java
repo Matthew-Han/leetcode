@@ -28,7 +28,7 @@ public class No307 {
     }
 
     public int sumRange(int left, int right) {
-        return bit.sum(left, right);
+        return bit.query(left, right);
     }
 
 }

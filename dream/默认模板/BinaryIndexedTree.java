@@ -18,24 +18,22 @@ public class BinaryIndexedTree {
         }
     }
 
-    public void update(int i, int delta) {
-        while (i < tree.length) {
+    public void update(int idx, int delta) {
+        for (int i = idx; i < tree.length; i += lowBit(i)) {
             tree[i] += delta;
-            i += lowBit(i);
         }
     }
 
-    public int sum(int i) {
+    public int query(int idx) {
         int res = 0;
-        while (i > 0) {
+        for (int i = idx; i > 0; i -= lowBit(i)) {
             res += tree[i];
-            i -= lowBit(i);
         }
         return res;
     }
 
-    public int sum(int i, int j) {
-        return sum(j + 1) - sum(i);
+    public int query(int left, int right) {
+        return query(right + 1) - query(left);
     }
 
     public int lowBit(int x) {
