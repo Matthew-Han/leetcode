@@ -5,7 +5,7 @@ package 春季编程大赛2022Solo;
  * @date 2022/4/20 15:22 20
  * @since 1.0
  **/
-public class Lcp56 {
+public class Lcp51 {
 
 
     int max = -1;

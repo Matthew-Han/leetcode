@@ -5,7 +5,7 @@ package 春季编程大赛2022Solo;
  * @date 2022/4/20 15:21 20
  * @since 1.0
  **/
-public class Lcp55 {
+public class Lcp50 {
 
     /**
      * 宝石补给
