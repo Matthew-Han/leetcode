@@ -1,3 +1,5 @@
+package 位运算;
+
 /**
  * @ClassName BinaryGap
  * @Description #868 二进制间距
@@ -32,7 +34,19 @@ public class No868 {
         return max;
     }
 
-    public static void main(String[] args) {
-        System.out.println(binaryGap(8));
+
+    public int date20220425(int n) {
+        int ans = 0;
+        int prev = -1;
+        for (int i = 31; i >= 0; i--) {
+            int curr = n >> (31 - i);
+            if ((curr & 1) == 1) {
+                ans = prev == -1 ? ans : Math.max(ans, prev - i);
+                prev = i;
+            }
+        }
+        return ans;
     }
+
+
 }
