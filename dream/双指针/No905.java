@@ -12,10 +12,29 @@ import java.util.Stack;
  **/
 public class No905 {
 
+    public int[] date20220427(int[] nums) {
+        int cursor = 0;
+        for (int i = nums.length - 1; i > cursor; i--) {
+            for (; cursor < i; cursor++) {
+                if ((nums[cursor] & 1) == 1) {
+                    break;
+                }
+            }
+            if (i > cursor && (nums[i] & 1) == 0) {
+                nums[i] ^= nums[cursor];
+                nums[cursor] ^= nums[i];
+                nums[i] ^= nums[cursor];
+            }
+        }
+        return nums;
+    }
+
+
     /**
      * 官方题解✔️
      * 原地双指针，这个最秀
      * 双指针，偶数从头开始插入，奇数从尾开始插入，遍历一次即可
+     *
      * @param arr
      * @return
      */
