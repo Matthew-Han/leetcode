@@ -48,7 +48,6 @@ public class No297 {
     }
 
     public TreeNode deserialize(String data) {
-
         String[] arr = data.split(",");
         if ("null".equals(arr[0]) || "".equals(data)) {
             return null;
