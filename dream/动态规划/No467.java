@@ -18,18 +18,17 @@ public class No467 {
     public int findSubstringInWraproundString(String p) {
         int ans = 0;
         int[] vis = new int[26];
-        for (int i = 0; i < p.length(); i++) {
+        char[] array = p.toCharArray();
+        for (int i = 0; i < array.length; i++) {
             int cnt = 1;
-            for (int j = i + 1; j < p.length(); j++) {
-                if (p.charAt(j - 1) == p.charAt(j) - 1 || p.charAt(j - 1) == p.charAt(j) + 25) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j - 1] == array[j] - 1 || array[j - 1] == array[j - 1] + 25) {
                     cnt++;
                 } else {
                     break;
                 }
             }
-            if (cnt > vis[p.charAt(i) - 'a']) {
-                vis[p.charAt(i) - 'a'] = cnt;
-            }
+            vis[array[i] - 'a'] = Math.max(vis[array[i] - 'a'], cnt);
         }
         for (int i = 0; i < 26; i++) {
             ans += vis[i];
