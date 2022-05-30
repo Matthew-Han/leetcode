@@ -24,7 +24,6 @@ public class No675 {
         find(forest);
         int[] src = new int[]{0, 0};
         for (Map.Entry<Integer, int[]> e : map.entrySet()) {
-            int k = e.getKey();
             int[] v = e.getValue();
             int step = 润(forest, src, v);
             if (step == -1) {
