@@ -10,6 +10,40 @@ import java.util.Set;
  **/
 public class No929 {
 
+    public int date20220606(String[] emails) {
+        Set<String> set = new HashSet<>();
+        for (String email : emails) {
+            StringBuilder sb = new StringBuilder();
+            boolean flag1 = false;
+            boolean flag2 = false;
+            for (char c : email.toCharArray()) {
+                if (c == '@') {
+                    flag1 = false;
+                    flag2 = true;
+                    sb.append("@");
+                    continue;
+                }
+                if (flag1) {
+                    continue;
+                }
+                if (c == '.') {
+                    if (flag2) {
+                        sb.append(".");
+                    }
+                    continue;
+                }
+                if (c == '+') {
+                    flag1 = true;
+                    continue;
+                }
+
+                sb.append(c);
+            }
+            set.add(sb.toString());
+        }
+        return set.size();
+    }
+
     /**
      * 执行用时： 23 ms , 在所有 Java 提交中击败了 58.41% 的用户
      * 内存消耗： 40 MB , 在所有 Java 提交中击败了 33.33% 的用户
@@ -39,7 +73,6 @@ public class No929 {
                 }
             }
             sb1.append(sb2);
-            System.out.println("sb1 = " + sb1);
             set.add(sb1.toString());
         }
         return set.size();
@@ -66,7 +99,4 @@ public class No929 {
         return set.size();
     }
 
-    public static void main(String[] args) {
-        System.out.println(numUniqueEmailsPro(new String[]{"test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"}));
-    }
 }
