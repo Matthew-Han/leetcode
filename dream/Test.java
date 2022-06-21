@@ -22,6 +22,7 @@ public class Test {
         //t2.run();
     }
 
+
 }
 
 class ThreadFuck implements Runnable {

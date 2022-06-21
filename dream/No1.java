@@ -27,7 +27,6 @@ public class No1 {
                     return new int[]{i, j};
                 }
             }
-
         }
         return null;
     }
