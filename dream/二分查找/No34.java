@@ -1,9 +1,6 @@
 package 二分查找;
 
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @ClassName FindFirstAndLastPositionOfElementInSortedArray
@@ -60,8 +57,6 @@ public class No34 {
             } else {
                 right = mid - 1;
             }
-            Map<String, String> map = new HashMap<>();
-            map.get("ss");
         }
 
         // 当point == -1说明这轮的sub数组没有target，就返回prev的下标
