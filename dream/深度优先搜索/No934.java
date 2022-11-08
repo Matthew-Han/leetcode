@@ -35,7 +35,6 @@ public class No934 {
                 }
             }
         }
-        System.out.println("arr = " + Arrays.deepToString(arr));
         int ans = Integer.MAX_VALUE;
         for (int[] xy : firstLand) {
             // 【注意】每次初始化访问标记【注意】
@@ -119,11 +118,62 @@ public class No934 {
         return Integer.MAX_VALUE;
     }
 
-    public static void main(String[] args) {
-        System.out.println(shortestBridge(new int[][]{{0, 1}, {1, 0}}));
-        System.out.println(shortestBridge(new int[][]{{0, 0, 0, 1}, {1, 1, 1, 0}}));
-        System.out.println(shortestBridge(new int[][]{{0, 1, 0}, {0, 0, 0}, {0, 0, 1}}));
-        System.out.println(shortestBridge(new int[][]{{1, 1, 1, 1, 1}, {1, 0, 0, 0, 1}, {1, 0, 1, 0, 1}, {1, 0, 0, 0, 1}, {1, 1, 1, 1, 1}}));
+    /* -------------------------------------------------------------------------------------------------------------- */
+
+    int[][] grid;
+    int[] dx = {0, 0, -1, 1};
+    int[] dy = {-1, 1, 0, 0};
+
+    public int Date20221025(int[][] grid) {
+        this.grid = grid;
+        go:
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == 1) {
+                    fuck(i, j);
+                    break go;
+                }
+            }
+        }
+        Queue<int[]> q = new LinkedList<>();
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == -1) {
+                    q.offer(new int[]{i, j});
+                }
+            }
+        }
+        boolean[][] vis = new boolean[grid.length][grid[0].length];
+        int step = 0;
+        while (!q.isEmpty()) {
+            int limit = q.size();
+            for (int i = 0; i < limit; i++) {
+                int[] curr = q.poll();
+                for (int j = 0; j < 4; j++) {
+                    int nex = curr[0] + dx[j];
+                    int ney = curr[1] + dy[j];
+                    if (nex >= 0 && nex < grid.length && ney >= 0 && ney < grid[0].length && grid[nex][ney] != -1 && !vis[nex][ney]) {
+                        if (grid[nex][ney] == 1) {
+                            return step;
+                        }
+                        vis[nex][ney] = true;
+                        q.offer(new int[]{nex, ney});
+                    }
+                }
+            }
+            step++;
+        }
+        return -1;
+    }
+
+    public void fuck(int x, int y) {
+        if (x < 0 || x >= grid.length || y < 0 || y >= grid[0].length || grid[x][y] != 1) {
+            return;
+        }
+        grid[x][y] = -1;
+        for (int i = 0; i < 4; i++) {
+            fuck(x + dx[i], y + dy[i]);
+        }
     }
 
 }
