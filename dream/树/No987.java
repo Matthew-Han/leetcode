@@ -1,6 +1,6 @@
 package 树;
 
-import javafx.util.Pair;
+import 默认模板.Pair;
 import 默认模板.TreeNode;
 import java.util.*;
 

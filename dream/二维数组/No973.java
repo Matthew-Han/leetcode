@@ -1,6 +1,7 @@
 package 二维数组;
 
-import javafx.util.Pair;
+import 默认模板.Pair;
+
 import java.util.Arrays;
 import java.util.PriorityQueue;
 

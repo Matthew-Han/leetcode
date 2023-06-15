@@ -1,4 +1,3 @@
-import javafx.util.Pair;
 import java.util.Map;
 
 /**
@@ -30,13 +29,6 @@ public class No657 {
         }
         return rl == ud && rl == 0;
 
-    }
-
-    public static void main(String[] args) {
-        System.out.println((int) 'R');
-        System.out.println((int) 'L');
-        System.out.println((int) 'U');
-        System.out.println((int) 'D');
     }
 
 

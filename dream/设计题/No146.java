@@ -1,6 +1,5 @@
 package 设计题;
 
-import javafx.util.Pair;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -16,7 +15,7 @@ import java.util.Queue;
 public class No146 {
 
     private final int capacity;
-    private final Queue<Pair<Integer, Integer>> data;
+    private final Queue<Integer[]> data;
 
     /**
      * Queue改成Map，获取<k,v>就快了，不用for了
@@ -32,15 +31,15 @@ public class No146 {
 
     public int get(int key) {
         int value = -1;
-        for (Pair<Integer, Integer> pair : data) {
-            if (pair.getKey() == key) {
-                value = pair.getValue();
+        for (Integer[] pair : data) {
+            if (pair[0] == key) {
+                value = pair[1];
                 data.remove(pair);
                 break;
             }
         }
         if (value != -1) {
-            data.offer(new Pair<>(key, value));
+            data.offer(new Integer[]{key, value});
         }
         System.out.println("data1 = " + data);
         return value;
@@ -49,23 +48,23 @@ public class No146 {
     public void put(int key, int value) {
         int size = data.size();
         if (size < capacity) {
-            for (Pair<Integer, Integer> pair : data) {
-                if (pair.getKey() == key) {
+            for (Integer[] pair : data) {
+                if (pair[0] == key) {
                     data.remove(pair);
                     break;
                 }
             }
-            data.offer(new Pair<>(key, value));
+            data.offer(new Integer[]{key, value});
         } else {
             boolean flag = false;
-            for (Pair<Integer, Integer> pair : data) {
-                if (pair.getKey() == key) {
+            for (Integer[] pair : data) {
+                if (pair[0] == key) {
                     data.remove(pair);
                     flag = true;
                     break;
                 }
             }
-            data.offer(new Pair<>(key, value));
+            data.offer(new Integer[]{key, value});
             if (!flag) {
                 data.poll();
             }
