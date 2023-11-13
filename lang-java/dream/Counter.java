@@ -48,7 +48,7 @@ public class Counter {
 
     public static void main(String[] args) throws IOException {
         // 需要统计行数的文件夹路径
-        File file = new File("/Users/southerncross/IdeaProjects/leetcode");
+        File file = new File("/Users/matthewhan/IdeaProjects/leetcode");
         // 调用递归方法查看.java文件，用于统计行数
         traverseFiles(file);
         System.out.println("所写文件个数：" + j);
