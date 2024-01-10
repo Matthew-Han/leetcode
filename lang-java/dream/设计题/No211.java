@@ -1,5 +1,7 @@
 package 设计题;
 
+import 默认模板.TrieNode;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +14,7 @@ import java.util.Map;
 public class No211 {
 
 
-    Map<Integer, Trie> data;
+    Map<Integer, TrieNode> data;
 
     /**
      * 添加与搜索单词 - 数据结构设计
@@ -22,11 +24,11 @@ public class No211 {
     }
 
     public void addWord(String word) {
-        Trie defaultTrie = data.getOrDefault(word.length(), new Trie());
-        Trie finals = defaultTrie;
+        TrieNode defaultTrie = data.getOrDefault(word.length(), new TrieNode());
+        TrieNode finals = defaultTrie;
         for (char c : word.toCharArray()) {
             if (defaultTrie.next[c - 'a'] == null) {
-                defaultTrie.next[c - 'a'] = new Trie();
+                defaultTrie.next[c - 'a'] = new TrieNode();
             }
             defaultTrie = defaultTrie.next[c - 'a'];
         }
@@ -35,7 +37,7 @@ public class No211 {
     }
 
     public boolean search(String word) {
-        Trie v = data.get(word.length());
+        TrieNode v = data.get(word.length());
         if (v == null) {
             return false;
         }
@@ -43,7 +45,7 @@ public class No211 {
     }
 
 
-    public boolean dfs(Trie trie, String word, int idx) {
+    public boolean dfs(TrieNode trie, String word, int idx) {
         if (trie == null) {
             return false;
         }
@@ -62,34 +64,7 @@ public class No211 {
         }
     }
 
-    static class Trie {
 
-        public Boolean isEnd;
-        public Trie[] next;
 
-        public Trie() {
-            isEnd = false;
-            next = new Trie[26];
-        }
 
-        @Override
-        public String toString() {
-            return "Trie{" +
-                    "isEnd=" + isEnd +
-                    ", next=" + Arrays.toString(next) +
-                    '}';
-        }
-    }
-
-    public static void main(String[] args) {
-        No211 demo = new No211();
-
-        demo.addWord("abc");
-
-        System.out.println(demo.search("abc"));
-        System.out.println(demo.search(".bc"));
-        System.out.println(demo.search("a.c"));
-        System.out.println(demo.search("ab."));
-        System.out.println(demo.search("b.."));
-    }
 }

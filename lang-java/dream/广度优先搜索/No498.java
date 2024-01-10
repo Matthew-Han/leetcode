@@ -1,4 +1,4 @@
-package 深度优先搜索;
+package 广度优先搜索;
 
 import java.util.*;
 

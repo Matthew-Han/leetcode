@@ -1,5 +1,7 @@
 package 设计题;
 
+import 默认模板.TrieNode;
+
 /**
  * @author Matthew Han
  * @version 1.0
@@ -9,18 +11,7 @@ package 设计题;
 
 public class No208 {
 
-    public static class TrieNode {
-        boolean isEnd;
-        TrieNode[] children;
 
-        public TrieNode() {
-            this.isEnd = false;
-            this.children = new TrieNode[26];
-        }
-
-    }
-
-    TrieNode trieNode;
 
     /**
      * #208 实现 Trie (前缀树)
@@ -60,10 +51,10 @@ public class No208 {
             return;
         }
         char curr = word.charAt(index);
-        if (tmp.children[curr - 'a'] == null) {
-            tmp.children[curr - 'a'] = new TrieNode();
+        if (tmp.next[curr - 'a'] == null) {
+            tmp.next[curr - 'a'] = new TrieNode();
         }
-        tmp = tmp.children[curr - 'a'];
+        tmp = tmp.next[curr - 'a'];
         if (index == word.length() - 1) {
             tmp.isEnd = true;
             // 完成该次递归
@@ -89,13 +80,13 @@ public class No208 {
             return false;
         }
         char curr = word.charAt(index);
-        if (tmp.children[curr - 'a'] == null) {
+        if (tmp.next[curr - 'a'] == null) {
             init = true;
             // System.out.println("catch");
             return false;
         }
         if (index == word.length() - 1) {
-            if (tmp.children[curr - 'a'].isEnd) {
+            if (tmp.next[curr - 'a'].isEnd) {
                 init = true;
                 return true;
             } else {
@@ -104,7 +95,7 @@ public class No208 {
             }
         } else {
             index++;
-            tmp = tmp.children[curr - 'a'];
+            tmp = tmp.next[curr - 'a'];
             return search(word);
         }
     }
@@ -123,7 +114,7 @@ public class No208 {
             return false;
         }
         char curr = prefix.charAt(index);
-        if (tmp.children[curr - 'a'] == null) {
+        if (tmp.next[curr - 'a'] == null) {
             init = true;
             return false;
         }
@@ -133,7 +124,7 @@ public class No208 {
 
         } else {
             index++;
-            tmp = tmp.children[curr - 'a'];
+            tmp = tmp.next[curr - 'a'];
             return startsWith(prefix);
         }
     }

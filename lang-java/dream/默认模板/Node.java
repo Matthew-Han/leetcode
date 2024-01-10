@@ -26,8 +26,4 @@ public class Node {
         this.children = children;
     }
 
-    public static void main(String[] args) {
-        System.out.println("sss");
-    }
-
 }

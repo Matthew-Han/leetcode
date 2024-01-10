@@ -6,8 +6,10 @@ let minGrid;
  */
 let minPathCost = (grid, moveCost) => {
     let ans = 0x3f3f3f3f;
-    minGrid = createGrid(grid.length, grid[grid.length - 1].length, 0x3f3f3f3f);
-    dfs(grid, moveCost, 0, 0, 0);
+    minGrid = new Array(grid.length).fill(0).map(() => new Array(grid[0].length).fill(0x3f3f3f3f));
+    for (let i = 0; i < grid[0].length; i++) {
+        dfs(grid, moveCost, 0, 0, i);
+    }
     for (let i = 0; i < minGrid[minGrid.length - 1].length; i++) {
         ans = Math.min(ans, minGrid[minGrid.length - 1][i]);
     }
@@ -15,30 +17,16 @@ let minPathCost = (grid, moveCost) => {
 };
 
 let dfs = (grid, moveCost, sum, x, y) => {
+    if (x >= grid.length) {
+        return;
+    }
     sum += grid[x][y];
     if (sum >= minGrid[x][y]) {
         return;
     } else {
         minGrid[x][y] = sum;
     }
-    if (y < grid[grid.length - 1].length - 1) {
-        for (let i = 0; i < grid[x].length; i++) {
-            dfs(grid, moveCost, sum + moveCost[grid[x][y]][i], x + 1, i);
-        }
+    for (let i = 0; i < grid[x].length; i++) {
+        dfs(grid, moveCost, sum + moveCost[grid[x][y]][i], x + 1, i);
     }
 }
-
-
-let createGrid = (m, n, val) => {
-    let arr = [];
-    for (let i = 0; i < m; i++) {
-        arr[i] = [];
-        for (let j = 0; j < n; j++) {
-            arr[i][j] = val;
-        }
-    }
-    return arr;
-}
-
-
-minPathCost([[5, 3], [4, 0], [2, 1]], [[9, 8], [1, 5], [10, 12], [18, 6], [2, 4], [14, 3]])

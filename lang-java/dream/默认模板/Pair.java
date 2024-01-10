@@ -1,6 +1,7 @@
 package 默认模板;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Pair<K,V> implements Serializable {
 
@@ -86,11 +87,9 @@ public class Pair<K,V> implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o instanceof Pair) {
-            Pair pair = (Pair) o;
-            if (key != null ? !key.equals(pair.key) : pair.key != null) return false;
-            if (value != null ? !value.equals(pair.value) : pair.value != null) return false;
-            return true;
+        if (o instanceof Pair pair) {
+            if (!Objects.equals(key, pair.key)) return false;
+            return Objects.equals(value, pair.value);
         }
         return false;
     }

@@ -1,5 +1,7 @@
 package 树;
 
+import 默认模板.TrieNode;
+
 import java.util.*;
 
 /**
@@ -10,7 +12,7 @@ import java.util.*;
 public class No212 {
 
     List<String> ans;
-    Trie root;
+    TrieNode root;
     int[] dx = {-1, 1, 0, 0};
     int[] dy = {0, 0, -1, 1};
 
@@ -23,11 +25,11 @@ public class No212 {
      */
     public List<String> findWords(char[][] board, String[] words) {
         ans = new ArrayList<>();
-        root = new Trie();
+        root = new TrieNode();
         init(words);
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                Trie tmp = root;
+                TrieNode tmp = root;
                 boolean[][] vis = new boolean[board.length][board[0].length];
                 vis[i][j] = true;
                 dfs(board, i, j, vis, tmp, "" + board[i][j]);
@@ -37,7 +39,7 @@ public class No212 {
     }
 
 
-    public void dfs(char[][] board, int x, int y, boolean[][] vis, Trie tmp, String sub) {
+    public void dfs(char[][] board, int x, int y, boolean[][] vis, TrieNode tmp, String sub) {
         char curr = board[x][y];
         if (null == tmp.next[curr - 'a']) {
             return;
@@ -63,10 +65,10 @@ public class No212 {
     public void init(String[] words) {
         for (String word : words) {
             char[] arr = word.toCharArray();
-            Trie tmp = root;
+            TrieNode tmp = root;
             for (char c : arr) {
                 if (null == tmp.next[c - 'a']) {
-                    tmp.next[c - 'a'] = new Trie();
+                    tmp.next[c - 'a'] = new TrieNode();
                 }
                 tmp = tmp.next[c - 'a'];
             }
@@ -74,23 +76,6 @@ public class No212 {
         }
     }
 
-    static class Trie {
-
-        public Trie[] next;
-        public boolean isEnd;
-
-        public Trie() {
-            next = new Trie[26];
-        }
-
-        @Override
-        public String toString() {
-            return "\nTrie{" +
-                    ", next=" + Arrays.toString(next) +
-                    ", isEnd=" + isEnd +
-                    "}\n";
-        }
-    }
 
 }
 

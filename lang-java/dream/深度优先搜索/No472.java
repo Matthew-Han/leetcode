@@ -1,5 +1,7 @@
 package 深度优先搜索;
 
+import 默认模板.TrieNode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.List;
 public class No472 {
 
 
-    Trie trie;
+    TrieNode trie;
     boolean flag;
     int cnt;
 
@@ -26,7 +28,7 @@ public class No472 {
 
         Arrays.sort(words, (o1, o2) -> Integer.compare(o1.length(), o2.length()));
         List<String> ans = new ArrayList<>();
-        this.trie = new Trie();
+        this.trie = new TrieNode();
         for (String word : words) {
             this.flag = false;
             this.cnt = 0;
@@ -44,10 +46,10 @@ public class No472 {
         if (nxt == word.length()) {
             flag = true;
         }
-        Trie tmp = trie;
+        TrieNode tmp = trie;
         for (int j = nxt; j < word.length(); j++) {
-            if (tmp.nxt[word.charAt(j) - 'a'] != null) {
-                tmp = tmp.nxt[word.charAt(j) - 'a'];
+            if (tmp.next[word.charAt(j) - 'a'] != null) {
+                tmp = tmp.next[word.charAt(j) - 'a'];
                 if (tmp.isEnd) {
                     cnt++;
                     dfs(word, j + 1);
@@ -61,25 +63,15 @@ public class No472 {
 
 
     public void insert(String word) {
-        Trie curr = trie;
+        TrieNode curr = trie;
         for (int i = 0; i < word.length(); i++) {
-            if (curr.nxt[word.charAt(i) - 'a'] == null) {
-                curr.nxt[word.charAt(i) - 'a'] = new Trie();
+            if (curr.next[word.charAt(i) - 'a'] == null) {
+                curr.next[word.charAt(i) - 'a'] = new TrieNode();
             }
-            curr = curr.nxt[word.charAt(i) - 'a'];
+            curr = curr.next[word.charAt(i) - 'a'];
         }
         curr.isEnd = true;
     }
 
-    public static class Trie {
 
-        boolean isEnd;
-        Trie[] nxt;
-
-        public Trie() {
-            this.isEnd = false;
-            this.nxt = new Trie[26];
-        }
-
-    }
 }

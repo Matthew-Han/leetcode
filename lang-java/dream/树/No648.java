@@ -1,5 +1,7 @@
 package 树;
 
+import 默认模板.TrieNode;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,10 +12,10 @@ import java.util.List;
  **/
 public class No648 {
 
-    TrieTree node;
+    TrieNode node;
 
     public String replaceWords(List<String> dictionary, String sentence) {
-        node = new TrieTree();
+        node = new TrieNode();
         StringBuilder sb = new StringBuilder();
         for (String d : dictionary) {
             build(d.toCharArray(), 0, node);
@@ -26,40 +28,22 @@ public class No648 {
         return sb.toString();
     }
 
-    public void build(char[] arr, int idx, TrieTree node) {
+    public void build(char[] arr, int idx, TrieNode node) {
         char c = arr[idx];
-        node.nxt[c - 'a'] = node.nxt[c - 'a'] == null ? new TrieTree() : node.nxt[c - 'a'];
+        node.next[c - 'a'] = node.next[c - 'a'] == null ? new TrieNode() : node.next[c - 'a'];
         if (idx == arr.length - 1) {
-            node.nxt[c - 'a'].isEnd = true;
+            node.next[c - 'a'].isEnd = true;
             return;
         }
-        build(arr, idx + 1, node.nxt[c - 'a']);
+        build(arr, idx + 1, node.next[c - 'a']);
     }
 
-    public String check(char[] arr, int idx, String ans, TrieTree node) {
-        if (idx > arr.length - 1 || node.nxt[arr[idx] - 'a'] == null) {
+    public String check(char[] arr, int idx, String ans, TrieNode node) {
+        if (idx > arr.length - 1 || node.next[arr[idx] - 'a'] == null) {
             return new String(arr);
         } else {
-            return node.nxt[arr[idx] - 'a'].isEnd ? ans + arr[idx] : check(arr, idx + 1, ans + arr[idx], node.nxt[arr[idx] - 'a']);
+            return node.next[arr[idx] - 'a'].isEnd ? ans + arr[idx] : check(arr, idx + 1, ans + arr[idx], node.next[arr[idx] - 'a']);
         }
     }
 
-    public static class TrieTree {
-
-        public boolean isEnd;
-        public TrieTree[] nxt;
-
-        public TrieTree() {
-            isEnd = false;
-            nxt = new TrieTree[26];
-        }
-
-        @Override
-        public String toString() {
-            return "TrieTree{" +
-                    "isEnd=" + isEnd +
-                    ", nxt=" + Arrays.toString(nxt) +
-                    '}';
-        }
-    }
 }
