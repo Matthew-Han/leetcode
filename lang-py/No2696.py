@@ -7,7 +7,7 @@
 class Solution:
     def minLengthByReplace(self, s: str) -> int:
         curr = ''
-        while (len(s) != len(curr)):
+        while len(s) != len(curr):
             curr = s
             s = s.replace('AB', '').replace('CD', '')
         return len(s)

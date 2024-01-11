@@ -4,6 +4,7 @@
 """
 from typing import List
 
+
 class Solution:
     def countPairs(self, nums: List[int], target: int) -> int:
         ans = 0
@@ -15,4 +16,3 @@ class Solution:
                 else:
                     break
         return ans
-
