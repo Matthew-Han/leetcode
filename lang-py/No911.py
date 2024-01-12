@@ -25,7 +25,7 @@ class TopVotedCandidate:
             else:
                 self.map[times[i]] = mp.pop()
 
-    def max_persons(self, tmp: defaultdict) -> set[int]:
+    def max_persons(self, tmp: defaultdict[int, int]) -> set[int]:
         sorted_persons = sorted(tmp.items(), key=lambda x: x[1], reverse=True)
         filter_persons = list(filter(lambda x: x[1] == sorted_persons[0][1], sorted_persons))
         return set(map(lambda x: x[0], filter_persons))
