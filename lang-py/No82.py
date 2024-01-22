@@ -1,3 +1,7 @@
+"""
+  author <a href="https://github.com/Matthew-Han">Matthew Han</a>
+  since 2024/1/19 10:43:32
+"""
 from collections import defaultdict
 from typing import Optional
 
@@ -21,7 +25,3 @@ class Solution:
                 tmp = tmp.next
         tmp.next = None
         return ans.next
-
-
-if __name__ == '__main__':
-    print(ListNode(2, ListNode(1, ListNode(1, ListNode(16, ListNode(3, ListNode(3)))))))
