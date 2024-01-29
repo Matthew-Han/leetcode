@@ -2,7 +2,7 @@
   author <a href="https://github.com/Matthew-Han">Matthew Han</a>
   since 2024/1/22 10:39:31
 """
-from typing import List
+import torch
 
 
 class Solution:
@@ -24,3 +24,4 @@ class Solution:
         nums[t1] = nums[t2]
         nums[t2] = t
         return int(''.join(nums))
+
