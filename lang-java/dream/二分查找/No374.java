@@ -32,8 +32,6 @@ public class No374 {
         int right = n;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            System.out.println("left: " + left);
-            System.out.println("right: " + right);
             if (guess(mid) == 1) {
                 left = mid + 1;
             } else if (guess(mid) == -1) {
@@ -47,7 +45,4 @@ public class No374 {
     }
 
 
-    public static void main(String[] args) {
-        System.out.println(guessNumber(10));
-    }
 }

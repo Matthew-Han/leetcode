@@ -23,7 +23,6 @@ public class No540 {
                 } else {
                     l = mid + 1;
                 }
-
             } else if (nums[mid + 1] == nums[mid]) {
                 if (mid % 2 == 0) {
                     l = mid + 1;
@@ -57,7 +56,6 @@ public class No540 {
                 } else {
                     left = mid + 1;
                 }
-
             } else if (mid + 1 < nums.length && nums[mid] == nums[mid + 1]) {
                 // 奇数在左边
                 if ((mid & 1) == 1) {

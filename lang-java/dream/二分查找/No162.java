@@ -21,7 +21,6 @@ public class No162 {
         int right = nums.length - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            System.out.println("mid = " + mid);
             if (mid - 1 < 0) {
                 if (mid + 1 < nums.length) {
                     return nums[mid] > nums[mid + 1] ? mid : mid + 1;
@@ -44,9 +43,5 @@ public class No162 {
         return -1;
     }
 
-
-    public static void main(String[] args) {
-        System.out.println(findPeakElement(new int[]{2, 1, 2}));
-    }
 
 }

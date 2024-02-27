@@ -76,44 +76,44 @@ public class No367 {
 
     public static int[] interval(int len) {
         int start;
-        int end;
-        switch (len) {
-            case 3:
+        int end = switch (len) {
+            case 3 -> {
                 start = 10;
-                end = 32;
-                break;
-            case 4:
+                yield 32;
+            }
+            case 4 -> {
                 start = 31;
-                end = 100;
-                break;
-            case 5:
+                yield 100;
+            }
+            case 5 -> {
                 start = 100;
-                end = 317;
-                break;
-            case 6:
+                yield 317;
+            }
+            case 6 -> {
                 start = 316;
-                end = 1000;
-                break;
-            case 7:
+                yield 1000;
+            }
+            case 7 -> {
                 start = 1000;
-                end = 3163;
-                break;
-            case 8:
+                yield 3163;
+            }
+            case 8 -> {
                 start = 3162;
-                end = 10000;
-                break;
-            case 9:
+                yield 10000;
+            }
+            case 9 -> {
                 start = 10000;
-                end = 31623;
-                break;
-            case 10:
+                yield 31623;
+            }
+            case 10 -> {
                 start = 31622;
-                end = 46341;
-                break;
-            default:
+                yield 46341;
+            }
+            default -> {
                 start = 1;
-                end = 10;
-        }
+                yield 10;
+            }
+        };
         return new int[]{start, end};
     }
 
