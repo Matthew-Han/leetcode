@@ -34,15 +34,10 @@ public class No151 {
         for (int i = list.size() - 1; i >= 0; i--) {
             sb.append(list.get(i)).append(" ");
         }
-        if (sb.length() > 0) {
+        if (!sb.isEmpty()) {
             sb.delete(sb.length() - 1, sb.length());
         }
         return sb.toString();
     }
 
-    public static void main(String[] args) {
-        System.out.println(reverseWords("  hello   world!  "));
-        System.out.println(reverseWords("    a good   example    "));
-        System.out.println(reverseWords("     "));
-    }
 }

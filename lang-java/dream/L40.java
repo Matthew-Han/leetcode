@@ -49,11 +49,7 @@ public class L40 {
         for (Integer n : priorityQueue) {
             result[index++] = n;
         }
-        System.out.println(priorityQueue.poll());
         return result;
     }
 
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(getLeastNumbers(new int[]{1, 2, -1, -11, 3, 4}, 2)));
-    }
 }

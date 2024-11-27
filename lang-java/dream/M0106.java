@@ -36,7 +36,6 @@ public class M0106 {
             j = i + 2;
             // 或者直接 count = 0;
         }
-        System.out.println("sb = " + sb);
         return sb.length() < s.length() ? sb.toString() : s;
     }
 
@@ -62,7 +61,6 @@ public class M0106 {
                 if (curr == s.charAt(i + 1)) {
                     isAdd = false;
                 } else {
-                    isAdd = true;
                     sb.append(currCount);
                     currCount = 1;
                 }
@@ -81,12 +79,6 @@ public class M0106 {
                 sb.append(s.charAt(i + 1)).append(1);
             }
         }
-        System.out.println(sb);
-
         return sb.length() < len ? sb.toString() : s;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(compressString2("aabcccccaa"));
     }
 }

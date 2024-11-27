@@ -36,11 +36,7 @@ public class L62 {
             list.remove(index);
             index += m - 1;
         }
-        return list.get(0);
+        return list.getFirst();
 
-    }
-
-    public static void main(String[] args) {
-        System.out.println(lastRemaining(100, 27));
     }
 }

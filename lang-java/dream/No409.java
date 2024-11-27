@@ -23,7 +23,6 @@ public class No409 {
             map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
         }
         int len = 0;
-        System.out.println(map);
         boolean isContainsOdd = false;
         for (Integer value : map.values()) {
             if (value % 2 != 0) {
@@ -33,10 +32,5 @@ public class No409 {
             len += value * 2;
         }
         return isContainsOdd ? len + 1 : len;
-
-    }
-
-    public static void main(String[] args) {
-        System.out.println(longestPalindrome("asdsAkjnahsAJbJBkjsaLKASJLk"));
     }
 }

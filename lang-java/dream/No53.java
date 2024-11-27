@@ -28,7 +28,6 @@ public class No53 {
                 dp[i] = prev + nums[i];
                 prev += dp[i];
             }
-            System.out.println("dp = " + Arrays.toString(dp));
         }
         int max = Integer.MIN_VALUE;
         for (int n : dp) {

@@ -45,19 +45,4 @@ public class L03 {
         }
         return count;
     }
-
-    /**
-     * 这个异或解决两数交换太秀了
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        int a = 7;
-        int b = 11;
-        b = a ^ b;
-        a = a ^ b;
-        b = a ^ b;
-        System.out.println(a);
-        System.out.println(b);
-    }
 }

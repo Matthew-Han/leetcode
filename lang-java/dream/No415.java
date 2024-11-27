@@ -40,7 +40,6 @@ public class No415 {
                 res[i - 1]++;
             }
         }
-        System.out.println("res = " + Arrays.toString(res));
         StringBuilder ans = new StringBuilder();
         for (int i = 0; i < res.length; i++) {
             if (i == 0 && res[i] == 0) {
@@ -49,8 +48,6 @@ public class No415 {
             ans.append(res[i]);
         }
         return ans.toString();
-
-
     }
 
     /**
@@ -94,12 +91,6 @@ public class No415 {
                 stringBuilder.append(fucker2[i1]);
             }
         }
-
         return stringBuilder.toString();
-    }
-
-    public static void main(String[] args) {
-        System.out.println(addStrings2("0", "0"));
-        System.out.println((int) '9');
     }
 }

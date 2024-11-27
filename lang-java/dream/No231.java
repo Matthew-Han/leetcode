@@ -49,11 +49,4 @@ public class No231 {
         }
         return n == 1;
     }
-
-
-    public static void main(String[] args) {
-        System.out.println(isPowerOfTwoPro(2));
-        System.out.println(3 >> 1);
-
-    }
 }

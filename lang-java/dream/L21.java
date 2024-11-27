@@ -41,7 +41,4 @@ public class L21 {
         return nums;
     }
 
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(exchange(new int[]{3, 2, 3, 2, 3})));
-    }
 }

@@ -42,7 +42,6 @@ public class No389 {
      * @return
      */
     public static char findTheDifferencePro(String s, String t) {
-
         char num1 = 0;
         char num2 = 0;
         int len = s.length();
@@ -52,10 +51,5 @@ public class No389 {
         }
         num2 += t.charAt(len);
         return (char) (num2 - num1);
-    }
-
-
-    public static void main(String[] args) {
-        System.out.println(findTheDifferencePro("aavv", "aaavv"));
     }
 }

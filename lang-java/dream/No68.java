@@ -35,13 +35,13 @@ public class No68 {
                 fuck(ans, sub, maxWidth);
             }
         }
-        ans.set(ans.size() - 1, fuck(ans.get(ans.size() - 1), maxWidth));
+        ans.set(ans.size() - 1, fuck(ans.getLast(), maxWidth));
         return ans;
     }
 
     public void fuck(List<String> ans, List<String> sub, int maxWidth) {
         if (sub.size() == 1) {
-            ans.add(sub.get(0) + build(maxWidth - sub.get(0).length()));
+            ans.add(sub.getFirst() + build(maxWidth - sub.getFirst().length()));
             return;
         }
         int len = 0;
@@ -52,7 +52,7 @@ public class No68 {
         int b = d / (sub.size() - 1);
         int c = d % (sub.size() - 1);
         String k = build(b);
-        StringBuilder tmp = new StringBuilder(sub.get(0));
+        StringBuilder tmp = new StringBuilder(sub.getFirst());
         for (int i = 1; i < sub.size(); i++) {
             if (c-- > 0) {
                 tmp.append(" ");
@@ -85,17 +85,8 @@ public class No68 {
     }
 
     public String build(int len) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < len; i++) {
-            sb.append(" ");
-        }
-        return sb.toString();
+        return " ".repeat(Math.max(0, len));
     }
 
-    public static void main(String[] args) {
-        String string = Arrays.toString(new int[]{1, 1, 1, 0});
-        System.out.println("string = " + string);
-
-    }
 
 }

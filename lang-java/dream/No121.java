@@ -17,7 +17,6 @@ public class No121 {
      * @return
      */
     public static int maxProfit(int[] prices) {
-
         int nextFucker = 0;
         for (int i = prices.length - 1; i >= 0; i--) {
             for (int f = i - 1 ; f >= 0; f--) {
@@ -28,7 +27,6 @@ public class No121 {
             }
         }
         return nextFucker;
-
     }
 
     /**
@@ -57,7 +55,4 @@ public class No121 {
         return maxDv;
     }
 
-    public static void main(String[] args) {
-        System.out.println(dp(new int[]{6,19,7,9,6,22}));
-    }
 }

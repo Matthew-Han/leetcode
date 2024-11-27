@@ -19,7 +19,7 @@ public class No434 {
      * @return
      */
     public static int countSegments(String s) {
-        if (s.length() == 0) {
+        if (s.isEmpty()) {
             return 0;
         }
         String[] strings = s.split("");

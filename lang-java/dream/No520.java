@@ -32,7 +32,7 @@ public class No520 {
      */
     public static boolean detectCapitalUseByArray(String word) {
         int count = 0;
-        for (int i = 0; i < word.toCharArray().length; i++) {
+        for (int i = 0; i < word.length(); i++) {
             count += word.charAt(i) <= 90 ? 1 : 0;
         }
         if (count == word.length()) {
@@ -84,10 +84,5 @@ public class No520 {
             return (qdx || qxx);
         }
         return true;
-    }
-
-
-    public static void main(String[] args) {
-        System.out.println(detectCapitalUseByArray("EALE"));
     }
 }

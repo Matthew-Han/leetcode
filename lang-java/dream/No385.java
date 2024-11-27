@@ -16,7 +16,6 @@ public class No385 {
      */
     public NestedInteger deserialize(String s) {
         NestedInteger head = new NestedInteger();
-
         Stack<NestedInteger> stack = new Stack<>();
         String[] arr = s.split(",");
         for (String value : arr) {
@@ -50,7 +49,7 @@ public class No385 {
                 }
             }
         }
-        return head.getList().get(0);
+        return head.getList().getFirst();
     }
 
     public Integer fuck(char[] arr) {
@@ -60,7 +59,7 @@ public class No385 {
                 sb.append(c);
             }
         }
-        return sb.length() == 0 ? null : Integer.parseInt(sb.toString());
+        return sb.isEmpty() ? null : Integer.parseInt(sb.toString());
     }
 
 

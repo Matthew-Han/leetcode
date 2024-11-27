@@ -12,10 +12,6 @@ import java.util.Stack;
 public class No20 {
 
 
-    public static void main(String[] args) {
-        System.out.println(isValid3("([([])]){(()[]())}"));
-    }
-
     /**
      * 执行用时： 5 ms , 在所有 Java 提交中击败了 9.16% 的用户
      * 内存消耗： 37.7 MB , 在所有 Java 提交中击败了 53.96% 的用户

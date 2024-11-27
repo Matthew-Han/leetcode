@@ -70,9 +70,4 @@ public class L59 {
         }
         return result;
     }
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
-        System.out.println(Arrays.toString(maxSlidingWindowPq(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
-    }
 }

@@ -42,11 +42,8 @@ public class No461 {
         Integer[] yTemp = new Integer[len];
         int j = xBinary.length - 1;
         int k = yBinary.length - 1;
-
         int count = 0;
         for (int i = len - 1; i >= 0; i--) {
-            System.out.println(j);
-            System.out.println(k);
             xTemp[i] = (j >= 0) ? Integer.parseInt(xBinary[j]) : 0;
             yTemp[i] = (k >= 0) ? Integer.parseInt(yBinary[k]) : 0;
             j--;
@@ -55,15 +52,6 @@ public class No461 {
                 count++;
             }
         }
-        System.out.println("xTemp = " + Arrays.toString(xTemp));
-        System.out.println("yTemp = " + Arrays.toString(yTemp));
-
         return count;
-
-    }
-
-    public static void main(String[] args) {
-        System.out.println(hammingDistance(1, 44));
-
     }
 }

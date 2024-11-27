@@ -46,8 +46,4 @@ public class M0503 {
         return flag ? max : oneCount + 1;
 
     }
-
-    public static void main(String[] args) {
-        System.out.println(reverseBits(0));
-    }
 }

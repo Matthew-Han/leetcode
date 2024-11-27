@@ -34,8 +34,4 @@ public class No263 {
             }
         }
     }
-
-    public static void main(String[] args) {
-        System.out.println(isUgly(8));
-    }
 }

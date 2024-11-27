@@ -23,23 +23,13 @@ public class No506 {
         Map<Integer, String> map = new LinkedHashMap<>(nums.length * 4 / 3 + 1);
         int[] sort = nums.clone();
         Arrays.sort(sort);
-        System.out.println(Arrays.toString(nums));
-        System.out.println(Arrays.toString(sort));
-
         for (int i = 0; i < sort.length; i++) {
             map.put(sort[i], sort.length - i == 1 ? "Gold Medal" : (sort.length - i == 2 ? "Silver Medal" : (sort.length - i == 3 ? "Bronze Medal" : String.valueOf(sort.length - i))));
         }
-        System.out.println(map);
-
         String[] strings = new String[map.size()];
         for (int i = 0; i < nums.length; i++) {
             strings[i] = map.get(nums[i]);
         }
         return strings;
     }
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(findRelativeRanks(new int[]{222, 5, 9, 3, 31})));
-    }
-
 }

@@ -38,6 +38,5 @@ public class M0206 {
             }
         }
         return true;
-
     }
 }

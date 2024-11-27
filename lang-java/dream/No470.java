@@ -53,11 +53,4 @@ public class No470 {
         return new Random().nextInt(7) + 1;
     }
 
-    public static void main(String[] args) {
-        int[] bucket = new int[11];
-        for (int i = 0; i < 10000; i++) {
-            bucket[rand10()]++;
-        }
-        System.out.println("bucket = " + Arrays.toString(bucket));
-    }
 }

@@ -48,8 +48,4 @@ public class No118 {
         return lover;
     }
 
-    public static void main(String[] args) {
-        System.out.println(generate(0));
-
-    }
 }

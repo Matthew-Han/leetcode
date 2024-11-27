@@ -30,7 +30,7 @@ public class No496 {
         }
 
         for (int i = 0; i < nums1.length; i++) {
-            if (map.get(nums1[i]).size() == 0) {
+            if (map.get(nums1[i]).isEmpty()) {
                 result[i] = -1;
             }
             for (int j = 0; j < map.get(nums1[i]).size(); j++) {
@@ -42,10 +42,8 @@ public class No496 {
                     result[i] = map.get(nums1[i]).get(j);
                     break;
                 }
-
             }
         }
-        System.out.println(map);
         return result;
     }
 
@@ -84,9 +82,5 @@ public class No496 {
             }
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(nextGreaterElementPro(new int[]{4, 1, 2}, new int[]{1, 3, 4, 2})));
     }
 }

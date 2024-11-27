@@ -17,7 +17,6 @@ public class No189 {
      * @param k
      */
     public static void rotate2(int[] nums, int k) {
-
         k = k % nums.length;
         int[] temp = new int[nums.length];
         int a = nums.length - k;
@@ -32,8 +31,6 @@ public class No189 {
             }
         }
         System.arraycopy(temp, 0, nums, 0, temp.length);
-        System.out.println(Arrays.toString(nums));
-
     }
 
 
@@ -53,13 +50,6 @@ public class No189 {
             nums[0] = temp;
             k--;
         }
-        System.out.println(Arrays.toString(nums));
     }
 
-    public static void main(String[] args) {
-
-        rotate2(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
-
-
-    }
 }

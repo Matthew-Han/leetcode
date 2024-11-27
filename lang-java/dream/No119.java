@@ -42,7 +42,4 @@ public class No119 {
         return fucker;
     }
 
-    public static void main(String[] args) {
-        System.out.println(getRow(3));
-    }
 }

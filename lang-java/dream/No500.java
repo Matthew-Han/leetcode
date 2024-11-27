@@ -46,10 +46,5 @@ public class No500 {
             }
         }
         return list.toArray(new String[0]);
-
-    }
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(findWords(new String[]{"Hello", "Alaska", "Dad", "Peace", "Hash"})));
     }
 }

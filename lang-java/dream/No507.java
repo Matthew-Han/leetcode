@@ -39,12 +39,6 @@ public class No507 {
         for (Integer integer : set) {
             count += integer;
         }
-        System.out.println(set);
-        System.out.println(count);
         return num == count;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(checkPerfectNumber(20996011));
     }
 }

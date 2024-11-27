@@ -15,12 +15,11 @@ public class No171 {
      * @return
      */
     public static int titleToNumber(String s) {
-
         String[] origin = s.split("");
         int result = 0;
         int carry = 0;
         for (int i = origin.length - 1; i >= 0; i--) {
-            result += ((int) origin[i].charAt(0) - 64) * Math.pow(26, carry);
+            result += (int) (((int) origin[i].charAt(0) - 64) * Math.pow(26, carry));
             carry++;
         }
         return result;
@@ -38,15 +37,10 @@ public class No171 {
         int result = 0;
         int carry = 0;
         for (int i = s.length() - 1; i >= 0; i--) {
-            result += (s.charAt(i) - 64) * Math.pow(26, carry);
+            result += (int) ((s.charAt(i) - 64) * Math.pow(26, carry));
             carry++;
         }
         return result;
     }
 
-    public static void main(String[] args) {
-        System.out.println("titleToNumber = " + quick("Z"));
-
-        System.out.println("Abc".charAt(2));
-    }
 }

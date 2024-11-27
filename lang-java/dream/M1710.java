@@ -57,8 +57,4 @@ public class M1710 {
         return m;
     }
 
-    public static void main(String[] args) {
-        System.out.println(majorityElement(new int[]{2, 2, 3, 3, 1}));
-    }
-
 }

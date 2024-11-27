@@ -9,12 +9,6 @@ import java.util.*;
  **/
 public class No14 {
 
-    public static void main(String[] args) {
-        No14 lcp = new No14();
-        String[] strs = {"acaa", "cbsaa"};
-        System.out.println(lcp.longestCommonPrefix(strs));
-    }
-
     /**
      * 自己写的垃圾解法
      *
@@ -85,7 +79,7 @@ public class No14 {
                 }
             }
             ans = ans.substring(0, j);
-            if ("".equals(ans)) {
+            if (ans.isEmpty()) {
                 return ans;
             }
         }

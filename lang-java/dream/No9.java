@@ -7,10 +7,6 @@
  **/
 public class No9 {
 
-    public static void main(String[] args) {
-        No9 pn = new No9();
-        System.out.println(pn.isPalindrome(11011));
-    }
 
     private boolean isPalindrome(int x) {
         String left, right;

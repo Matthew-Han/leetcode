@@ -17,9 +17,5 @@ public class No168 {
         return (n-- == 0) ? "" : (convertToTitle(n / 26) + (char) (n % 26 + 'A'));
     }
 
-    public static void main(String[] args) {
-        System.out.println(convertToTitle(701));
-        System.out.println(25 % 26);
 
-    }
 }

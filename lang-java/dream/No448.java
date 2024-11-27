@@ -22,7 +22,6 @@ public class No448 {
      * @return
      */
     public static List<Integer> findDisappearedNumbers(int[] nums) {
-
         Arrays.sort(nums);
         int[] temp = new int[nums.length];
         for (int num : nums) {
@@ -34,13 +33,6 @@ public class No448 {
                 list.add(i + 1);
             }
         }
-        System.out.println(Arrays.toString(nums));
-        System.out.println(Arrays.toString(temp));
         return list;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(findDisappearedNumbers(new int[]{1, 1}));
-
     }
 }

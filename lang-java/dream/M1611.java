@@ -17,7 +17,6 @@ public class M1611 {
      * @return
      */
     public int[] divingBoard(int shorter, int longer, int k) {
-
         if (k == 0) {
             return new int[]{};
         }
@@ -31,7 +30,6 @@ public class M1611 {
             res[i] = longer * i + shorter * (k - i);
         }
         return res;
-
     }
 
 }

@@ -23,11 +23,6 @@ public class L05 {
                 sb.delete(i + 3, i + 4);
             }
         }
-        System.out.println("sb = " + sb);
         return s.replaceAll(" ", "%20");
-    }
-
-    public static void main(String[] args) {
-        System.out.println(replaceSpace(" We are happy . "));
     }
 }

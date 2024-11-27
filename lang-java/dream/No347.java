@@ -23,12 +23,7 @@ public class No347 {
      */
     public static int[] topKFrequent(int[] nums, int k) {
         int[] res = new int[k];
-        PriorityQueue<Map.Entry<Integer, Integer>> priorityQueue = new PriorityQueue<>(new Comparator<Map.Entry<Integer, Integer>>() {
-            @Override
-            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
-                return Integer.compare(o2.getValue(), o1.getValue());
-            }
-        });
+        PriorityQueue<Map.Entry<Integer, Integer>> priorityQueue = new PriorityQueue<>((o1, o2) -> Integer.compare(o2.getValue(), o1.getValue()));
 
         Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
@@ -41,23 +36,6 @@ public class No347 {
         }
 
         return res;
-    }
-
-    public static void main(String[] args) {
-        topKFrequent(new int[]{1, 1, 1, 1, 2, 2, 3, 4, 5, 5}, 2);
-
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return Integer.compare(o2, o1);
-            }
-        });
-        priorityQueue.add(1);
-        priorityQueue.add(4);
-        priorityQueue.add(2);
-        System.out.println("priorityQueue = " + priorityQueue);
-        System.out.println("priorityQueue = " + priorityQueue.peek());
-        System.out.println("priorityQueue = " + priorityQueue.poll());
     }
 
 }

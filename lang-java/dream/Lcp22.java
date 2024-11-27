@@ -40,7 +40,6 @@ public class Lcp22 {
                 set.add(v);
                 dfs(next1, k, flag);
             }
-
             boolean[][] next2 = clone(board);
             flag = paint(next2, false, i, cnt);
             v = convert(next2);
@@ -70,7 +69,6 @@ public class Lcp22 {
                 }
                 r[i] = true;
             }
-
         } else {
             for (int j = 0; j < board.length; j++) {
                 if (!board[j][index]) {

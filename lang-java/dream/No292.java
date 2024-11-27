@@ -22,8 +22,4 @@ public class No292 {
     public static boolean canWinNim(int n) {
         return 0 != n % 4;
     }
-
-    public static void main(String[] args) {
-        canWinNim(4);
-    }
 }

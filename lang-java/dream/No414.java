@@ -36,8 +36,4 @@ public class No414 {
         }
         return fuck[fuck.length - 3];
     }
-
-    public static void main(String[] args) {
-        System.out.println(thirdMax(new int[]{1, 2, 3, -90, -2, 11, 3}));
-    }
 }

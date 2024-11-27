@@ -33,7 +33,7 @@ public class L58I {
         for (int i = list.size() - 1; i >= 0; i--) {
             sb.append(list.get(i)).append(" ");
         }
-        if (sb.length() > 0) {
+        if (!sb.isEmpty()) {
             sb.delete(sb.length() - 1, sb.length());
         }
         return sb.toString();

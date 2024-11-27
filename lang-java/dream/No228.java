@@ -44,7 +44,6 @@ public class No228 {
                     prev = nums[i + 1];
                 }
             }
-
         }
         return ans;
     }

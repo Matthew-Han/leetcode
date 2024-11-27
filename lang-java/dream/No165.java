@@ -19,7 +19,6 @@ public class No165 {
         for (int i = 0; i < k; i++) {
             int v1 = i >= char1.length ? 0 : Integer.parseInt(char1[i]);
             int v2 = i >= char2.length ? 0 : Integer.parseInt(char2[i]);
-
             if (v1 > v2) {
                 return 1;
             } else if (v1 < v2) {

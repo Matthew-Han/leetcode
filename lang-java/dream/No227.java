@@ -26,7 +26,7 @@ public class No227 {
                 tmp.append(curr);
             } else {
                 if (curr == '+' || curr == '-') {
-                    if (tmp.length() != 0) {
+                    if (!tmp.isEmpty()) {
                         stack.push(Integer.parseInt(tmp.toString()));
                         tmp.setLength(0);
                     }
@@ -34,7 +34,7 @@ public class No227 {
                 } else {
                     i++;
                     int prev;
-                    if (tmp.length() != 0) {
+                    if (!tmp.isEmpty()) {
                         prev = Integer.parseInt(tmp.toString());
                     } else {
                         prev = (Integer) stack.pop();
@@ -44,8 +44,6 @@ public class No227 {
                         tmp.append(s.charAt(i));
                         i++;
                     }
-                    //System.out.println("tmp = " + tmp);
-
                     if (curr == '*') {
                         stack.push(prev * Integer.parseInt(tmp.toString()));
                     }
@@ -57,13 +55,12 @@ public class No227 {
                 }
             }
             if (i == s.length() - 1) {
-                if (tmp.length() != 0) {
+                if (!tmp.isEmpty()) {
                     stack.push(Integer.parseInt(tmp.toString()));
                 }
             }
 
         }
-        // System.out.println("stack = " + stack);
         int ans = 0;
         char prev = 0;
         for (Object o : stack) {
@@ -77,16 +74,7 @@ public class No227 {
                 prev = (Character) o;
             }
         }
-
         return ans;
-
-
     }
 
-    public static void main(String[] args) {
-        No227 demo = new No227();
-        System.out.println(demo.calculate("123+440/10-123*3*2+1"));
-        System.out.println(demo.calculate("10000/10/5+16/4/4"));
-        System.out.println(demo.calculate("1*3+1"));
-    }
 }

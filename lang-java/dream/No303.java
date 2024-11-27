@@ -25,19 +25,12 @@ public class No303 {
     public No303(int[] nums) {
         sums = new int[nums.length + 1];
         for (int i = 1; i < sums.length; i++) {
-            System.out.println(nums[i - 1]);
-            System.out.println("=================");
             sums[i] = sums[i - 1] + nums[i - 1];
         }
-        System.out.println(Arrays.toString(sums));
     }
 
     public int sumRange(int i, int j) {
         return sums[j + 1] - sums[i];
     }
 
-    public static void main(String[] args) {
-        No303 obj = new No303(new int[]{-2, 0, 3, -5, 2, -1});
-        System.out.println(obj.sumRange(3, 3));
-    }
 }

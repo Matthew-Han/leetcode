@@ -27,7 +27,4 @@ public class No198 {
         return currMax;
     }
 
-    public static void main(String[] args) {
-        System.out.println(rob(new int[]{4, 2, 4, 9, 6}));
-    }
 }

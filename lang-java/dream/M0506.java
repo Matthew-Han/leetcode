@@ -25,7 +25,6 @@ public class M0506 {
             }
         }
         return count;
-
     }
 
     public static String toBin(int num) {
@@ -34,9 +33,5 @@ public class M0506 {
             chs[Integer.SIZE - 1 - i] = (char) ((num >> i & 1) + '0');
         }
         return new String(chs);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(convertInteger(12, 123));
     }
 }

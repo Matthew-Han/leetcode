@@ -28,11 +28,6 @@ public class No441 {
                 return layer - 1;
             }
         }
-
         return 0;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(arrangeCoins(3));
     }
 }

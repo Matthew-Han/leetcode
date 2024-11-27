@@ -18,7 +18,6 @@ public class L56 {
      * @return
      */
     public int singleNumber(int[] nums) {
-
         Map<Integer, Integer> map = new HashMap<>();
         for (int n : nums) {
             map.put(n, map.getOrDefault(n, 0) + 1);
@@ -29,6 +28,5 @@ public class L56 {
             }
         }
         return -1;
-
     }
 }

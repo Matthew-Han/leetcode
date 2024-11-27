@@ -33,11 +33,11 @@ public class L34 {
         if (node == null) {
             return;
         }
-        list.set(0, list.get(0) + node.val);
+        list.set(0, list.getFirst() + node.val);
         list.add(node.val);
         if (node.left == null && node.right == null) {
-            if (list.get(0) == sum) {
-                list.remove(0);
+            if (list.getFirst() == sum) {
+                list.removeFirst();
                 ans.add(list);
             }
             return;

@@ -17,48 +17,22 @@ public class L17 {
      * @return
      */
     public static int[] printNumbers(int n) {
-        int max;
-        switch (n) {
-            case 2:
-                max = 99;
-                break;
-            case 3:
-                max = 999;
-                break;
-            case 4:
-                max = 9999;
-                break;
-            case 5:
-                max = 99999;
-                break;
-            case 6:
-                max = 999999;
-                break;
-            case 7:
-                max = 9999999;
-                break;
-            case 8:
-                max = 99999999;
-                break;
-            case 9:
-                max = 999999999;
-                break;
-            case 10:
-                max = Integer.MAX_VALUE;
-                break;
-            default:
-                max = 9;
-                break;
-        }
+        int max = switch (n) {
+            case 2 -> 99;
+            case 3 -> 999;
+            case 4 -> 9999;
+            case 5 -> 99999;
+            case 6 -> 999999;
+            case 7 -> 9999999;
+            case 8 -> 99999999;
+            case 9 -> 999999999;
+            case 10 -> Integer.MAX_VALUE;
+            default -> 9;
+        };
         int[] result = new int[max];
         for (int i = 1; i <= max; i++) {
             result[i - 1] = i;
         }
         return result;
     }
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(printNumbers(6)));
-    }
-
 }

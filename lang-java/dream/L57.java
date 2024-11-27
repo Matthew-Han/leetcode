@@ -87,7 +87,4 @@ public class L57 {
         return null;
     }
 
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(twoSum3(new int[]{16, 16, 18, 24, 30, 32}, 48)));
-    }
 }

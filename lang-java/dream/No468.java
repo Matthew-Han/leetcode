@@ -20,7 +20,7 @@ public class No468 {
         String[] arr = queryIP.split("\\.");
         if (cnt0 == 3 && arr.length == 4) {
             for (int i = 0; i < 4; i++) {
-                if (arr[i].length() == 0 || arr[i].length() > 3) {
+                if (arr[i].isEmpty() || arr[i].length() > 3) {
                     return "Neither";
                 }
                 // 前导 0
@@ -47,7 +47,7 @@ public class No468 {
                 return "Neither";
             }
             for (int i = 0; i < 8; i++) {
-                if (arr[i].length() > 4 || arr[i].length() < 1) {
+                if (arr[i].length() > 4 || arr[i].isEmpty()) {
                     return "Neither";
                 }
                 for (int j = 0; j < arr[i].length(); j++) {

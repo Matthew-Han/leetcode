@@ -25,9 +25,7 @@ public class No451 {
         List<Map.Entry<Character, Integer>> list = new ArrayList<>(cache.entrySet());
         list.sort((o1, o2) -> Integer.compare(o2.getValue(), o1.getValue()));
         for (Map.Entry<Character, Integer> entry : list) {
-            for (int i = 0; i < entry.getValue(); i++) {
-                sb.append(entry.getKey());
-            }
+            sb.append(String.valueOf(entry.getKey()).repeat(Math.max(0, entry.getValue())));
         }
         return sb.toString();
     }

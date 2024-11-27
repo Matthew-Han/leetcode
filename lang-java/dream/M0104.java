@@ -36,8 +36,4 @@ public class M0104 {
         return true;
     }
 
-    public static void main(String[] args) {
-        System.out.println(canPermutePalindrome("tactcoa"));
-        System.out.println(canPermutePalindrome("aaabbbccvvff"));
-    }
 }

@@ -22,7 +22,7 @@ public class No299 {
      */
     public static String getHint(String secret, String guess) {
 
-        if (secret.length() == 0 && guess.length() == 0) {
+        if (secret.isEmpty() && guess.isEmpty()) {
             return "0A0B";
         }
         int bulls = 0;
@@ -52,7 +52,6 @@ public class No299 {
                 }
             }
         }
-        System.out.println(cows);
         return bulls + "A" + (cows - bulls) + "B";
     }
 

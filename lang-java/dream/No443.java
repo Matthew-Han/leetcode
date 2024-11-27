@@ -22,12 +22,6 @@ public class No443 {
         char currElement = chars[0];
         int currCount = 1;
         for (int i = 0; i < chars.length; i++) {
-            System.out.println("chars[i] = " + chars[i]);
-            System.out.println("currElement = " + currElement);
-            System.out.println("currCount = " + currCount);
-            System.out.println("i = " + i);
-            System.out.println("----------------------");
-
             if (i + 1 < chars.length && currElement != chars[i + 1] || i + 1 == chars.length) {
                 StringBuilder temp = new StringBuilder(String.valueOf(currElement));
                 // ['a']该种情况，不需要拼接count，只要a即可，['a', 'a']才是a2
@@ -48,11 +42,7 @@ public class No443 {
                 currCount++;
             }
         }
-        System.out.println(chars);
         return j;
     }
 
-    public static void main(String[] args) {
-        System.out.println(compress(new char[]{'a', 'a', 'a', 'a', 'a', 'b', 'b', 'v', 'v', 'h'}));
-    }
 }

@@ -20,7 +20,7 @@ public class No290 {
      */
     public static boolean wordPattern(String pattern, String str) {
 
-        if (str.length() == 0 && pattern.length() == 0) {
+        if (str.isEmpty() && pattern.isEmpty()) {
             return true;
         }
         int j = 1;
@@ -39,9 +39,6 @@ public class No290 {
                 k++;
             }
         }
-        System.out.println(map1);
-        System.out.println(map2);
-
         Integer[] ints1 = new Integer[pattern.length()];
         Integer[] ints2 = new Integer[str.split(" ").length];
 
@@ -61,10 +58,6 @@ public class No290 {
                 }
             }
         }
-
-        System.out.println(Arrays.toString(ints1));
-        System.out.println(Arrays.toString(ints2));
-
         return Arrays.toString(ints1).equals(Arrays.toString(ints2));
     }
 
@@ -87,14 +80,6 @@ public class No290 {
         for (int i = 0; i < str.split(" ").length; i++) {
             map2.put(str.split(" ")[i], i);
         }
-
-        System.out.println(map1);
-        System.out.println(map2);
         return map1.values().toString().equals(map2.values().toString());
-    }
-
-
-    public static void main(String[] args) {
-        System.out.println(wordPatternPro("", "b c a"));
     }
 }

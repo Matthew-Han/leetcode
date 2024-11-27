@@ -22,7 +22,6 @@ public class No383 {
      * @return
      */
     public static boolean canConstructPro(String ransomNote, String magazine) {
-
         List<Character> list1 = new ArrayList<>(ransomNote.length());
         List<Character> list2 = new ArrayList<>(magazine.length());
         for (int i = 0; i < ransomNote.length(); i++) {
@@ -31,8 +30,6 @@ public class No383 {
         for (int i = 0; i < magazine.length(); i++) {
             list2.add(magazine.charAt(i));
         }
-        System.out.println(list1);
-        System.out.println(list2);
         for (int i = list1.size() - 1; i >= 0; i--) {
             for (int i1 = list2.size() - 1; i1 >= 0; i1--) {
                 if (list1.get(i).equals(list2.get(i1))) {
@@ -42,10 +39,7 @@ public class No383 {
                 }
             }
         }
-        System.out.println(list1);
-        System.out.println(list2);
-        return list1.size() == 0;
-
+        return list1.isEmpty();
     }
 
     /**
@@ -66,8 +60,6 @@ public class No383 {
         for (int i = 0; i < magazine.length(); i++) {
             map2.put(String.valueOf(magazine.charAt(i)), map2.getOrDefault(String.valueOf(magazine.charAt(i)), 0) + 1);
         }
-        System.out.println(map1);
-        System.out.println(map2);
         int count = 0;
         for (String s1 : map1.keySet()) {
             for (String s2 : map2.keySet()) {
@@ -77,11 +69,6 @@ public class No383 {
                 }
             }
         }
-        System.out.println(count);
         return count == map1.size();
-    }
-
-    public static void main(String[] args) {
-        System.out.println(canConstructPro("abssad", "sabacds"));
     }
 }

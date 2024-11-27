@@ -7,13 +7,6 @@
  **/
 public class No459 {
 
-    public static void main(String[] args) {
-        System.out.println(repeatedSubstringPattern2("abcdabcd"));
-        System.out.println(repeatedSubstringPattern2("abab"));
-        System.out.println(repeatedSubstringPattern2("babbabbabbabbab"));
-
-    }
-
     /**
      * 执行用时： 48 ms , 在所有 Java 提交中击败了 71.99% 的用户
      * 内存消耗： 40.3 MB , 在所有 Java 提交中击败了 43.66% 的用户
@@ -44,11 +37,7 @@ public class No459 {
         String sub = new String(tmp);
         StringBuilder res = new StringBuilder();
         int count = s.length() / size;
-
-        for (int i = 0; i < count; i++) {
-            res.append(sub);
-        }
-        System.out.println("res = " + res);
+        res.append(sub.repeat(count));
         return res.toString().equals(s);
     }
 
@@ -69,8 +58,6 @@ public class No459 {
             int end;
             while (start < s.length()) {
                 end = Math.min((start + sonLen), s.length());
-                System.out.println("start = " + start);
-                System.out.println("end = " + end);
                 if (window.equals(s.substring(start, end))) {
                     result = true;
                 } else {

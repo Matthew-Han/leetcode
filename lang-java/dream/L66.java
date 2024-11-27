@@ -33,10 +33,6 @@ public class L66 {
             tempRight[i] = prev * a[i];
             prev = tempRight[i];
         }
-
-
-        System.out.println("tempLeft = " + Arrays.toString(tempLeft));
-        System.out.println("tempRight = " + Arrays.toString(tempRight));
         for (int i = 0; i < len; i++) {
             int temp = 1;
             if (i - 1 >= 0) {
@@ -52,7 +48,4 @@ public class L66 {
 
     }
 
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(constructArr(new int[]{1, 2, 3, 4, 5})));
-    }
 }

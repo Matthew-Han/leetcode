@@ -21,9 +21,6 @@ public class L58II {
         return s.substring(n, n + len);
     }
 
-    public static void main(String[] args) {
-
-    }
 }
 
 

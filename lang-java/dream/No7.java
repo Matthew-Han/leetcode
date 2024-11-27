@@ -7,12 +7,6 @@
  **/
 public class No7 {
 
-    public static void main(String[] args) {
-        int x = -1129932;
-        No7 r = new No7();
-        System.out.println(r.reverse(x));
-    }
-
     /**
      * 该方法不是很快的原因就是
      *

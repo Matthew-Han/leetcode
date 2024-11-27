@@ -46,8 +46,4 @@ public class L61 {
         }
         return diff == 4;
     }
-
-    public static void main(String[] args) {
-        System.out.println(isStraight(new int[]{0, 3, 2, 6, 5}));
-    }
 }

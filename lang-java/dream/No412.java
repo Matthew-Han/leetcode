@@ -24,8 +24,4 @@ public class No412 {
         }
         return list;
     }
-
-    public static void main(String[] args) {
-        System.out.println(fizzBuzz(15));
-    }
 }

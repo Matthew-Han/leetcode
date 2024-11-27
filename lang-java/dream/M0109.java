@@ -19,7 +19,7 @@ public class M0109 {
         if (s1.equals(s2)) {
             return true;
         }
-        if (null == s2 || "".equals(s1) || "".equals(s2)) {
+        if (null == s2 || s1.isEmpty() || s2.isEmpty()) {
             return false;
         }
         return (s1 + s1).contains(s2);

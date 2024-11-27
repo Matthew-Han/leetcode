@@ -38,8 +38,4 @@ public class No453 {
         }
         return count;
     }
-
-    public static void main(String[] args) {
-        System.out.println(law(new int[]{1, 2, 4, 5}));
-    }
 }

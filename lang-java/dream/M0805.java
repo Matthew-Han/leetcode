@@ -16,7 +16,6 @@ public class M0805 {
      * @return
      */
     public int multiply(int a, int b) {
-
         // 防止出现 [918795921, 1] 这种需要加超多次的情况，把绝对值的较小值当做「次数」
         if (Math.abs(a) > Math.abs(b)) {
             a = a ^ b;
@@ -39,7 +38,6 @@ public class M0805 {
         } else {
             return sum;
         }
-
     }
 
 }

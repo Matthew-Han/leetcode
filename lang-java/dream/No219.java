@@ -27,8 +27,6 @@ public class No219 {
         while (j < nums.length) {
             while (j < nums.length && j - i <= k) {
                 if (nums[i] == nums[j]) {
-                    System.out.println(i);
-                    System.out.println(j);
                     return true;
                 }
                 j++;
@@ -39,9 +37,5 @@ public class No219 {
             }
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(containsNearbyDuplicate(new int[]{1, 2, 1}, 2));
     }
 }

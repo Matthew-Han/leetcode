@@ -37,27 +37,19 @@ public class No35 {
         for (int i = 0; i < list.size(); i++) {
 
             if (i + 1 < list.size() && list.get(i) < target && target < list.get(i + 1)) {
-                System.out.println("一");
                 list.add(i + 1, target);
                 return i + 1;
             }
-            if (target > list.get(list.size() - 1)) {
-                System.out.println("二");
+            if (target > list.getLast()) {
                 list.add(list.size(), target);
                 return list.size() - 1;
             }
-            if (target < list.get(0)) {
-                System.out.println("三");
-                list.add(0, target);
+            if (target < list.getFirst()) {
+                list.addFirst(target);
                 return 0;
             }
         }
 
         return 0;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(searchInsert(new int[]{1, 3, 5, 7}, 6));
-
     }
 }

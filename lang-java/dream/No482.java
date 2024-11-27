@@ -24,24 +24,15 @@ public class No482 {
             return key;
         }
         int headLen = (key.length() % K) == 0 ? K : key.length() % K;
-
         StringBuilder sb = new StringBuilder();
         sb.append(key, 0, headLen);
         int start = headLen;
         int end = start + K;
-        System.out.println(sb);
         while (start <= key.length() - headLen) {
-            System.out.println("start = " + start);
-            System.out.println("end = " + end);
             sb.append("-").append(key, start, end);
             start += K;
             end = start + K;
         }
         return sb.toString();
-
-    }
-
-    public static void main(String[] args) {
-        System.out.println(licenseKeyFormatting("5F3Z-2e-9-w", 7));
     }
 }

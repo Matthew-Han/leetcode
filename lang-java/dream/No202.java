@@ -18,7 +18,6 @@ public class No202 {
      * @return
      */
     public static boolean isHappy(int n) {
-
         // 使用hashSet查找比列表和数组快
         HashSet<Integer> set = new HashSet<>(n);
         while (true) {
@@ -37,7 +36,6 @@ public class No202 {
             }
             set.add(temp);
             n = temp;
-            System.out.println(n);
         }
 
     }
@@ -72,11 +70,6 @@ public class No202 {
             n /= 10;
             r += d * d;
         }
-        System.out.println("r = " + r);
         return r;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(isHappyByFloyd(19));
     }
 }

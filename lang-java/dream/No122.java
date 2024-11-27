@@ -25,8 +25,4 @@ public class No122 {
         }
         return maxDv;
     }
-
-    public static void main(String[] args) {
-        System.out.println(violence(new int[]{2,2,5}));
-    }
 }

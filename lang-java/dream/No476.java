@@ -20,11 +20,6 @@ public class No476 {
         for (String string : strings) {
             stringBuilder.append(Integer.parseInt(string) == 1 ? 0 : (Integer.parseInt(string) == 0 ? 1 : 0));
         }
-        System.out.println(stringBuilder);
         return Integer.parseInt(stringBuilder.toString(), 2);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(findComplement(5));
     }
 }

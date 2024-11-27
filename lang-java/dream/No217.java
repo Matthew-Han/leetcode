@@ -19,15 +19,11 @@ public class No217 {
      * @return
      */
     public static boolean containsDuplicateByHash(int[] nums) {
-        long startTime = System.currentTimeMillis();
         HashSet<Integer> set = new HashSet<>(nums.length * 4 / 3 + 1);
         for (int num : nums) {
             set.add(num);
         }
-        System.out.println((System.currentTimeMillis() - startTime));
-
         return nums.length != set.size();
-
     }
 
     /**
@@ -38,27 +34,15 @@ public class No217 {
      * @return
      */
     public static boolean containsDuplicateByList(int[] nums) {
-        long startTime = System.currentTimeMillis();
         List<Integer> list = new ArrayList<>(nums.length);
         for (int num : nums) {
             if (!list.contains(num)) {
                 list.add(num);
             } else {
-                System.out.println((System.currentTimeMillis() - startTime));
                 return true;
             }
         }
-        System.out.println((System.currentTimeMillis() - startTime));
         return false;
-
     }
 
-
-    public static void main(String[] args) {
-        int[] ints = new int[10000];
-        for (int i = 0; i < ints.length; i++) {
-            ints[i] = i;
-        }
-        System.out.println(containsDuplicateByHash(ints));
-    }
 }

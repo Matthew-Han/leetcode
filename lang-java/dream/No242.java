@@ -44,9 +44,6 @@ public class No242 {
             map1.put(s.charAt(i), map1.getOrDefault(s.charAt(i), 0) + 1);
             map2.put(t.charAt(i), map2.getOrDefault(t.charAt(i), 0) + 1);
         }
-        System.out.println("map1 = " + map1);
-        System.out.println("map2 = " + map2);
-        System.out.println("map1.equals(map2) = " + map1.equals(map2));
         return map1.equals(map2);
     }
 
@@ -70,10 +67,6 @@ public class No242 {
             }
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(isAnagramByHash("dgqztusjuu", "dqugjzutsu"));
     }
 }
 

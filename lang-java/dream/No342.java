@@ -24,8 +24,4 @@ public class No342 {
         }
         return num == 1;
     }
-
-    public static void main(String[] args) {
-        System.out.println(isPowerOfFour(8));
-    }
 }

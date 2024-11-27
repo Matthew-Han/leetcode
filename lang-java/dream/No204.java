@@ -15,7 +15,6 @@ public class No204 {
             // 如果大于 2 则一定拥有 2 这个质数
             result++;
         }
-
         // 从 3 开始遍历，且只遍历奇数
         for (int i = 3; i < n; i += 2) {
             if (!b[i]) {

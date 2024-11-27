@@ -19,24 +19,28 @@ public class No150 {
     public int evalRPN(String[] tokens) {
         Stack<Integer> stack = new Stack<>();
         for (String token : tokens) {
-            if ("*".equals(token)) {
-                int prev = stack.pop();
-                int ans = stack.pop() * prev;
-                stack.add(ans);
-            } else if ("+".equals(token)) {
-                int prev = stack.pop();
-                int ans = prev + stack.pop();
-                stack.add(ans);
-            } else if ("-".equals(token)) {
-                int prev = stack.pop();
-                int ans = stack.pop() - prev;
-                stack.add(ans);
-            } else if ("/".equals(token)) {
-                int prev = stack.pop();
-                int ans = stack.pop() / prev;
-                stack.add(ans);
-            } else {
-                stack.add(Integer.valueOf(token));
+            switch (token) {
+                case "*" -> {
+                    int prev = stack.pop();
+                    int ans = stack.pop() * prev;
+                    stack.add(ans);
+                }
+                case "+" -> {
+                    int prev = stack.pop();
+                    int ans = prev + stack.pop();
+                    stack.add(ans);
+                }
+                case "-" -> {
+                    int prev = stack.pop();
+                    int ans = stack.pop() - prev;
+                    stack.add(ans);
+                }
+                case "/" -> {
+                    int prev = stack.pop();
+                    int ans = stack.pop() / prev;
+                    stack.add(ans);
+                }
+                default -> stack.add(Integer.valueOf(token));
             }
         }
         return stack.pop();

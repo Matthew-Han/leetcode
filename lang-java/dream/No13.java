@@ -31,7 +31,7 @@ public class No13 {
         for (int i = 0; i < s.length(); ++i) {
             int left = map.get(String.valueOf(s.charAt(i)));
             int right = i + 1 < s.length() ? map.get(String.valueOf(s.charAt(i + 1))) : 0;
-            //小的数字位于大的数字左边
+            // 小的数字位于大的数字左边
             if (left < right) {
                 sum -= left;
             } else {
@@ -40,11 +40,6 @@ public class No13 {
         }
         return sum;
 
-    }
-
-    public static void main(String[] args) {
-        System.out.println(romanToInt("CDMCX"));
-        System.out.println(romanToInt("CXIIVCLCDMCX"));
     }
 
 }

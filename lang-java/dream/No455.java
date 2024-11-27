@@ -31,8 +31,4 @@ public class No455 {
         }
         return count;
     }
-
-    public static void main(String[] args) {
-        System.out.println(findContentChildren(new int[]{1, 2}, new int[]{1, 2, 3}));
-    }
 }

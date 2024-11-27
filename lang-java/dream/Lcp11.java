@@ -24,7 +24,4 @@ public class Lcp11 {
         return set.size();
     }
 
-    public static void main(String[] args) {
-
-    }
 }

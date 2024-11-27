@@ -79,42 +79,4 @@ public class No169 {
         return nums[nums.length / 2];
     }
 
-    /**
-     * 该方法超出是时间限制
-     *
-     * @param nums
-     * @return
-     */
-    public static int thirdMethod(int[] nums) {
-
-        int count = 0;
-        int index = (int) (Math.random() * nums.length);
-        int fuck = nums[index];
-        for (int i = 0; i < nums.length; i++) {
-            System.out.println("i = " + i);
-            System.out.println("num = " + nums[i]);
-            System.out.println("fuck = " + fuck);
-            if (nums[i] == fuck) {
-                count++;
-                System.out.println("count = " + count);
-                System.out.println("------------");
-            }
-            if (count > nums.length / 2) {
-                return nums[index];
-            } else if (i == (nums.length - 1)) {
-                System.out.println("============");
-                count = 0;
-                i = -1;
-                index = (int) (Math.random() * nums.length);
-                fuck = nums[index];
-            }
-        }
-        return 0;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(thirdMethod(new int[]{2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 3, 2}));
-        //map.put(num, map.getOrDefault(num, 0) + 1);
-        System.out.println((int) (Math.random() * 5));
-    }
 }

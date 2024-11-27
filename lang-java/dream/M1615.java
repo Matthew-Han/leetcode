@@ -28,7 +28,6 @@ public class M1615 {
                 res[0]++;
             }
         }
-
         for (int i = 0; i < 26; i++) {
             res[1] += Math.min(bucket1[i], bucket2[i]);
         }

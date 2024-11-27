@@ -30,8 +30,4 @@ public class No475 {
         }
         return res;
     }
-
-    public static void main(String[] args) {
-        System.out.println(findRadius(new int[]{1, 2, 3, 5, 15}, new int[]{2, 30}));
-    }
 }

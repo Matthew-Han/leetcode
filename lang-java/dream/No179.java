@@ -40,7 +40,6 @@ public class No179 {
         for (Integer t : tmp) {
             sb.append(t);
         }
-
         return sb.toString();
     }
 }

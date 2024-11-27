@@ -26,7 +26,6 @@ public class M1607 {
     public int maximum(int a, int b) {
         long x = (long) a - (long) b;
         int k = (int) (x >> 63);
-
         return (1 + k) * a - b * k;
     }
 
