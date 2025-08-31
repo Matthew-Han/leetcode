@@ -16,7 +16,6 @@ public class QuickSort<T extends Comparable<T>> implements ISort<T> {
      */
     @Override
     public void sort(T[] arr) {
-
         quickSort(arr, 0, arr.length - 1);
         System.out.println("arr = " + Arrays.toString(arr));
     }
@@ -50,7 +49,6 @@ public class QuickSort<T extends Comparable<T>> implements ISort<T> {
         quickSort(arr, left, i - 1);
         quickSort(arr, i + 1, right);
         System.out.println("arr = " + Arrays.toString(arr));
-
     }
 
     public static void main(String[] args) {

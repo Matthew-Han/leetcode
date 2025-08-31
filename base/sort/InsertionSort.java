@@ -17,7 +17,6 @@ public class InsertionSort<T extends Comparable<T>> implements ISort<T> {
     @Override
     public void sort(T[] arr) {
         int len = arr.length;
-
         for (int i = 1; i < len; i++) {
             for (int j = 0; j < i; j++) {
                 if (j + 1 < len && arr[i].compareTo(arr[j]) < 1) {
@@ -29,7 +28,6 @@ public class InsertionSort<T extends Comparable<T>> implements ISort<T> {
             }
         }
         System.out.println("arr = " + Arrays.toString(arr));
-
     }
 
     public static void main(String[] args) {
